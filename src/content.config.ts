@@ -4,6 +4,7 @@ const postSchema = z.object({
   title: z.string().optional(),
   date: z.coerce.date().optional(),
   summary: z.string().optional(),
+  writing_note: z.string().optional(),
   featured: z.boolean().optional(),
   tags: z.array(z.string()).optional()
 });
