@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"7687be83a74161f5","type":"text","text":"set","x":-125,"y":-200,"width":250,"height":60},
+		{"id":"3734e1b4cd8db7ef","type":"text","text":"sets","x":-140,"y":80,"width":250,"height":60},
+		{"id":"e2e4c7b5eef68ed2","type":"text","text":"","x":-125,"y":-80,"width":250,"height":60},
+		{"id":"748411495aaf8c01","type":"file","file":"notes/未命名.md","x":-240,"y":-200,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"9df8165450cc79a9","fromNode":"7687be83a74161f5","fromSide":"bottom","toNode":"e2e4c7b5eef68ed2","toSide":"top"}
+	]
+}

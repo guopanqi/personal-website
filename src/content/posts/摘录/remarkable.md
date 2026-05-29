@@ -45,9 +45,27 @@
    > - 参考：
    >   [Weather Factory](https://weatherfactory.biz/cultist-simulator/),
    >   [Alpha and the Why](https://weatherfactory.biz/cultist-simulator-the-alpha-and-the-why/),
-   >   [itch.io 采访](https://itch.io/blog/37131/the-internet-is-not-a-kind-place-for-human-brains-an-interview-with-the-masterminds-behind-cultist-simulator)
+    >   [itch.io 采访](https://itch.io/blog/37131/the-internet-is-not-a-kind-place-for-human-brains-an-interview-with-the-masterminds-behind-cultist-simulator)
 
-9. 暗夜刀锋 Blades in the Dark [](https://evilhat.com/product/blades-in-the-dark/)
-   ![](./remarkable-assets/blades-in-the-dark.webp "small")
+9. 苏丹的游戏 Sultan's Game [](https://store.steampowered.com/app/3117820)
+   ![](./remarkable-assets/sultans-game.jpg "small")
+    > 刚开始觉得很有意思, 故事很吸引人, 也很新颖
+    > 不过玩了三四轮之后, 系统太复杂了, 和米椒模拟器一样让人玩起来很累
+    >
+    > 开发者访谈：[专访大尺度《苏丹的游戏》编剧钻咖：游戏的苏丹跟真苏丹比起来，十分善良！](https://www.bilibili.com/video/BV1MNmEBUELf/)
+    >
+    > TapTap纪录片：[国产最大尺度Steam爆款，登顶热销榜靠的不是瑟瑟？丨《存档点》E06](https://www.bilibili.com/video/BV1bT1MBSEka/)
 
-10. 国王，Thronefall，yes, your grace 里面的收获金币-消耗金币-防御 的资源逻辑
+10. 暗夜刀锋 Blades in the Dark [](https://evilhat.com/product/blades-in-the-dark/)
+   ![](./remarkable-assets/blades-in-the-dark.png "small")
+
+11. 国王 Thronefall
+   ![](./好看-assets/thronefall.jpg)
+   > yes, your grace 里面的收获金币-消耗金币-防御 的资源逻辑
+
+12. 孤山速降 Lonely Mountains: Downhill [](https://www.douban.com/subject/27052376/)
+   ![](./remarkable-assets/lonely-mountains.jpg "small")
+   > 记得去玩孤山独影Cairn， 也让我想起短途旅行a short hike
+
+13. 深空梦里人 Citizen Sleeper [](https://www.douban.com/subject/35507913/)
+   ![](./remarkable-assets/citizen-sleeper.jpg "small")

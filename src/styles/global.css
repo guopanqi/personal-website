@@ -241,14 +241,50 @@ ul {
   padding-top: 0;
 }
 
-/* .article {
-  padding-top: 0rem;
-} */
-
 .article header {
   text-align: left;
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+/* 段落间距优化 */
+.article p {
+  margin-bottom: 1rem;
+}
+
+/* 列表样式 */
+.article ul,
+.article ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.article li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+/* 引用样式 - 更突出 */
+.article blockquote {
+  margin: 1.2rem 0;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(0, 0, 0, 0.03);
+  font-style: normal;
+  color: var(--text);
+}
+
+.article blockquote p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 分隔线样式 */
+.article hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2rem 0;
 }
 
 .article > * {
