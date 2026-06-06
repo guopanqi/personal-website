@@ -60,7 +60,7 @@
    ![](./remarkable-assets/blades-in-the-dark.png "small")
 
 11. 国王 Thronefall
-   ![](./好看-assets/thronefall.jpg)
+   ![](./好看-assets/thronefall.jpg "small")
    > yes, your grace 里面的收获金币-消耗金币-防御 的资源逻辑
 
 12. 孤山速降 Lonely Mountains: Downhill [](https://www.douban.com/subject/27052376/)
