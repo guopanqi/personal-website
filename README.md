@@ -67,6 +67,26 @@ Override example:
 }
 ```
 
+## Markdown extensions vs Obsidian
+
+This site uses custom remark plugins that differs from standard CommonMark:
+
+| Feature | Syntax | Standard | This site |
+|---|---|---|---|
+| **Line breaks** | Single newline | Merged into space | `<br>` via `remark-breaks` |
+| **Paragraph** | Blank line | `<p>` | `<p>` |
+| **Highlight (closed)** | `==文字==` | ❌ | ✅ `<mark>` via `remark-highlight-mark` |
+| **Highlight (open)** | `==文字` (无结尾) | ❌ | ✅ 自动高亮到换行 |
+
+**Not supported** (Obsidian syntaxes that won't work here):
+
+| Syntax | Example | What to use instead |
+|---|---|---|
+| Internal links | `[[文件名]]` | Standard markdown links |
+| Callouts | `> [!note]` | Plain `>` blockquote |
+| Comments | `%%注释%%` | Remove or keep as invisible text |
+| Embedded images | `![[图.png]]` | `![](path)` |
+
 ## Footnotes in Markdown
 
 Use standard GFM footnotes (already enabled):
@@ -89,3 +109,10 @@ cover: "/images/games/cover.png"
 featured: false
 date: 2026-03-16
 ```
+
+## Custom remark plugins (from Obsidian)
+
+以下语法移植自 Obsidian，写文章时可以直接使用：
+
+- **高亮** — `==文字==` 或行首 `==文字`（无结尾自动高亮到换行）
+- **单换行折行** — 直接换行即可，不需要行尾空格

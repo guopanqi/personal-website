@@ -1,13 +1,8 @@
-
 2021 年 6 月
 Paul Gram
-
-原文链接
- https://paulgraham.com/hwh.html
-
+原文链接 https://paulgraham.com/hwh.html
 
 It might not seem there's much to learn about how to work hard. Anyone who's been to school knows what it entails, even if they chose not to do it. There are 12 year olds who work amazingly hard. And yet when I ask if I know more about working hard now than when I was in school, the answer is definitely yes.
-
 努力工作似乎没有什么值得专门学习的。任何上过学的人都知道这意味着什么，即使他选择不去做。十二岁的孩子也可能勤奋得惊人。然而，当我问自己：关于如何努力工作，现在的我是否比上学时懂得更多？答案显然是肯定的。
 
 One thing I know is that if you want to do great things, you'll have to work very hard. I wasn't sure of that as a kid. Schoolwork varied in difficulty; one didn't always have to work super hard to do well. And some of the things famous adults did, they seemed to do almost effortlessly. Was there, perhaps, some way to evade hard work through sheer brilliance? Now I know the answer to that question. There isn't.

@@ -252,6 +252,13 @@ ul {
   margin-bottom: 0;
 }
 
+mark {
+  background: #f7e9c3;
+  color: inherit;
+  padding: 0.1rem 0.2rem;
+  border-radius: 2px;
+}
+
 /* 段落间距优化 */
 .article p {
   margin-bottom: 1rem;

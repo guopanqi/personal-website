@@ -11,7 +11,7 @@ from rich.table import Table
 
 from .config import DEFAULT_CSV_PATH
 from .csv_store import read_csv, write_csv
-from .models import CSV_FIELDS
+from .models import CSV_FIELDS, MODEL_FIELD_MAP
 from .normalize import (
     extract_link_id,
     is_url_valid,
@@ -28,10 +28,6 @@ app = typer.Typer(
 
 err_console = Console(stderr=True)
 
-CSV_ARG = typer.Argument(
-    None,
-    help="Path to CSV file (default: ../gamer520-games.csv)",
-)
 CSV_OPT = typer.Option(
     None,
     "--csv",
@@ -39,11 +35,9 @@ CSV_OPT = typer.Option(
 )
 
 
-def _resolve_csv(csv_arg: Optional[str], csv_opt: Optional[str]) -> Path:
+def _resolve_csv(csv_opt: Optional[str]) -> Path:
     if csv_opt:
         return Path(csv_opt)
-    if csv_arg:
-        return Path(csv_arg)
     return DEFAULT_CSV_PATH
 
 
@@ -198,11 +192,10 @@ def _export_rows(
 
 @app.command()
 def latest(
-    csv_arg: Optional[str] = CSV_ARG,
     csv_opt: Optional[str] = CSV_OPT,
     json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
 ):
-    rows = read_csv(_resolve_csv(csv_arg, csv_opt))
+    rows = read_csv(_resolve_csv(csv_opt))
     d, count_on_date, max_id = _latest_info(rows)
     total = len(rows)
     if json_output:
@@ -231,25 +224,26 @@ def search(
         None, "--title", help="Fuzzy match on title field",
     ),
     limit: int = typer.Option(20, "--limit", "-n", help="Max results"),
+    full: bool = typer.Option(False, "--full", help="Show all fields"),
     json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
-    csv_arg: Optional[str] = CSV_ARG,
     csv_opt: Optional[str] = CSV_OPT,
 ):
     if not query and not title:
         err_console.print("Error: provide a search query or --title", style="red")
         raise typer.Exit(code=2)
-    rows = read_csv(_resolve_csv(csv_arg, csv_opt))
+    rows = read_csv(_resolve_csv(csv_opt))
     link_id = None
     if query and query.isdigit():
         link_id = int(query)
     results = _search_rows(rows, title=title, query=query, link_id=link_id)
     results = results[:limit]
     if json_output:
+        if full:
+            out_fields = CSV_FIELDS
+        else:
+            out_fields = ("发布日期", "平台", "标题", "推荐度", "链接", "用户备注")
         out = json.dumps(
-            [
-                {k: r.get(k, "") for k in ("发布日期", "平台", "标题", "推荐度", "链接", "用户备注")}
-                for r in results
-            ],
+            [{k: r.get(k, "") for k in out_fields} for r in results],
             ensure_ascii=False,
             indent=2,
         )
@@ -259,19 +253,23 @@ def search(
             print("No matches found.")
             raise typer.Exit()
         for r in results:
-            print(
-                f"{r['发布日期']} [{r['平台']}] {r['标题']} (score: {r['推荐度']}) {r['链接']}"
-            )
+            if full:
+                print(
+                    f"{r['发布日期']} [{r['平台']}] {r['标题']} | {r.get('标签','')} | {r.get('一句话描述','')} | score: {r['推荐度']} | {r['链接']} | {r.get('用户备注','')}"
+                )
+            else:
+                print(
+                    f"{r['发布日期']} [{r['平台']}] {r['标题']} (score: {r['推荐度']}) {r['链接']}"
+                )
 
 
 @app.command()
 def validate(
-    csv_arg: Optional[str] = CSV_ARG,
     csv_opt: Optional[str] = CSV_OPT,
     strict: bool = typer.Option(False, "--strict", help="(reserved for future strict checks)"),
     json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
 ):
-    csv_path = _resolve_csv(csv_arg, csv_opt)
+    csv_path = _resolve_csv(csv_opt)
     try:
         rows = read_csv(csv_path)
     except ValueError as e:
@@ -297,11 +295,10 @@ def validate(
 
 @app.command("sort")
 def sort_csv(
-    csv_arg: Optional[str] = CSV_ARG,
     csv_opt: Optional[str] = CSV_OPT,
     dry_run: bool = typer.Option(False, "--dry-run", help="Preview sort, do not write"),
 ):
-    csv_path = _resolve_csv(csv_arg, csv_opt)
+    csv_path = _resolve_csv(csv_opt)
     rows = read_csv(csv_path)
 
     def sort_key(row: dict[str, str]) -> tuple[str, int]:
@@ -326,20 +323,30 @@ def sort_csv(
 
 @app.command()
 def add(
-    file_path: Optional[str] = typer.Argument(
+    stdin: bool = typer.Option(False, "--stdin", help="Read JSON array from stdin (preferred for AI)"),
+    file_path: Optional[str] = typer.Option(
         None,
-        help="JSON file with entries to add",
+        "--file",
+        "-f",
+        help="Read JSON array from a file",
     ),
-    stdin: bool = typer.Option(False, "--stdin", help="Read JSON from stdin"),
     dry_run: bool = typer.Option(False, "--dry-run", help="Preview changes, do not write"),
     json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
-    csv_arg: Optional[str] = CSV_ARG,
     csv_opt: Optional[str] = CSV_OPT,
 ):
+    """Add one or more entries from JSON.
+
+    Examples:
+      gamer520 add --stdin --dry-run
+      gamer520 add --file pending.json --dry-run
+    """
     if not stdin and not file_path:
-        err_console.print("Error: provide a JSON file or --stdin", style="red")
+        err_console.print("Error: provide --stdin or --file PATH", style="red")
         raise typer.Exit(code=2)
-    csv_path = _resolve_csv(csv_arg, csv_opt)
+    if stdin and file_path:
+        err_console.print("Error: use either --stdin or --file, not both", style="red")
+        raise typer.Exit(code=2)
+    csv_path = _resolve_csv(csv_opt)
     existing = read_csv(csv_path)
     try:
         if stdin:
@@ -484,10 +491,9 @@ def remove(
     dry_run: bool = typer.Option(False, "--dry-run", help="Preview removal, do not write"),
     yes: bool = typer.Option(False, "--yes", help="Confirm removal"),
     json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
-    csv_arg: Optional[str] = CSV_ARG,
     csv_opt: Optional[str] = CSV_OPT,
 ):
-    csv_path = _resolve_csv(csv_arg, csv_opt)
+    csv_path = _resolve_csv(csv_opt)
     rows = read_csv(csv_path)
     norm_query = normalize_title_key(title)
     matches: list[tuple[int, dict[str, str]]] = []
@@ -534,6 +540,138 @@ def remove(
 
 
 @app.command()
+def update(
+    title: str = typer.Option(
+        ..., "--title", help="Exact title to update (after normalization)"
+    ),
+    set_fields: list[str] = typer.Option(
+        [], "--set", help="field=value pairs to update (e.g. --set 推荐度 4 --set 用户备注 已玩)",
+    ),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Preview changes, do not write"),
+    yes: bool = typer.Option(False, "--yes", help="Confirm update"),
+    json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
+    csv_opt: Optional[str] = CSV_OPT,
+):
+    """Update one or more fields of an existing entry by title.
+
+    Examples:
+      gamer520 update --title "舒适森林 Cozy Grove" --set 用户备注 "玩过" --dry-run
+      gamer520 update --title "游戏名" --set 推荐度 4 --set 推荐标签 推荐 --yes
+    """
+    if not set_fields:
+        err_console.print("Error: provide at least one --set field=value", style="red")
+        raise typer.Exit(code=2)
+
+    csv_path = _resolve_csv(csv_opt)
+    rows = read_csv(csv_path)
+    norm_query = normalize_title_key(title)
+
+    matches: list[tuple[int, dict[str, str]]] = []
+    for i, r in enumerate(rows, start=2):
+        if normalize_title_key(r.get("标题", "")) == norm_query:
+            matches.append((i, r))
+
+    if len(matches) == 0:
+        err_console.print(f"No match for title '{title}' (normalized: '{norm_query}')", style="red")
+        raise typer.Exit(code=1)
+    if len(matches) > 1:
+        err_console.print(f"Multiple matches ({len(matches)}) for title. Data integrity issue.", style="red")
+        for line, r in matches:
+            err_console.print(f"  Row {line}: {r['标题']} ({r['链接']})")
+        raise typer.Exit(code=1)
+
+    line, match_row = matches[0]
+
+    changes: dict[str, str] = {}
+    for kv in set_fields:
+        if "=" not in kv:
+            err_console.print(f"Error: --set must be field=value, got '{kv}'", style="red")
+            raise typer.Exit(code=2)
+        field, _, value = kv.partition("=")
+        field = field.strip()
+        if field not in CSV_FIELDS:
+            err_console.print(
+                f"Error: unknown field '{field}'. Valid fields: {', '.join(CSV_FIELDS)}",
+                style="red",
+            )
+            raise typer.Exit(code=2)
+        changes[field] = value.strip()
+
+    updated = dict(match_row)
+    for field, value in changes.items():
+        updated[field] = value
+
+    errs: list[str] = []
+    if "发布日期" in changes:
+        try:
+            date.fromisoformat(changes["发布日期"])
+        except ValueError:
+            errs.append(f"Invalid date '{changes['发布日期']}'")
+    if "平台" in changes:
+        if changes["平台"] not in ("PC", "Switch", "PC/Switch"):
+            errs.append(f"Invalid platform '{changes['平台']}'")
+    if "推荐度" in changes:
+        if changes["推荐度"] not in ("1", "2", "3", "4", "5"):
+            errs.append(f"Invalid score '{changes['推荐度']}'")
+    if "标题" in changes and not changes["标题"].strip():
+        errs.append("Title cannot be empty")
+    if "链接" in changes:
+        if not changes["链接"].strip():
+            errs.append("Link cannot be empty")
+        elif not is_url_valid(changes["链接"]):
+            errs.append(f"Invalid URL '{changes['链接'][:60]}'")
+
+    if errs:
+        for e in errs:
+            err_console.print(f"Error: {e}", style="red")
+        raise typer.Exit(code=1)
+
+    remaining = [r for i, r in enumerate(rows, start=2) if i != line]
+    final_rows = remaining + [updated]
+    validation_errors = _validate_rows(final_rows)
+    if validation_errors:
+        for e in validation_errors:
+            err_console.print(f"Validation error after update: {e}", style="red")
+        raise typer.Exit(code=1)
+
+    if dry_run:
+        if json_output:
+            print(
+                json.dumps(
+                    {"would_update": match_row["标题"], "changes": changes},
+                    ensure_ascii=False,
+                )
+            )
+        else:
+            print(f"Would update row {line}: {match_row['标题']}")
+            for field, value in changes.items():
+                old_val = match_row.get(field, "")
+                print(f"  {field}: '{old_val}' -> '{value}'")
+        raise typer.Exit()
+
+    if not yes:
+        err_console.print(
+            "Use --yes to confirm update (preview with --dry-run first)", style="red"
+        )
+        raise typer.Exit(code=1)
+
+    write_csv(csv_path, final_rows)
+    if json_output:
+        print(
+            json.dumps(
+                {
+                    "updated": match_row["标题"],
+                    "changes": changes,
+                    "total": len(final_rows),
+                },
+                ensure_ascii=False,
+            )
+        )
+    else:
+        print(f"Updated row {line}: {match_row['标题']}. Total: {len(final_rows)} rows.")
+
+
+@app.command()
 def export(
     date_filter: Optional[str] = typer.Option(None, "--date", help="Export entries for a specific date"),
     days: Optional[int] = typer.Option(None, "--days", help="Export entries from last N days"),
@@ -542,10 +680,9 @@ def export(
     latest_only: bool = typer.Option(False, "--latest", help="Export only latest date entries"),
     format: str = typer.Option("jsonl", "--format", help="Output format: jsonl, csv, md"),
     full: bool = typer.Option(False, "--full", help="Include 判断理由 field"),
-    csv_arg: Optional[str] = CSV_ARG,
     csv_opt: Optional[str] = CSV_OPT,
 ):
-    rows = read_csv(_resolve_csv(csv_arg, csv_opt))
+    rows = read_csv(_resolve_csv(csv_opt))
     if date_filter:
         rows = [r for r in rows if r.get("发布日期", "") == date_filter]
     if days is not None:

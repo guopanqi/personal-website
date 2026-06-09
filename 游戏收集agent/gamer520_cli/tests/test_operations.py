@@ -394,7 +394,7 @@ def test_add_from_file():
     json.dump([entry], tmp, ensure_ascii=False)
     tmp.close()
     try:
-        result = runner.invoke(app, ["add", tmp.name, "--csv", csv_path])
+        result = runner.invoke(app, ["add", "--file", tmp.name, "--csv", csv_path])
         assert result.exit_code == 0, result.stderr
         assert "Added 1 entries" in result.stdout
     finally:

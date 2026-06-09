@@ -91,9 +91,15 @@ uv run gamer520 search --title "候选标题" --json
 
 `--title` 使用模糊匹配（忽略空格、标点、大小写、版本后缀），适合查重。
 
+`--full` 输出所有 10 个字段（默认仅 6 个）。
+
 显式 `query` 参数使用简单子串匹配（不区分大小写），搜索标题、链接、用户备注。
 
 纯数字 query 自动转为链接 ID 搜索。
+
+```bash
+uv run gamer520 search "宝石少女" --full --json
+```
 
 ### `validate`
 
@@ -137,8 +143,8 @@ printf '%s\n' '[...JSON数组...]' | uv run gamer520 add --stdin --dry-run
 printf '%s\n' '[...JSON数组...]' | uv run gamer520 add --stdin
 
 # 文件输入（需要审阅或复用时）
-uv run gamer520 add pending.json
-uv run gamer520 add pending.json --dry-run
+uv run gamer520 add --file pending.json --dry-run
+uv run gamer520 add --file pending.json
 ```
 
 输入 JSON 格式：
@@ -186,6 +192,28 @@ uv run gamer520 remove --title "精确标题" --yes
 - 删除后自动校验剩余 CSV，校验失败则拒绝删除
 
 推荐先用 `search --title` 模糊找候选，再复制确认后的完整标题删除。
+
+### `update`
+
+修改已有条目的一个或多个字段。
+
+```bash
+# dry-run 预览
+uv run gamer520 update --title "舒适森林 Cozy Grove" --set "用户备注=玩过" --dry-run
+
+# 确认写入
+uv run gamer520 update --title "舒适森林 Cozy Grove" --set "用户备注=玩过" --yes
+
+# 多字段同时修改
+uv run gamer520 update --title "游戏名" --set "推荐度=4" --set "推荐标签=推荐" --yes
+```
+
+匹配规则同 `remove`（规范化后精确匹配）。
+- 匹配 0 行或匹配多行 → 失败
+- 字段名必须是 CSV 的 10 个中文字段之一
+- 标量校验：推荐度 1–5、平台 PC/Switch/PC/Switch、日期 YYYY-MM-DD
+- 修改后自动执行全表校验，校验失败拒绝写入
+- 无需先 `remove` 再 `add`，一步完成
 
 ### `export`
 
@@ -273,3 +301,4 @@ uv run pytest
 | 排序 | 版本是否独立收录 |
 | 局部上下文导出 | PC/Switch 合并判断 |
 | 数据健康检查 | 用户备注的语义整理 |
+| 单条修改（`update`） | 修改内容的语义判断 |
