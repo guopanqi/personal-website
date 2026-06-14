@@ -4,8 +4,9 @@
   --muted: #5f594f;
   --line: #d6d0c5;
   --accent: #3f372d;
-  --layout-width: 700px;
+  --layout-width: 640px;
   --layout-gutter: 2.5rem;
+  --layout-offset-x: 2rem;
   --space-1: 0.9rem;
   --space-2: 1.3rem;
   --space-3: 1.6rem;
@@ -49,6 +50,7 @@ main a:hover {
 .page-shell {
   width: min(var(--layout-width), calc(100% - var(--layout-gutter)));
   margin: 1.5rem auto 3rem;
+  transform: translateX(var(--layout-offset-x));
 }
 
 .site-header {
@@ -481,7 +483,8 @@ a.external-link::after {
 @media (max-width: 700px) {
   .page-shell {
     width: min(var(--layout-width), calc(100% - 1.4rem));
-    margin-top: 0.8rem;
+    margin: 0.8rem auto 3rem;
+    transform: none;
   }
 
   .games-grid,

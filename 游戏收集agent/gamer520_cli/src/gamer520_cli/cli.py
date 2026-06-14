@@ -193,9 +193,17 @@ def _export_rows(
 @app.command()
 def latest(
     csv_opt: Optional[str] = CSV_OPT,
+    platform: Optional[str] = typer.Option(
+        None, "--platform", help="Filter by platform: PC, Switch, or PC/Switch",
+    ),
     json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
 ):
     rows = read_csv(_resolve_csv(csv_opt))
+    if platform:
+        rows = [r for r in rows if r.get("平台", "") == platform]
+        if not rows:
+            err_console.print(f"No rows found for platform '{platform}'", style="red")
+            raise typer.Exit(code=1)
     d, count_on_date, max_id = _latest_info(rows)
     total = len(rows)
     if json_output:
@@ -205,8 +213,12 @@ def latest(
             "latest_link_id": max_id,
             "total_rows": total,
         }
+        if platform:
+            obj["platform"] = platform
         print(json.dumps(obj, ensure_ascii=False))
     else:
+        if platform:
+            print(f"platform: {platform}")
         print(f"latest_date: {d.isoformat()}")
         print(f"rows_on_latest_date: {count_on_date}")
         print(f"latest_link_id: {max_id}")
@@ -709,6 +721,72 @@ def export(
         rows = [r for r in rows if r.get("发布日期", "") == d_info.isoformat()]
     output = _export_rows(rows, full=full, format=format)
     print(output)
+
+
+@app.command("scrape-list")
+def scrape_list_cmd(
+    url: str = typer.Argument(..., help="Game list page URL to scrape"),
+    json_output: bool = typer.Option(True, "--json/--no-json", help="Output as JSON (default: true)"),
+):
+    """Scrape a game list page; return [{title, url, date_text}].
+
+    Example:
+      gamer520 scrape-list https://www.gamer520.com/pcplay
+      gamer520 scrape-list https://www.gamer520.com/pcplay/page/2
+    """
+    try:
+        from .scraper import scrape_list
+    except ImportError as e:
+        err_console.print(f"Missing dependency: {e}", style="red")
+        raise typer.Exit(code=1)
+
+    try:
+        results = scrape_list(url)
+    except ValueError as e:
+        err_console.print(str(e), style="red")
+        raise typer.Exit(code=1)
+    except Exception as e:
+        err_console.print(f"Scrape failed: {e}", style="red")
+        raise typer.Exit(code=1)
+
+    if json_output:
+        print(json.dumps(results, ensure_ascii=False, indent=2))
+    else:
+        for item in results:
+            date_col = (item["date_text"] or "")[:20].ljust(20)
+            print(f"{date_col} {item['title']} ({item['url']})")
+
+
+@app.command("scrape-detail")
+def scrape_detail_cmd(
+    url: str = typer.Argument(..., help="Game detail page URL to scrape"),
+    json_output: bool = typer.Option(True, "--json/--no-json", help="Output as JSON (default: true)"),
+):
+    """Scrape a game detail page; return {title, release_date, genres, description}.
+
+    Example:
+      gamer520 scrape-detail https://www.gamer520.com/113322.html
+    """
+    try:
+        from .scraper import scrape_detail
+    except ImportError as e:
+        err_console.print(f"Missing dependency: {e}", style="red")
+        raise typer.Exit(code=1)
+
+    try:
+        result = scrape_detail(url)
+    except ValueError as e:
+        err_console.print(str(e), style="red")
+        raise typer.Exit(code=1)
+    except Exception as e:
+        err_console.print(f"Scrape failed: {e}", style="red")
+        raise typer.Exit(code=1)
+
+    if json_output:
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+    else:
+        for k, v in result.items():
+            print(f"{k}: {v}")
 
 
 if __name__ == "__main__":
