@@ -1,105 +1,75 @@
 # gamer520-cli
 
-CLI 工具，用于管理 Gamer520 游戏收藏 CSV 数据。将确定性的 CSV 操作（查最新日期、搜索、校验、排序、追加、删除、导出）脚本化，保留 AI 对游戏内容的判断和人工可编辑性。
+管理 Gamer520 游戏收藏 CSV 数据库的命令行工具。所有 CSV 读写操作通过本工具完成，不直接编辑 CSV 文件。
 
-CSV 仍然是唯一主数据源，不引入数据库。
-
-## 目录结构
-
-```
-游戏收集agent/
-├── gamer520-games.csv          # 主数据源（UTF-8 with BOM）
-├── taste.txt                   # 用户口味基准
-├── gamer520-daily-update-SKILL.md  # AI 每日更新流程
-├── gamer520_cli/               # 本 CLI 项目
-│   ├── pyproject.toml
-│   ├── README.md
-│   ├── src/gamer520_cli/
-│   │   ├── __init__.py
-│   │   ├── __main__.py
-│   │   ├── cli.py              # CLI 命令入口
-│   │   ├── config.py           # 默认路径配置
-│   │   ├── csv_store.py        # CSV 读写（UTF-8 with BOM）
-│   │   ├── models.py           # GameRow 数据模型
-│   │   └── normalize.py        # URL/标题规范化
-│   └── tests/
-│       ├── fixtures/games.csv  # 测试用最小 CSV
-│       ├── test_normalize.py
-│       ├── test_csv_store.py
-│       └── test_operations.py
-```
-
-## 前提
-
-- Python 3.12+
-- [uv](https://docs.astral.sh/uv/)
-
-## 安装
+## 调用方式
 
 ```bash
-cd 游戏收集agent/gamer520_cli
-uv sync
-```
-
-## 运行方式
-
-在 CLI 子目录内：
-
-```bash
-cd 游戏收集agent/gamer520_cli
-uv run gamer520 <command>
-```
-
-从仓库根目录：
-
-```bash
+# 从仓库根目录（推荐）
 uv run --project 游戏收集agent/gamer520_cli gamer520 <command>
+
+# 在 CLI 子目录内
+cd 游戏收集agent/gamer520_cli && uv run gamer520 <command>
 ```
 
-## 命令参考
+**关键路径**
+
+| 名称 | 路径 |
+|------|------|
+| 数据库 | `游戏收集agent/gamer520-games.csv` |
+| 口味文件 | `游戏收集agent/taste.txt` |
+
+## 命令一览
+
+| 命令 | 用途 | 关键参数 |
+|------|------|---------|
+| `latest` | 返回最新帖子发布日期和最大 link_id | `--platform PC\|Switch`、`--json` |
+| `search` | 全字段子串匹配；`--field` 限定单列 | `--field 字段名`、`--json`、`--limit`、`--full` |
+| `validate` | 校验 CSV 完整性和数据健康 | `--json` |
+| `sort` | 按帖子发布日期降序、同日期按 link_id 降序排列 | `--dry-run` |
+| `add` | 追加新条目（JSON 数组） | `--stdin`、`--file`、`--dry-run`、`--json` |
+| `remove` | 按标题精确删除 | `--title`、`--dry-run`、`--yes` |
+| `update` | 修改已有条目的字段 | `--title`、`--set KEY=VALUE`、`--dry-run`、`--yes` |
+| `export` | 按条件导出子集 | `--days`、`--date`、`--latest`、`--query`、`--platform`、`--format`、`--full` |
+| `scrape-list` | 抓取列表页 → `[{title, url, date, date_text}]` | `<url>` |
+| `scrape-detail` | 抓取详情页 → `{title, game_release_date, genres, description}` | `<url>` |
+
+## 命令详情
 
 ### `latest`
 
-返回 CSV 中最新发布日期和相关统计。
+返回 CSV 中最新帖子发布日期（即 gamer520 论坛帖子日期，非游戏官方发行日期）和相关统计。
 
 ```bash
 uv run gamer520 latest
-uv run gamer520 latest --json
+uv run gamer520 latest --platform PC
+uv run gamer520 latest --platform Switch --json
 ```
 
 输出：
 
 ```
-latest_date: 2026-06-06
-rows_on_latest_date: 11
-latest_link_id: 114951
-total_rows: 219
+latest_date: 2026-06-14
+rows_on_latest_date: 3
+latest_link_id: 115709
+total_rows: 306
 ```
 
-用途：每日更新前确定扫描边界。同一天多次更新时，不跳过当天新增内容。
+用途：每日更新前确定扫描边界，PC 和 Switch 各自独立查询。
 
 ### `search`
 
-搜索标题、链接、备注。
+全字段子串匹配（不区分大小写）。
 
 ```bash
 uv run gamer520 search "灰烬王国"
-uv run gamer520 search 114946
-uv run gamer520 search "想玩" --limit 5
-uv run gamer520 search --title "候选标题" --json
+uv run gamer520 search "115709"              # 链接 ID 子串
+uv run gamer520 search "优先推荐" --field 推荐标签
+uv run gamer520 search "叙事" --json --limit 10
+uv run gamer520 search "宝石少女" --full
 ```
 
-`--title` 使用模糊匹配（忽略空格、标点、大小写、版本后缀），适合查重。
-
-`--full` 输出所有 10 个字段（默认仅 6 个）。
-
-显式 `query` 参数使用简单子串匹配（不区分大小写），搜索标题、链接、用户备注。
-
-纯数字 query 自动转为链接 ID 搜索。
-
-```bash
-uv run gamer520 search "宝石少女" --full --json
-```
+默认匹配所有 10 个字段。`--field 字段名` 限定到单列（任意中文字段名均可）。
 
 ### `validate`
 
@@ -110,132 +80,118 @@ uv run gamer520 validate
 uv run gamer520 validate --json
 ```
 
-检查项：
-- 表头完整、字段顺序正确
-- 日期格式 `YYYY-MM-DD`
-- 平台合法（`PC` / `Switch` / `PC/Switch`）
-- 推荐度 `1`–`5`
-- URL 非空且格式合法
-- 链接重复
-- 规范化标题重复
-- 空标题
-
-RFC 中 `--strict` 参数已保留但当前无额外效果。标题唯一性默认检查。
+检查项：表头完整性、日期格式、平台合法性、推荐度范围、URL 格式、链接重复、标题重复、空标题。
 
 ### `sort`
 
-按发布日期降序、同日期按链接 ID 降序排列。
+按帖子发布日期降序、同日期按链接 ID 降序排列。
 
 ```bash
-uv run gamer520 sort              # 写入排序结果
-uv run gamer520 sort --dry-run    # 仅预览
+uv run gamer520 sort
+uv run gamer520 sort --dry-run
 ```
-
-无法提取链接 ID 的条目排在同日期最后。
 
 ### `add`
 
-追加新增条目。
+追加新条目。写入前自动校验字段完整性、格式、重复链接、重复标题。
 
 ```bash
-# stdin 输入（AI 优先路径）
-printf '%s\n' '[...JSON数组...]' | uv run gamer520 add --stdin --dry-run
-printf '%s\n' '[...JSON数组...]' | uv run gamer520 add --stdin
+# heredoc stdin（推荐，避免中文 shell 转义问题）
+uv run gamer520 add --stdin --dry-run << 'ENDOFDATA'
+[{"帖子发布日期":"2026-06-14","平台":"PC","标题":"游戏名","标签":"叙事；探索","一句话描述":"...","推荐度":3,"推荐标签":"可试","判断理由":"...","链接":"https://www.gamer520.com/NNNNN.html","用户备注":""}]
+ENDOFDATA
 
-# 文件输入（需要审阅或复用时）
+uv run gamer520 add --stdin << 'ENDOFDATA'
+[{...}]
+ENDOFDATA
+
+# 文件输入
 uv run gamer520 add --file pending.json --dry-run
 uv run gamer520 add --file pending.json
 ```
 
-输入 JSON 格式：
-
-```json
-[
-  {
-    "发布日期": "2026-06-07",
-    "平台": "PC",
-    "标题": "游戏名称",
-    "标签": "叙事；探索",
-    "一句话描述": "玩家扮演...",
-    "推荐度": "3",
-    "推荐标签": "可试",
-    "判断理由": "符合口味...",
-    "链接": "https://www.gamer520.com/123456.html",
-    "用户备注": ""
-  }
-]
-```
-
-写入前自动执行：
-- 字段完整性校验
-- 日期格式校验
-- 推荐度范围校验
-- URL 非空校验
-- 链接重复拒绝
-- 规范化标题重复拒绝
-- 整体 CSV 健康校验（dry-run 和 write 均执行）
-
-`--dry-run` 和写入路径均会校验最终 CSV 健康状态。如果已有 CSV 存在重复或坏数据，dry-run 也会失败。
-
 ### `remove`
 
-按标题删除误收录条目。
+按标题删除条目（规范化后精确匹配，忽略空格/标点/大小写）。
 
 ```bash
 uv run gamer520 remove --title "精确标题" --dry-run
 uv run gamer520 remove --title "精确标题" --yes
 ```
 
-匹配规则为规范化后精确匹配（忽略空格、标点、大小写，但不去版本后缀）。
-- 匹配 0 行 → 失败
-- 匹配多行 → 失败（输出候选列表）
-- 删除后自动校验剩余 CSV，校验失败则拒绝删除
-
-推荐先用 `search --title` 模糊找候选，再复制确认后的完整标题删除。
-
 ### `update`
 
 修改已有条目的一个或多个字段。
 
 ```bash
-# dry-run 预览
 uv run gamer520 update --title "舒适森林 Cozy Grove" --set "用户备注=玩过" --dry-run
-
-# 确认写入
 uv run gamer520 update --title "舒适森林 Cozy Grove" --set "用户备注=玩过" --yes
-
-# 多字段同时修改
 uv run gamer520 update --title "游戏名" --set "推荐度=4" --set "推荐标签=推荐" --yes
 ```
 
-匹配规则同 `remove`（规范化后精确匹配）。
-- 匹配 0 行或匹配多行 → 失败
-- 字段名必须是 CSV 的 10 个中文字段之一
-- 标量校验：推荐度 1–5、平台 PC/Switch/PC/Switch、日期 YYYY-MM-DD
-- 修改后自动执行全表校验，校验失败拒绝写入
-- 无需先 `remove` 再 `add`，一步完成
-
 ### `export`
 
-按条件导出 CSV 子集，供 AI 上下文使用。
+按条件导出子集，供 AI 上下文或人工审阅使用。
 
 ```bash
-uv run gamer520 export --date 2026-06-06
-uv run gamer520 export --days 3
+uv run gamer520 export --days 7           # 最近 7 天
+uv run gamer520 export --date 2026-06-14  # 指定日期
+uv run gamer520 export --latest           # 最新一批
 uv run gamer520 export --query "王国"
-uv run gamer520 export --latest
-uv run gamer520 export --platform PC
+uv run gamer520 export --platform Switch
+uv run gamer520 export --days 30 --format md --full
 ```
 
-格式参数（默认 `jsonl`）：
+格式：`jsonl`（默认）、`csv`、`md`。默认不含 `判断理由`，加 `--full` 输出全字段。
+
+### `scrape-list`
+
+抓取 gamer520 列表页，返回紧凑 JSON。
 
 ```bash
---format jsonl   # AI 优先，每行一个 JSON 对象
---format csv     # 适合管道处理
---format md      # 适合人阅读
+uv run gamer520 scrape-list https://www.gamer520.com/pcplay
+uv run gamer520 scrape-list https://www.gamer520.com/gameswitch
 ```
 
-默认不输出长字段 `判断理由`，除非传 `--full`。
+返回：`[{"title": "...", "url": "...", "date": "2026-06-14", "date_text": "3小时前"}]`
+
+`date` 从页面 `<time datetime="...">` 属性解析，是 gamer520 帖子发布日期，非游戏官方发行日期。
+
+### `scrape-detail`
+
+抓取 gamer520 详情页，返回游戏信息。
+
+```bash
+uv run gamer520 scrape-detail https://www.gamer520.com/NNNNN.html
+```
+
+返回：`{"title": "...", "game_release_date": "2026-04-03", "genres": "...", "description": "..."}`
+
+注意：`game_release_date` 是游戏官方发行日期，与 `帖子发布日期` 是两个不同概念。
+
+## 操作规范
+
+- 写入前必须先 `--dry-run` 确认
+- `add` 推荐用 heredoc 传 `--stdin`，避免中文 shell 转义问题
+- 写入后运行 `sort` 和 `validate`
+- 需要局部数据时用 `search` 或 `export`，不直接读取整份 CSV
+
+## CSV Schema
+
+默认路径：`游戏收集agent/gamer520-games.csv`，编码 UTF-8 with BOM，字段顺序固定。
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| 帖子发布日期 | `YYYY-MM-DD` | gamer520 论坛帖子发布日期（非游戏官方发行日期），从 `scrape-list` 的 `date` 字段取得 |
+| 平台 | `PC` / `Switch` / `PC/Switch` | |
+| 标题 | string | 去掉版本/build 修饰，必要时补充英文名 |
+| 标签 | string | 中文分号 `；` 分隔 |
+| 一句话描述 | string | 基于详情页内容 |
+| 推荐度 | `1`–`5` | |
+| 推荐标签 | string | `优先推荐` / `推荐` / `可试` / `不推荐` / `非常不推荐` |
+| 判断理由 | string | 结合口味解释评分 |
+| 链接 | URL | gamer520 条目页 |
+| 用户备注 | string | 新增默认留空 |
 
 ## 退出码
 
@@ -246,59 +202,25 @@ uv run gamer520 export --platform PC
 | 2 | 命令参数错误 |
 | 3 | 文件路径或编码错误 |
 
-## 输出约定
-
-- stdout：正常结果
-- stderr：错误和警告
-- `--json`：机器可读 JSON，适合 AI 解析
-- 写操作支持 `--dry-run`，只输出变化摘要不修改文件
-
-## 测试
+## 开发与测试
 
 ```bash
 cd 游戏收集agent/gamer520_cli
 uv run pytest
 ```
 
-测试使用独立的 fixture CSV（`tests/fixtures/games.csv`），不影响真实数据。
+测试使用独立 fixture（`tests/fixtures/games.csv`），不影响真实数据。
 
-### 测试策略
+**测试覆盖**：`test_normalize.py`（URL/标题规范化）、`test_csv_store.py`（BOM 读写、字段顺序）、`test_operations.py`（每个命令的集成测试）。
 
-- `test_normalize.py`：URL 规范化、标题规范化（key vs search 两种语义）
-- `test_csv_store.py`：UTF-8 with BOM 读写、字段顺序、表头校验
-- `test_operations.py`：每个命令至少一个 CliRunner 集成测试
+**源码结构**：
 
-## CSV Schema
-
-默认路径：`游戏收集agent/gamer520-games.csv`
-
-字段（固定顺序）：
-
-| 中文字段 | 说明 |
-|----------|------|
-| 发布日期 | `YYYY-MM-DD` |
-| 平台 | `PC` / `Switch` / `PC/Switch` |
-| 标题 | 去掉版本修饰，必要时补充英文名 |
-| 标签 | 中文分号 `；` 分隔 |
-| 一句话描述 | 基于详情页 |
-| 推荐度 | `1`–`5` |
-| 推荐标签 | 统一文字标签 |
-| 判断理由 | 结合口味解释评分 |
-| 链接 | 条目页 URL |
-| 用户备注 | 人工填写，新增默认留空 |
-
-编码：UTF-8 with BOM。
-
-## 与 AI Skill 的关系
-
-完整的每日更新流程在 `游戏收集agent/gamer520-daily-update-SKILL.md` 中定义。CLI 负责确定性操作部分：
-
-| CLI 负责 | AI 负责 |
-|----------|---------|
-| CSV 读写、BOM 保留、字段顺序 | 游戏内容理解 |
-| 链接/标题规范化 | 推荐度判断 |
-| 重复检测 | 标签和描述写作 |
-| 排序 | 版本是否独立收录 |
-| 局部上下文导出 | PC/Switch 合并判断 |
-| 数据健康检查 | 用户备注的语义整理 |
-| 单条修改（`update`） | 修改内容的语义判断 |
+| 文件 | 职责 |
+|------|------|
+| `cli.py` | Typer 命令入口，10 个命令 |
+| `csv_store.py` | UTF-8 with BOM 读写 |
+| `models.py` | GameRow 模型，CSV 字段映射 |
+| `normalize.py` | URL/标题规范化，link_id 提取 |
+| `scraper.py` | 抓取器注册表（新站点在此注册） |
+| `scraper_gamer520.py` | gamer520.com 专用 HTML 解析（页面结构变化时改此文件） |
+| `config.py` | 默认 CSV 路径 |
