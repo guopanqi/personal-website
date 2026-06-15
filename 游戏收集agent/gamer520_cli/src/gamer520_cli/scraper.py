@@ -7,7 +7,7 @@ To add a new site:
 
 Return shapes:
   scrape_list  -> list of {"title": str, "url": str, "date_text": str}
-  scrape_detail -> {"title": str, "release_date": str, "genres": str, "description": str}
+  scrape_detail -> {"title": str, "game_release_date": str, "genres": str, "description": str}
 """
 from urllib.parse import urlparse
 
@@ -34,5 +34,5 @@ def scrape_list(url: str) -> list[dict]:
 
 
 def scrape_detail(url: str) -> dict:
-    """Fetch a game detail page; return {title, release_date, genres, description}."""
+    """Fetch a game detail page; return {title, game_release_date, genres, description}."""
     return _get_scraper(url).scrape_detail(url)

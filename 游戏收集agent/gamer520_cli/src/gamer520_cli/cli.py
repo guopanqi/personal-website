@@ -15,7 +15,6 @@ from .models import CSV_FIELDS, MODEL_FIELD_MAP
 from .normalize import (
     extract_link_id,
     is_url_valid,
-    normalize_title_for_search,
     normalize_title_key,
     normalize_url,
 )
@@ -41,48 +40,25 @@ def _resolve_csv(csv_opt: Optional[str]) -> Path:
     return DEFAULT_CSV_PATH
 
 
-def _fuzzy_match(query: str, target: str) -> bool:
-    q = normalize_title_for_search(query)
-    t = normalize_title_for_search(target)
-    return q in t or t in q
-
 
 def _search_rows(
     rows: list[dict[str, str]],
-    *,
-    title: Optional[str] = None,
-    query: Optional[str] = None,
-    link_id: Optional[int] = None,
+    query: str,
+    field: Optional[str] = None,
 ) -> list[dict[str, str]]:
-    results: list[dict[str, str]] = []
-    for row in rows:
-        if title:
-            if _fuzzy_match(title, row.get("标题", "")):
-                results.append(row)
-                continue
-        if link_id is not None:
-            row_url = row.get("链接", "")
-            rid = extract_link_id(row_url)
-            if rid == link_id:
-                results.append(row)
-                continue
-        if query:
-            q = query.lower()
-            if (
-                q in row.get("标题", "").lower()
-                or q in row.get("链接", "").lower()
-                or q in row.get("用户备注", "").lower()
-            ):
-                results.append(row)
-                continue
-    return results
+    q = query.lower()
+    fields = [field] if field else CSV_FIELDS
+    return [
+        row for row in rows
+        if any(q in row.get(f, "").lower() for f in fields)
+    ]
 
 
 def _latest_info(rows: list[dict[str, str]]) -> tuple[date, int, int]:
     latest: date | None = None
     for row in rows:
         try:
-            d = date.fromisoformat(row["发布日期"])
+            d = date.fromisoformat(row["帖子发布日期"])
         except ValueError:
             continue
         if latest is None or d > latest:
@@ -90,7 +66,7 @@ def _latest_info(rows: list[dict[str, str]]) -> tuple[date, int, int]:
     if latest is None:
         msg = "No valid dates found in CSV"
         raise typer.BadParameter(msg)
-    rows_on_date = [r for r in rows if r["发布日期"] == latest.isoformat()]
+    rows_on_date = [r for r in rows if r["帖子发布日期"] == latest.isoformat()]
     max_id = 0
     for r in rows_on_date:
         rid = extract_link_id(r.get("链接", ""))
@@ -124,7 +100,7 @@ def _validate_rows(
 ) -> list[str]:
     errors: list[str] = []
     for i, row in enumerate(rows, start=2):
-        raw_date = row.get("发布日期", "").strip()
+        raw_date = row.get("帖子发布日期", "").strip()
         platform = row.get("平台", "").strip()
         score = row.get("推荐度", "").strip()
         url = row.get("链接", "").strip()
@@ -228,32 +204,33 @@ def latest(
 
 @app.command()
 def search(
-    query: Optional[str] = typer.Argument(
-        None,
-        help="Search query (matches title, url, user_note)",
+    query: str = typer.Argument(
+        ...,
+        help="Search query — fuzzy title match (primary), link ID if all digits, substring on all other fields",
     ),
-    title: Optional[str] = typer.Option(
-        None, "--title", help="Fuzzy match on title field",
+    field: Optional[str] = typer.Option(
+        None,
+        "--field", "-f",
+        help=f"Restrict to one field: {', '.join(CSV_FIELDS)}",
     ),
     limit: int = typer.Option(20, "--limit", "-n", help="Max results"),
     full: bool = typer.Option(False, "--full", help="Show all fields"),
     json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
     csv_opt: Optional[str] = CSV_OPT,
 ):
-    if not query and not title:
-        err_console.print("Error: provide a search query or --title", style="red")
+    if field and field not in CSV_FIELDS:
+        err_console.print(
+            f"Error: unknown field '{field}'. Valid: {', '.join(CSV_FIELDS)}", style="red"
+        )
         raise typer.Exit(code=2)
     rows = read_csv(_resolve_csv(csv_opt))
-    link_id = None
-    if query and query.isdigit():
-        link_id = int(query)
-    results = _search_rows(rows, title=title, query=query, link_id=link_id)
+    results = _search_rows(rows, query, field=field)
     results = results[:limit]
     if json_output:
         if full:
             out_fields = CSV_FIELDS
         else:
-            out_fields = ("发布日期", "平台", "标题", "推荐度", "链接", "用户备注")
+            out_fields = ("帖子发布日期", "平台", "标题", "推荐度", "链接", "用户备注")
         out = json.dumps(
             [{k: r.get(k, "") for k in out_fields} for r in results],
             ensure_ascii=False,
@@ -267,11 +244,11 @@ def search(
         for r in results:
             if full:
                 print(
-                    f"{r['发布日期']} [{r['平台']}] {r['标题']} | {r.get('标签','')} | {r.get('一句话描述','')} | score: {r['推荐度']} | {r['链接']} | {r.get('用户备注','')}"
+                    f"{r['帖子发布日期']} [{r['平台']}] {r['标题']} | {r.get('标签','')} | {r.get('一句话描述','')} | score: {r['推荐度']} | {r['链接']} | {r.get('用户备注','')}"
                 )
             else:
                 print(
-                    f"{r['发布日期']} [{r['平台']}] {r['标题']} (score: {r['推荐度']}) {r['链接']}"
+                    f"{r['帖子发布日期']} [{r['平台']}] {r['标题']} (score: {r['推荐度']}) {r['链接']}"
                 )
 
 
@@ -315,7 +292,7 @@ def sort_csv(
 
     def sort_key(row: dict[str, str]) -> tuple[str, int]:
         try:
-            d = date.fromisoformat(row["发布日期"])
+            d = date.fromisoformat(row["帖子发布日期"])
         except ValueError:
             d = date.min
         rid = extract_link_id(row.get("链接", "")) or 0
@@ -325,7 +302,7 @@ def sort_csv(
     if dry_run:
         print(f"Would sort {len(sorted_rows)} rows (no write)")
         for r in sorted_rows[:5]:
-            print(f"  {r['发布日期']} id={extract_link_id(r.get('链接',''))} {r['标题']}")
+            print(f"  {r['帖子发布日期']} id={extract_link_id(r.get('链接',''))} {r['标题']}")
         if len(sorted_rows) > 5:
             print(f"  ... and {len(sorted_rows) - 5} more")
     else:
@@ -427,7 +404,7 @@ def add(
         msg = f"Would add {len(new_rows)} entries (no duplicates, no errors)"
         print(msg)
         for r in new_rows:
-            print(f"  + {r['发布日期']} [{r['平台']}] {r['标题']} ({r['链接']})")
+            print(f"  + {r['帖子发布日期']} [{r['平台']}] {r['标题']} ({r['链接']})")
     else:
         write_csv(csv_path, all_rows)
         if json_output:
@@ -448,9 +425,9 @@ def _validate_entry(
 ) -> list[str]:
     errs: list[str] = []
     try:
-        date.fromisoformat(row["发布日期"])
+        date.fromisoformat(row["帖子发布日期"])
     except (ValueError, KeyError):
-        errs.append(f"Entry #{num}: invalid date '{row.get('发布日期', '')}'")
+        errs.append(f"Entry #{num}: invalid date '{row.get('帖子发布日期', '')}'")
     if row.get("平台") not in ("PC", "Switch", "PC/Switch"):
         errs.append(f"Entry #{num}: invalid platform '{row.get('平台', '')}'")
     score = row.get("推荐度", "")
@@ -528,7 +505,7 @@ def remove(
             print(json.dumps({"would_remove": match_row}, ensure_ascii=False))
         else:
             print(
-                f"Would remove row {line}: {match_row['发布日期']} [{match_row['平台']}] {match_row['标题']}"
+                f"Would remove row {line}: {match_row['帖子发布日期']} [{match_row['平台']}] {match_row['标题']}"
             )
         raise typer.Exit()
     if not yes:
@@ -614,11 +591,11 @@ def update(
         updated[field] = value
 
     errs: list[str] = []
-    if "发布日期" in changes:
+    if "帖子发布日期" in changes:
         try:
-            date.fromisoformat(changes["发布日期"])
+            date.fromisoformat(changes["帖子发布日期"])
         except ValueError:
-            errs.append(f"Invalid date '{changes['发布日期']}'")
+            errs.append(f"Invalid date '{changes['帖子发布日期']}'")
     if "平台" in changes:
         if changes["平台"] not in ("PC", "Switch", "PC/Switch"):
             errs.append(f"Invalid platform '{changes['平台']}'")
@@ -696,14 +673,14 @@ def export(
 ):
     rows = read_csv(_resolve_csv(csv_opt))
     if date_filter:
-        rows = [r for r in rows if r.get("发布日期", "") == date_filter]
+        rows = [r for r in rows if r.get("帖子发布日期", "") == date_filter]
     if days is not None:
         cutoff = date.today() - timedelta(days=days)
         rows = [
             r
             for r in rows
-            if r.get("发布日期", "")
-            and date.fromisoformat(r["发布日期"]) >= cutoff
+            if r.get("帖子发布日期", "")
+            and date.fromisoformat(r["帖子发布日期"]) >= cutoff
         ]
     if query:
         q = query.lower()
@@ -718,7 +695,7 @@ def export(
         rows = [r for r in rows if r.get("平台", "") == platform]
     if latest_only:
         d_info, _, _ = _latest_info(rows)
-        rows = [r for r in rows if r.get("发布日期", "") == d_info.isoformat()]
+        rows = [r for r in rows if r.get("帖子发布日期", "") == d_info.isoformat()]
     output = _export_rows(rows, full=full, format=format)
     print(output)
 

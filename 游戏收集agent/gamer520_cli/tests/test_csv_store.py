@@ -14,7 +14,7 @@ def _make_csv(content: str) -> str:
 
 
 def test_read_csv_utf8_bom():
-    header = "发布日期,平台,标题,标签,一句话描述,推荐度,推荐标签,判断理由,链接,用户备注\n"
+    header = "帖子发布日期,平台,标题,标签,一句话描述,推荐度,推荐标签,判断理由,链接,用户备注\n"
     data = '2026-06-06,PC,Test Game,action,Desc.,3,推荐,Reason,https://www.gamer520.com/1.html,\n'
     content = header + data
     path = _make_csv(content)
@@ -33,7 +33,7 @@ def test_read_csv_utf8_bom():
 def test_write_csv_preserves_bom():
     rows_data = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Test",
             "标签": "action",
@@ -60,7 +60,7 @@ def test_write_csv_preserves_bom():
 def test_field_order_preserved():
     rows_data = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Test",
             "标签": "action",
@@ -91,4 +91,4 @@ def test_check_header_missing():
     import pytest
 
     with pytest.raises(ValueError, match="CSV header mismatch"):
-        check_header(["发布日期", "平台"])
+        check_header(["帖子发布日期", "平台"])

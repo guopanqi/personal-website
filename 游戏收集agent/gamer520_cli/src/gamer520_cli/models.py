@@ -25,7 +25,7 @@ class GameRow(BaseModel):
 
 
 CSV_FIELDS = [
-    "发布日期",
+    "帖子发布日期",
     "平台",
     "标题",
     "标签",
@@ -38,7 +38,7 @@ CSV_FIELDS = [
 ]
 
 MODEL_FIELD_MAP: dict[str, str] = {
-    "发布日期": "release_date",
+    "帖子发布日期": "release_date",
     "平台": "platform",
     "标题": "title",
     "标签": "tags",
@@ -53,7 +53,7 @@ MODEL_FIELD_MAP: dict[str, str] = {
 
 def row_to_csv_dict(row: GameRow) -> dict[str, str]:
     return {
-        "发布日期": row.release_date.isoformat(),
+        "帖子发布日期": row.release_date.isoformat(),
         "平台": row.platform,
         "标题": row.title,
         "标签": row.tags,

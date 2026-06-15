@@ -108,7 +108,7 @@ def scrape_detail(url: str) -> dict:
 
     return {
         "title": _extract_title(soup),
-        "release_date": _extract_release_date(full_text),
+        "game_release_date": _extract_release_date(full_text),
         "genres": _extract_genres(full_text),
         "description": _extract_description(soup),
     }
@@ -152,17 +152,21 @@ def _extract_description(soup: BeautifulSoup) -> str:
         or soup.find("article")
     )
     if content:
-        paras = []
-        for p in content.find_all("p"):
-            t = p.get_text(separator=" ", strip=True)
-            if len(t) > 30 and not _SKIP_IN_DESC.search(t):
-                paras.append(t)
-            if len(paras) >= 3:
+        chunks: list[str] = []
+        total_chars = 0
+        seen: set[str] = set()
+        for el in content.find_all(["p", "li"]):
+            t = el.get_text(separator=" ", strip=True)
+            if len(t) > 30 and not _SKIP_IN_DESC.search(t) and t not in seen:
+                chunks.append(t)
+                seen.add(t)
+                total_chars += len(t)
+            if total_chars >= 1500 or len(chunks) >= 12:
                 break
-        if paras:
-            return " ".join(paras)
+        if chunks:
+            return " ".join(chunks)
 
     # Fallback: meaningful lines from full text
     lines = [line.strip() for line in soup.get_text(separator="\n").split("\n")]
     good = [line for line in lines if len(line) > 40 and not _SKIP_IN_DESC.search(line)]
-    return " ".join(good[:2])
+    return " ".join(good[:4])

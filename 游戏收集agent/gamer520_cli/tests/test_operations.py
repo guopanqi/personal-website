@@ -55,7 +55,7 @@ def test_search_by_query():
 
 
 def test_search_by_title():
-    result = runner.invoke(app, ["search", "--title", "game alpha", "--csv", str(FIXTURE_CSV)])
+    result = runner.invoke(app, ["search", "game alpha", "--csv", str(FIXTURE_CSV)])
     assert result.exit_code == 0
     assert "Game Alpha" in result.stdout
 
@@ -88,7 +88,7 @@ def test_validate_ok():
 def test_validate_fails_invalid_date():
     rows = [
         {
-            "发布日期": "not-a-date",
+            "帖子发布日期": "not-a-date",
             "平台": "PC",
             "标题": "Bad",
             "标签": "",
@@ -112,7 +112,7 @@ def test_validate_fails_invalid_date():
 def test_validate_fails_invalid_platform():
     rows = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PS5",
             "标题": "Bad",
             "标签": "",
@@ -136,7 +136,7 @@ def test_validate_fails_invalid_platform():
 def test_validate_fails_invalid_score():
     rows = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Bad",
             "标签": "",
@@ -160,7 +160,7 @@ def test_validate_fails_invalid_score():
 def test_validate_fails_duplicate_title():
     rows = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Same Game",
             "标签": "",
@@ -172,7 +172,7 @@ def test_validate_fails_duplicate_title():
             "用户备注": "",
         },
         {
-            "发布日期": "2026-06-07",
+            "帖子发布日期": "2026-06-07",
             "平台": "PC",
             "标题": "Same Game",
             "标签": "",
@@ -196,7 +196,7 @@ def test_validate_fails_duplicate_title():
 def test_validate_fails_duplicate_link():
     rows = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Game A",
             "标签": "",
@@ -208,7 +208,7 @@ def test_validate_fails_duplicate_link():
             "用户备注": "",
         },
         {
-            "发布日期": "2026-06-07",
+            "帖子发布日期": "2026-06-07",
             "平台": "PC",
             "标题": "Game B",
             "标签": "",
@@ -238,7 +238,7 @@ def test_sort_dry_run():
 def test_sort_actual():
     rows = [
         {
-            "发布日期": d,
+            "帖子发布日期": d,
             "平台": "PC",
             "标题": f"Game {i}",
             "标签": "",
@@ -258,11 +258,11 @@ def test_sort_actual():
         result = runner.invoke(app, ["sort", "--csv", path])
         assert result.exit_code == 0
         sorted_rows = read_csv(path)
-        assert sorted_rows[0]["发布日期"] == "2026-06-06"
+        assert sorted_rows[0]["帖子发布日期"] == "2026-06-06"
         assert extract_link_id(sorted_rows[0]["链接"]) == 100003
-        assert sorted_rows[1]["发布日期"] == "2026-06-06"
+        assert sorted_rows[1]["帖子发布日期"] == "2026-06-06"
         assert extract_link_id(sorted_rows[1]["链接"]) == 100001
-        assert sorted_rows[2]["发布日期"] == "2026-06-05"
+        assert sorted_rows[2]["帖子发布日期"] == "2026-06-05"
     finally:
         os.unlink(path)
 
@@ -270,7 +270,7 @@ def test_sort_actual():
 def test_add_stdin():
     csv_path = _temp_copy(str(FIXTURE_CSV))
     entry = {
-        "发布日期": "2026-06-07",
+        "帖子发布日期": "2026-06-07",
         "平台": "PC",
         "标题": "New Game",
         "标签": "action",
@@ -294,7 +294,7 @@ def test_add_dry_run():
     result = runner.invoke(
         app,
         ["add", "--stdin", "--csv", str(FIXTURE_CSV), "--dry-run"],
-        input=json.dumps([{"发布日期": "2026-06-07", "平台": "PC", "标题": "Dry Run Game", "标签": "action", "一句话描述": "Dry run.", "推荐度": "3", "推荐标签": "可试", "判断理由": "Test.", "链接": "https://www.gamer520.com/200002.html", "用户备注": ""}]),
+        input=json.dumps([{"帖子发布日期": "2026-06-07", "平台": "PC", "标题": "Dry Run Game", "标签": "action", "一句话描述": "Dry run.", "推荐度": "3", "推荐标签": "可试", "判断理由": "Test.", "链接": "https://www.gamer520.com/200002.html", "用户备注": ""}]),
     )
     assert result.exit_code == 0
     assert "Would add" in result.stdout
@@ -303,7 +303,7 @@ def test_add_dry_run():
 def test_add_rejects_duplicate_link():
     rows = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Existing",
             "标签": "",
@@ -317,7 +317,7 @@ def test_add_rejects_duplicate_link():
     ]
     path = _test_csv(rows)
     entry = {
-        "发布日期": "2026-06-07",
+        "帖子发布日期": "2026-06-07",
         "平台": "PC",
         "标题": "Duplicate Link",
         "标签": "",
@@ -340,7 +340,7 @@ def test_add_rejects_duplicate_link():
 def test_add_rejects_duplicate_title():
     rows = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Unique Title",
             "标签": "",
@@ -354,7 +354,7 @@ def test_add_rejects_duplicate_title():
     ]
     path = _test_csv(rows)
     entry = {
-        "发布日期": "2026-06-07",
+        "帖子发布日期": "2026-06-07",
         "平台": "PC",
         "标题": "Unique Title",
         "标签": "",
@@ -377,7 +377,7 @@ def test_add_rejects_duplicate_title():
 def test_add_from_file():
     csv_path = _temp_copy(str(FIXTURE_CSV))
     entry = {
-        "发布日期": "2026-06-08",
+        "帖子发布日期": "2026-06-08",
         "平台": "Switch",
         "标题": "File Import Game",
         "标签": "rpg",
@@ -448,7 +448,7 @@ def test_remove_partial_title_fails():
 def test_remove_rejects_if_resulting_csv_invalid():
     rows = [
         {
-            "发布日期": "2026-06-06",
+            "帖子发布日期": "2026-06-06",
             "平台": "PC",
             "标题": "Foo",
             "标签": "",
@@ -460,7 +460,7 @@ def test_remove_rejects_if_resulting_csv_invalid():
             "用户备注": "",
         },
         {
-            "发布日期": "2026-06-07",
+            "帖子发布日期": "2026-06-07",
             "平台": "PC",
             "标题": "Target To Remove",
             "标签": "",
@@ -472,7 +472,7 @@ def test_remove_rejects_if_resulting_csv_invalid():
             "用户备注": "",
         },
         {
-            "发布日期": "2026-06-08",
+            "帖子发布日期": "2026-06-08",
             "平台": "PC",
             "标题": "Foo",
             "标签": "",
