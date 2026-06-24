@@ -26,6 +26,7 @@ cd 游戏收集agent/gamer520_cli && uv run gamer520 <command>
 | `latest` | 返回最新帖子发布日期和最大 link_id | `--platform PC\|Switch`、`--json` |
 | `search` | 全字段子串匹配；`--field` 限定单列 | `--field 字段名`、`--json`、`--limit`、`--full` |
 | `validate` | 校验 CSV 完整性和数据健康 | `--json` |
+| `doctor-check-repeat` | 检查库中所有条目，找出标题一致或链接一致的重复条目 | `--json` |
 | `sort` | 按帖子发布日期降序、同日期按 link_id 降序排列 | `--dry-run` |
 | `add` | 追加新条目（JSON 数组） | `--stdin`、`--file`、`--dry-run`、`--json` |
 | `remove` | 按标题精确删除 | `--title`、`--dry-run`、`--yes` |
@@ -81,6 +82,19 @@ uv run gamer520 validate --json
 ```
 
 检查项：表头完整性、日期格式、平台合法性、推荐度范围、URL 格式、链接重复、标题重复、空标题。
+
+### `doctor-check-repeat`
+
+对库中的所有条目进行检查，找出标题一致或者链接一致的重复条目。
+
+```bash
+uv run gamer520 doctor-check-repeat
+uv run gamer520 doctor-check-repeat --json
+```
+
+- **普通模式**：使用 `rich` 模块在终端直观、漂亮地展示出所有重复的分组及其所在的行号、标题、发布日期、链接等详细信息。如果没有重复，则输出健康提示信息。
+- **JSON 模式**：通过 `--json` 输出结构化的 JSON 结果，方便脚本或 AI 流程进一步分析处理。
+- **退出码**：发现重复条目时返回 `1`，数据库完全无重复时返回 `0`。
 
 ### `sort`
 

@@ -1,8 +1,0 @@
-<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="675" fill="#ECE6D8"/>
-  <line x1="120" y1="190" x2="1080" y2="190" stroke="#B8AE9A" stroke-width="2"/>
-  <line x1="120" y1="270" x2="1000" y2="270" stroke="#B8AE9A" stroke-width="2"/>
-  <line x1="120" y1="350" x2="940" y2="350" stroke="#B8AE9A" stroke-width="2"/>
-  <line x1="120" y1="430" x2="980" y2="430" stroke="#B8AE9A" stroke-width="2"/>
-  <text x="120" y="120" fill="#4A4134" font-size="56" font-family="Georgia, serif">Daily Essay Sketch</text>
-</svg>

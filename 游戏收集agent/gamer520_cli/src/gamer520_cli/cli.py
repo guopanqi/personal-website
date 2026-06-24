@@ -282,6 +282,114 @@ def validate(
             print(f"All valid: {len(rows)} rows, no errors.")
 
 
+@app.command("doctor-check-repeat")
+def doctor_check_repeat(
+    csv_opt: Optional[str] = CSV_OPT,
+    json_output: bool = typer.Option(False, "--json", help="Output as JSON"),
+):
+    """Check the database for duplicate entries based on normalized titles or URLs."""
+    csv_path = _resolve_csv(csv_opt)
+    try:
+        rows = read_csv(csv_path)
+    except ValueError as e:
+        err_console.print(f"CSV read error: {e}", style="red")
+        raise typer.Exit(code=1)
+
+    link_groups: dict[str, list[dict[str, str | int]]] = {}
+    title_groups: dict[str, list[dict[str, str | int]]] = {}
+
+    for i, row in enumerate(rows, start=2):
+        raw_url = row.get("链接", "").strip()
+        url = normalize_url(raw_url)
+        item = {
+            "row": i,
+            "date": row.get("帖子发布日期", "").strip(),
+            "platform": row.get("平台", "").strip(),
+            "title": row.get("标题", "").strip(),
+            "score": row.get("推荐度", "").strip(),
+            "url": raw_url,
+        }
+        if url:
+            link_groups.setdefault(url, []).append(item)
+
+        norm_title = normalize_title_key(row.get("标题", ""))
+        if norm_title:
+            title_groups.setdefault(norm_title, []).append(item)
+
+    link_dups = {k: v for k, v in link_groups.items() if len(v) > 1}
+    title_dups = {k: v for k, v in title_groups.items() if len(v) > 1}
+
+    if json_output:
+        output_data = {
+            "has_repeats": bool(link_dups or title_dups),
+            "link_repeats": [
+                {"normalized_url": url, "items": items}
+                for url, items in link_dups.items()
+            ],
+            "title_repeats": [
+                {"normalized_title": norm_title, "items": items}
+                for norm_title, items in title_dups.items()
+            ]
+        }
+        print(json.dumps(output_data, ensure_ascii=False, indent=2))
+        if link_dups or title_dups:
+            raise typer.Exit(code=1)
+        raise typer.Exit(code=0)
+
+    console = Console()
+    if not link_dups and not title_dups:
+        console.print("[bold green]No duplicate links or titles found. Database is healthy![/bold green]")
+        raise typer.Exit(code=0)
+
+    if link_dups:
+        console.print(f"[bold yellow]Found {len(link_dups)} duplicate link group(s):[/bold yellow]\n")
+        for url, items in link_dups.items():
+            console.print(f"[bold cyan]Normalized URL: {url}[/bold cyan]")
+            table = Table(show_header=True, header_style="bold magenta")
+            table.add_column("Row", style="dim", width=6)
+            table.add_column("Date", width=12)
+            table.add_column("Platform", width=10)
+            table.add_column("Title", style="bold")
+            table.add_column("Score", justify="right", width=6)
+            table.add_column("URL")
+            for item in items:
+                table.add_row(
+                    str(item["row"]),
+                    str(item["date"]),
+                    str(item["platform"]),
+                    str(item["title"]),
+                    str(item["score"]),
+                    str(item["url"]),
+                )
+            console.print(table)
+            console.print()
+
+    if title_dups:
+        console.print(f"[bold yellow]Found {len(title_dups)} duplicate title group(s):[/bold yellow]\n")
+        for norm_title, items in title_dups.items():
+            console.print(f"[bold cyan]Normalized Title Key: '{norm_title}'[/bold cyan]")
+            table = Table(show_header=True, header_style="bold magenta")
+            table.add_column("Row", style="dim", width=6)
+            table.add_column("Date", width=12)
+            table.add_column("Platform", width=10)
+            table.add_column("Title", style="bold")
+            table.add_column("Score", justify="right", width=6)
+            table.add_column("URL")
+            for item in items:
+                table.add_row(
+                    str(item["row"]),
+                    str(item["date"]),
+                    str(item["platform"]),
+                    str(item["title"]),
+                    str(item["score"]),
+                    str(item["url"]),
+                )
+            console.print(table)
+            console.print()
+
+    raise typer.Exit(code=1)
+
+
 @app.command("sort")
 def sort_csv(
     csv_opt: Optional[str] = CSV_OPT,

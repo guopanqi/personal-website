@@ -6,30 +6,22 @@ It might not seem there's much to learn about how to work hard. Anyone who's bee
 努力工作似乎没有什么值得专门学习的。任何上过学的人都知道这意味着什么，即使他选择不去做。十二岁的孩子也可能勤奋得惊人。然而，当我问自己：关于如何努力工作，现在的我是否比上学时懂得更多？答案显然是肯定的。
 
 One thing I know is that if you want to do great things, you'll have to work very hard. I wasn't sure of that as a kid. Schoolwork varied in difficulty; one didn't always have to work super hard to do well. And some of the things famous adults did, they seemed to do almost effortlessly. Was there, perhaps, some way to evade hard work through sheer brilliance? Now I know the answer to that question. There isn't.
-
 我知道的一件事是：如果你想做出卓越的事情，就必须非常努力。小时候，我并不能确定这一点。学校里的功课难度不一，有时并不需要特别用功，也可以取得不错的成绩。而那些著名人物做出的某些事情，看起来似乎毫不费力。难道仅凭过人的聪明才智，就可以绕过艰苦的工作吗？现在我知道答案了：不可以。
 
 The reason some subjects seemed easy was that my school had low standards. And the reason famous adults seemed to do things effortlessly was years of practice; they made it look easy.
-
 有些课程显得容易，是因为学校的要求很低。那些著名人物之所以看起来做什么都毫不费力，是因为他们已经练习了许多年。他们只是让这一切显得容易。
 
 Of course, those famous adults usually had a lot of natural ability too. There are three ingredients in great work: natural ability, practice, and effort. You can do pretty well with just two, but to do the best work you need all three: you need great natural ability and to have practiced a lot and to be trying very hard. [1]
-
 当然，那些著名人物通常也拥有很高的天赋。卓越的工作包含三种成分：天赋、练习和努力。拥有其中两种，你就可以做得相当不错；但要做出最好的成果，三者缺一不可：你需要很高的天赋，需要长期练习，也需要真正竭尽全力。[1]
 
 Bill Gates, for example, was among the smartest people in business in his era, but he was also among the hardest working. "I never took a day off in my twenties," he said. "Not one." It was similar with Lionel Messi. He had great natural ability, but when his youth coaches talk about him, what they remember is not his talent but his dedication and his desire to win. P. G. Wodehouse would probably get my vote for best English writer of the 20th century, if I had to choose. Certainly no one ever made it look easier. But no one ever worked harder. At 74, he wrote  
 with each new book of mine I have, as I say, the feeling that this time I have picked a lemon in the garden of literature. A good thing, really, I suppose. Keeps one up on one's toes and makes one rewrite every sentence ten times. Or in many cases twenty times.  
 Sounds a bit extreme, you think. And yet Bill Gates sounds even more extreme. Not one day off in ten years? These two had about as much natural ability as anyone could have, and yet they also worked about as hard as anyone could work. You need both.
-
 例如，比尔·盖茨是他那个时代商业领域最聪明的人之一，同时也是工作最刻苦的人之一。他曾说：“我二十多岁的时候一天也没有休息过。一天都没有。”莱昂内尔·梅西也是如此。他拥有非凡的天赋，但青年时期的教练谈起他时，印象最深的并不是他的天赋，而是他的投入和求胜欲。如果必须选出一位二十世纪最优秀的英语作家，我大概会投 P. G. 沃德豪斯一票。毫无疑问，没有人能像他一样把写作表现得如此轻松。但也没有人比他更加勤奋。七十四岁时，他写道：
-
 正如我说过的，每写一本新书，我都会觉得：这一次，我恐怕从文学的花园里摘到了一颗坏柠檬。不过我想，这其实是一件好事。它让人不敢松懈，迫使人把每句话重写十遍。有时甚至要重写二十遍。
-
 你也许会觉得，这听起来有些极端。然而，比尔·盖茨的说法似乎更加极端。十年里一天也没有休息？这两个人的天赋几乎已经达到了人所能拥有的极限，但他们的勤奋程度也同样接近极限。两者都需要。
 
-  
-
-That seems so obvious, and yet in practice we find it slightly hard to grasp. There's a faint xor between talent and hard work. It comes partly from popular culture, where it seems to run very deep, and partly from the fact that the outliers are so rare. If great talent and great drive are both rare, then people with both are rare squared. Most people you meet who have a lot of one will have less of the other. But you'll need both if you want to be an outlier yourself. And since you can't really change how much natural talent you have, in practice doing great work, insofar as you can, reduces to working very hard.
+  That seems so obvious, and yet in practice we find it slightly hard to grasp. There's a faint xor between talent and hard work. It comes partly from popular culture, where it seems to run very deep, and partly from the fact that the outliers are so rare. If great talent and great drive are both rare, then people with both are rare squared. Most people you meet who have a lot of one will have less of the other. But you'll need both if you want to be an outlier yourself. And since you can't really change how much natural talent you have, in practice doing great work, insofar as you can, reduces to working very hard.
 
 这件事看起来显而易见，但在现实中，我们却不太容易真正理解它。在人们的印象里，天赋和勤奋之间似乎存在一种隐约的“异或”关系：一个人有了其中一样，似乎就不太需要另一样。这种感觉一部分来自流行文化，而且根深蒂固；另一部分则来自一个事实：真正的异类实在太少了。如果非凡的天赋很少见，极强的驱动力也很少见，那么同时拥有两者的人，稀有程度就近似于两者相乘。你遇到的大多数人，如果拥有其中一种很多，另一种通常就会少一些。但如果你自己想成为一个异类，就必须同时拥有两者。由于一个人的天赋高低基本无法改变，因此，在你能够控制的范围内，做出卓越成果实际上就归结为一件事：非常努力地工作。
 
@@ -56,8 +48,6 @@ I think around age 13 or 14. I have a clear memory from around then of sitting i
 Perhaps something changes at adolescence. That would make sense.
 
 我交谈过的几个人都记得，自己大约在这个年龄开始认真对待工作。我问帕特里克·科里森，什么时候开始觉得无所事事令人难受。他说：我想大概是在十三四岁的时候。我清楚地记得，当时我坐在起居室里，望着窗外，心里纳闷：为什么我要这样浪费暑假？也许人在青春期会发生某种变化。这倒也合理。
-
-  
 
 Strangely enough, the biggest obstacle to getting serious about work was probably school, which made work (what they called work) seem boring and pointless. I had to learn what real work was before I could wholeheartedly desire to do it. That took a while, because even in college a lot of the work is pointless; there are entire departments that are pointless. But as I learned the shape of real work, I found that my desire to do it slotted into it as if they'd been made for each other.
 

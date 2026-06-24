@@ -531,3 +531,106 @@ def test_export_platform():
     for line in lines:
         obj = json.loads(line)
         assert obj["平台"] == "Switch"
+
+
+def test_doctor_check_repeat_ok():
+    result = runner.invoke(app, ["doctor-check-repeat", "--csv", str(FIXTURE_CSV)])
+    assert result.exit_code == 0
+    assert "No duplicate links or titles found" in result.stdout
+
+    result_json = runner.invoke(app, ["doctor-check-repeat", "--csv", str(FIXTURE_CSV), "--json"])
+    assert result_json.exit_code == 0
+    data = json.loads(result_json.stdout)
+    assert data["has_repeats"] is False
+    assert len(data["link_repeats"]) == 0
+    assert len(data["title_repeats"]) == 0
+
+
+def test_doctor_check_repeat_duplicate_link():
+    rows = [
+        {
+            "帖子发布日期": "2026-06-01",
+            "平台": "PC",
+            "标题": "Game A",
+            "标签": "",
+            "一句话描述": "",
+            "推荐度": "3",
+            "推荐标签": "",
+            "判断理由": "",
+            "链接": "https://www.gamer520.com/100010.html",
+            "用户备注": "",
+        },
+        {
+            "帖子发布日期": "2026-06-02",
+            "平台": "PC",
+            "标题": "Game B",
+            "标签": "",
+            "一句话描述": "",
+            "推荐度": "3",
+            "推荐标签": "",
+            "判断理由": "",
+            "链接": "https://www.gamer520.com/100010.html",
+            "用户备注": "",
+        }
+    ]
+    path = _test_csv(rows)
+    try:
+        result = runner.invoke(app, ["doctor-check-repeat", "--csv", path])
+        assert result.exit_code == 1
+        assert "Found 1 duplicate link group" in result.stdout
+        assert "https://www.gamer520.com/100010.html" in result.stdout
+
+        result_json = runner.invoke(app, ["doctor-check-repeat", "--csv", path, "--json"])
+        assert result_json.exit_code == 1
+        data = json.loads(result_json.stdout)
+        assert data["has_repeats"] is True
+        assert len(data["link_repeats"]) == 1
+        assert data["link_repeats"][0]["normalized_url"] == "https://www.gamer520.com/100010.html"
+        assert len(data["link_repeats"][0]["items"]) == 2
+    finally:
+        os.unlink(path)
+
+
+def test_doctor_check_repeat_duplicate_title():
+    rows = [
+        {
+            "帖子发布日期": "2026-06-01",
+            "平台": "PC",
+            "标题": "Cozy Grove",
+            "标签": "",
+            "一句话描述": "",
+            "推荐度": "3",
+            "推荐标签": "",
+            "判断理由": "",
+            "链接": "https://www.gamer520.com/100010.html",
+            "用户备注": "",
+        },
+        {
+            "帖子发布日期": "2026-06-02",
+            "平台": "PC",
+            "标题": "cozy grove  ",
+            "标签": "",
+            "一句话描述": "",
+            "推荐度": "3",
+            "推荐标签": "",
+            "判断理由": "",
+            "链接": "https://www.gamer520.com/100020.html",
+            "用户备注": "",
+        }
+    ]
+    path = _test_csv(rows)
+    try:
+        result = runner.invoke(app, ["doctor-check-repeat", "--csv", path])
+        assert result.exit_code == 1
+        assert "Found 1 duplicate title group" in result.stdout
+        assert "cozygrove" in result.stdout
+
+        result_json = runner.invoke(app, ["doctor-check-repeat", "--csv", path, "--json"])
+        assert result_json.exit_code == 1
+        data = json.loads(result_json.stdout)
+        assert data["has_repeats"] is True
+        assert len(data["title_repeats"]) == 1
+        assert data["title_repeats"][0]["normalized_title"] == "cozygrove"
+        assert len(data["title_repeats"][0]["items"]) == 2
+    finally:
+        os.unlink(path)
