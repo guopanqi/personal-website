@@ -12,6 +12,14 @@ uv run --project 游戏收集agent/gamer520_cli gamer520 <command>
 cd 游戏收集agent/gamer520_cli && uv run gamer520 <command>
 ```
 
+**在网络受限的沙箱环境中**（例如 Gamer520 每日更新 scheduled task 实际运行的 Claude Linux 沙箱）：`uv run` 需要的 `uv sync`/`uv pip install` 会尝试从 `files.pythonhosted.org` 下载 wheel，如果该环境把这个域名限速到个位数 KB/s，同步会长时间挂起甚至超时失败；`.venv/bin/python3` 也是构建时（通常在 macOS 上）写死的解释器软链接，换平台后可能直接失效。遇到这种情况改用项目自带的可执行脚本，它跳过 uv 的依赖同步，直接复用 `.venv/lib/python3.12/site-packages`（纯 Python 依赖天然跨平台；唯一的编译扩展 `pydantic_core` 已经在该目录下同时放了 macOS 和 Linux aarch64 两份二进制，按解释器平台自动匹配），只在必要时联网下载一个 Python 3.12 解释器本身：
+
+```bash
+游戏收集agent/gamer520_cli/gamer520 <command>
+```
+
+两种方式命令集完全一致，可以直接替换使用。如果这个脚本报错找不到 `.venv` 或 `src`，说明 `.venv` 缺依赖或已损坏，需要在有正常网络的机器上跑一次 `uv sync --project 游戏收集agent/gamer520_cli` 重建；脚本本身不做依赖安装。
+
 **关键路径**
 
 | 名称 | 路径 |
@@ -257,7 +265,7 @@ uv run gamer520 scrape-detail https://www.gamer520.com/NNNNN.html
 | 标题 | string | 去掉版本/build 修饰，必要时补充英文名 |
 | 标签 | string | 中文分号 `；` 分隔 |
 | 一句话描述 | string | 基于详情页内容 |
-| 推荐度 | `1`–`5` | 唯一推荐事实源；展示时映射为 `非常不推荐 / 不推荐 / 可试 / 推荐 / 优先推荐` |
+| 推荐度 | `1`–`5` | 唯一推荐事实源；展示时映射为 `非常不推荐 / 不推荐 / 可试 / 推荐 / 优先推荐`。分档含义见 `Gamer520每日更新SKILL.md`，CLI 只校验取值范围 |
 | 判断理由 | string | 结合口味解释评分 |
 | 链接 | URL | gamer520 条目页 |
 | 用户备注 | string | 新增默认留空 |
