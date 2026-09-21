@@ -4,8 +4,8 @@ import json
 from pathlib import Path
 
 # Add cli src to path
-sys.path.append(str(Path(__file__).parent.parent / "gamer520_cli/src"))
-from gamer520_cli.normalize import normalize_title_key, normalize_title_for_search, extract_link_id, normalize_url
+sys.path.append(str(Path(__file__).parent.parent / "game_library_cli/src"))
+from game_library_cli.normalize import normalize_title_key, normalize_title_for_search, extract_link_id, normalize_url
 
 PC_CANDIDATES = [
   {"title": "奇迹时代4 高级版|豪华中文|V.1.015.002.122980+大法师的秘辛DLC-全扩展+全季票+全DLC+修改器|解压即撸|", "url": "https://www.gamer520.com/57234.html", "date": "2026-06-17"},
@@ -58,7 +58,7 @@ SWITCH_CANDIDATES = [
 ]
 
 def main():
-    csv_path = Path(__file__).parent.parent / "gamer520-games.csv"
+    csv_path = Path(__file__).parent.parent / "game-library.csv"
     
     # Read CSV
     db = []

@@ -1,0 +1,28 @@
+[project]
+name = "game-library-cli"
+version = "0.1.0"
+description = "CLI for managing a personal game judgement library"
+readme = "README.md"
+authors = [
+    { name = "pancheeplay", email = "50655257+pancheeplay@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.26.0",
+    "rich>=15.0.0",
+    "pydantic>=2.0.0",
+    "requests>=2.34.2",
+    "beautifulsoup4>=4.15.0",
+]
+
+[project.scripts]
+game-library = "game_library_cli.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.11.14,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]

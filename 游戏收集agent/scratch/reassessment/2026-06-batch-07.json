@@ -1,0 +1,423 @@
+[
+  {
+    "title": "骑士镇魂曲",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在极简黑暗传说中用一个键躲避密集弹幕，继续玩的动力只有记住节奏并提高生存时间。实际是单键弹幕地狱，菲律宾传说和希腊神话只是表现层，没有叙事或选择结构。",
+    "link": "https://www.gamer520.com/115202.html"
+  },
+  {
+    "title": "东方侵蚀 堕落的乐园巫女",
+    "old_score": "3",
+    "new_score": "1",
+    "judgment": "玩家操控巫女在敌群中走位、自动攻击、拾取经验并组合技能，动力来自一局局构筑成形。实际是典型Survivors-like弹幕生存，东方题材和角色只是包装，重复战斗与数值成长占据主体。",
+    "link": "https://www.gamer520.com/115107.html"
+  },
+  {
+    "title": "图书管理员 整理魔法图书馆吧 Librarian Tidy Up the Arcane Library",
+    "old_score": "3",
+    "new_score": "4",
+    "judgment": "玩家面对一座会持续提出整理问题的魔法图书馆，通过搬运、分类、归位和解锁效率魔法把混乱空间变成可工作的系统。实际是第一人称整理模拟，空间规划和订单式任务构成明确体验引擎；重复劳动和较弱叙事是限制。",
+    "link": "https://www.gamer520.com/112962.html"
+  },
+  {
+    "title": "宝石少女 2nd.cut:For the Exquisite Attire",
+    "old_score": "3",
+    "new_score": "2",
+    "judgment": "玩家主要阅读少年与失忆少女围绕魔女审判展开的关系故事，动力来自人物秘密和结局差异。实际是郁系视觉小说，选择和审判提供少量结构，但互动仍以对话点击为主，纯文本推进限制匹配。",
+    "link": "https://www.gamer520.com/115076.html"
+  },
+  {
+    "title": "尖塔爆破 Spire Blast",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家观察尖塔结构，选择彩色投射物和角度触发连锁坍塌，满足感来自预判物理结果而非反射操作。实际是短关卡物理解谜，颜色与链式破坏提供有效规则差异，但内容深度和重玩性有限。",
+    "link": "https://www.gamer520.com/115098.html"
+  },
+  {
+    "title": "异世界冒险者公会 Isekai Adventurer Guild",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家组建冒险者队伍、接委托、进入随机任务并靠战斗与装备成长推进，动力主要是队伍构筑和清图效率。实际是SRPG式Roguelite，公会只是成长界面，缺少人物关系和生活经营来抵消传统战斗。",
+    "link": "https://www.gamer520.com/105334.html"
+  },
+  {
+    "title": "息风谷战略",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家在武侠地域地图上经营门派、招募成员、争夺地盘并处理回合战斗，动力来自势力扩张和路线取舍。实际是地域压制型策略RPG，门派经营有结构价值，但回合战斗、武侠养成和宏观数值仍是主体。",
+    "link": "https://www.gamer520.com/105266.html"
+  },
+  {
+    "title": "打骨折超市日记 支持者版 Discounty",
+    "old_score": "3",
+    "new_score": "4",
+    "judgment": "玩家接手小镇超市，在补货、货架布局、定价和顾客需求之间维持生意，同时认识居民并揭开小镇矛盾。实际是经营模拟与社区叙事互相供给，库存压力会改变日常选择；重复补货和时间管理可能拖慢节奏。",
+    "link": "https://www.gamer520.com/98278.html"
+  },
+  {
+    "title": "断指默示录",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家以骰子和扑克规则与恶魔下注，在风险押注和有限资源间争取活过一轮，动力来自赌局判断与构筑变化。实际是骰子扑克Roguelike，断指设定有形式记忆点，但核心仍偏概率计算和重复牌局。",
+    "link": "https://www.gamer520.com/115066.html"
+  },
+  {
+    "title": "舒适森林 Cozy Grove",
+    "old_score": "3",
+    "new_score": "4",
+    "judgment": "玩家每天回到一座逐渐恢复色彩的幽灵岛，完成居民请求、收集材料、制作物品并听他们讲完各自的故事。实际是时间门槛较轻的生活模拟，日常任务和角色关系是主驱动；收集日课与装饰劳动会限制长期新鲜感。",
+    "link": "https://www.gamer520.com/18249.html"
+  },
+  {
+    "title": "节奏魔女 舞动的骷髅",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家跟随节拍移动和攻击，在一局局战斗中解锁技能流派，动力是节奏准确度与生存成绩。实际把Survivors-like和音乐判定叠在一起，音乐没有转化为社交或身体表达，仍是纯操作刷成长。",
+    "link": "https://www.gamer520.com/92555.html"
+  },
+  {
+    "title": "蛋落伤害 Fowl Damage",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家利用跳跃、坠落高度和受伤规则穿过平台关卡，动力来自发现安全路线和控制风险。实际是物理平台益智，伤害管理带来区别于普通跳跃的规则，但平台操作和Boss仍可能变成纯挑战。",
+    "link": "https://www.gamer520.com/115096.html"
+  },
+  {
+    "title": "蝙蝠侠 三部合集",
+    "old_score": "4",
+    "new_score": "3",
+    "judgment": "玩家在哥谭调查案件、潜行清理据点、解谜并推进蝙蝠侠与反派的长期关系，动力来自城市氛围和连续叙事。实际是开放世界动作潜行合集，调查与场景设计有价值，但三作共同的战斗、收集和重复任务占比很高。",
+    "link": "https://www.gamer520.com/115113.html"
+  },
+  {
+    "title": "阎罗索命",
+    "old_score": "2",
+    "new_score": "3",
+    "judgment": "玩家在北宋国子监调查连环命案，通过查证证词、阅读档案和选择推理方向逐步还原真相。实际是文字探案冒险，调查媒介和历史场所感比纯视觉小说更主动；但文本阅读仍是主要操作，推理深度决定上限。",
+    "link": "https://www.gamer520.com/115109.html"
+  },
+  {
+    "title": "沙盘战争 三国",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家管理城池内政、军政和武将，在地图上扩张并最终统一天下，动力是宏观路线和资源调度。实际是传统三国战略模拟，内政与战争有系统性，但缺少具体人物和生活层，容易落入宏观数值优化。",
+    "link": "https://www.gamer520.com/112481.html"
+  },
+  {
+    "title": "色系战记",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家在地图上用卡牌改变颜色领地、争夺空间并构筑一套能持续扩张的牌组，动力来自区域控制与连锁效果。实际是卡牌Roguelike加地盘争夺，颜色规则有结构差异，但传统牌组循环仍占主体。",
+    "link": "https://www.gamer520.com/113102.html"
+  },
+  {
+    "title": "财富磨坊 Fortune Mill",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家反复投飞镖、刮彩票、赚取金钱并解锁自动化，动力是让数字增长更快直到逃离房间。实际是点击增量与放置自动化，房间情境只是外壳，没有故事或选择压力。",
+    "link": "https://www.gamer520.com/114754.html"
+  },
+  {
+    "title": "仁王 3 Nioh 3",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在战国妖异世界中切换武士与忍者风格，练习闪避、连招和Boss应对，动力完全来自战斗掌握。实际是高强度动作RPG与刷装备，类魂式惩罚和纯操作都命中明确雷区。",
+    "link": "https://www.gamer520.com/106845.html"
+  },
+  {
+    "title": "吾皇万岁",
+    "old_score": "3",
+    "new_score": "2",
+    "judgment": "玩家扮演新君处理官员、后宫、继承人、战争和国家事务，动力来自把王朝维持并传给下一代。实际更像带角色养成和数值推进的古代经营，治理选择若不改变人物处境就容易变成表格优化，纳妃育嗣也是明显限制。",
+    "link": "https://www.gamer520.com/114949.html"
+  },
+  {
+    "title": "哥特王朝 重制版 Gothic Remake",
+    "old_score": "1",
+    "new_score": "3",
+    "judgment": "玩家在采矿谷中寻找生存位置、加入派系、建立关系并通过探索决定自己在封闭社会中的归属，动力来自世界反应和任务路线。实际是老派开放世界RPG，派系与探索有真实结构差异，但动作战斗、找路和完成度是主要摩擦。",
+    "link": "https://www.gamer520.com/114933.html"
+  },
+  {
+    "title": "学生时代",
+    "old_score": "3",
+    "new_score": "3",
+    "judgment": "玩家在南方小城度过一段可选择的青春生活，处理学习、朋友、家庭和感情，动力来自回看自己的选择会把人生推向哪里。实际是生活叙事与选择冒险，人物日常有贴合点，但恋爱与文本选择仍占主导，系统深度有限。",
+    "link": "https://www.gamer520.com/92448.html"
+  },
+  {
+    "title": "山河小侠",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家在开放武侠世界中探索、结交同伴、修炼并参与事件，动力来自江湖路线和人物关系。实际仍以回合制对决、装备成长和武侠养成为主，开放世界与友谊系统可能提供内容价值，但难以改变战斗模板。",
+    "link": "https://www.gamer520.com/114943.html"
+  },
+  {
+    "title": "暗黑破坏神2 狱火重生 重制炼狱版 Diablo II Resurrected Infernal Forge",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家选择职业进入地牢，连续击杀怪物、捡装备、配技能并重复刷取更高效率，动力是装备和数值构筑。实际是经典刷宝ARPG，职业内容与联机都服务于重复战斗，明确命中硬雷区。",
+    "link": "https://www.gamer520.com/22679.html"
+  },
+  {
+    "title": "杀手精神病兔子在太空新星拓荒",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在异星战场走位射击、收集资源并搭建防御网，动力来自一局内强化与基地撑过下一波。实际是弹幕肉鸽和即时基地防守的混合，基地是战斗辅助而非经营系统，重复清怪占主导。",
+    "link": "https://www.gamer520.com/114951.html"
+  },
+  {
+    "title": "梦幻魔法公主",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家作为父亲安排女儿成长、触发互动事件并收集多结局，动力来自养成数值与角色路线。实际是美少女养成和事件点击，恋爱/角色卖点与多结局都不足以形成具体生活选择，命中偏好限制。",
+    "link": "https://www.gamer520.com/112551.html"
+  },
+  {
+    "title": "深渊之印 Mark of the Deep",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在受诅咒岛屿中寻找失踪船员，探索分支区域并依靠闪避和Boss战推进，动力来自地图秘密与战斗掌握。实际是银河城与魂系动作的组合，类魂战斗是不可绕开的核心，直接不推荐。",
+    "link": "https://www.gamer520.com/87774.html"
+  },
+  {
+    "title": "灰烬王国 陨落纪元 Kingdom of Ashes",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家抽牌组成元素连锁，在程序化地图中清理敌人、获得强化并挑战英雄，动力主要是构筑效率。实际是卡组Roguelike，元素共鸣有规则趣味，但传统战斗与刷局占据全部体验。",
+    "link": "https://www.gamer520.com/114946.html"
+  },
+  {
+    "title": "生化危机9 安魂曲 Resident Evil 9 Requiem",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在拉昆市两条角色线之间调查、解谜、管理有限资源并面对恐怖敌人，动力来自生存压力和谜团推进。实际是第一人称/生存恐怖模板，有限资源和惊吓是核心，不符合明确禁区。",
+    "link": "https://www.gamer520.com/109515.html"
+  },
+  {
+    "title": "世界大战 诺曼底登陆 1944 World War D-Day 1944",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在诺曼底战场完成两栖和空降任务，主要靠瞄准、移动和清除敌人推进。实际是第一人称射击战役，历史场景只是内容包装，没有关系或选择结构。",
+    "link": "https://www.gamer520.com/114881.html"
+  },
+  {
+    "title": "再见犹丽狄茜",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家在校园低谷中与神秘少女相遇，通过对话和选择体验一段青春关系，动力来自认知变化和情绪结局。实际是短篇恋爱视觉小说，若关系书写细腻可有形式价值，但互动主要停留在文本点击。",
+    "link": "https://www.gamer520.com/114888.html"
+  },
+  {
+    "title": "刀剑神域 碎梦边境 SWORD ART ONLINE Fractured Daydream",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家带领系列角色参加多人共斗任务，靠即时战斗和技能配合击败强敌，动力是联机协作与角色配置。实际是动作共斗和刷任务，最多20人是情境规模，不是叙事或关系结构。",
+    "link": "https://www.gamer520.com/82628.html"
+  },
+  {
+    "title": "十字军之王3 Crusader Kings III",
+    "old_score": "2",
+    "new_score": "3",
+    "judgment": "玩家经营一个王朝，在婚姻、继承、阴谋、宗教和战争间处理具体人物的长期后果，动力来自家族关系如何意外生成历史。实际是复杂历史策略，但人物关系和涌现故事会把宏观系统转成具体局势；门槛和战争管理仍重。",
+    "link": "https://www.gamer520.com/12487.html"
+  },
+  {
+    "title": "受折磨的灵魂2 Tormented Souls 2",
+    "old_score": "2",
+    "new_score": "1",
+    "judgment": "玩家在固定视角恐怖场景中找钥匙、解谜、管理资源并与怪物战斗，动力是逃生和解开谜团。实际是生存恐怖，解谜不能改变恐怖与战斗主轴，命中明确禁区。",
+    "link": "https://www.gamer520.com/101195.html"
+  },
+  {
+    "title": "征服之歌 Songs of Conquest",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家带领施法者探索地图、经营城镇、研发科技并在回合战斗中扩张，动力来自路线规划和势力发展。实际是传统4X/战棋混合，资源和战场有策略价值，但宏观战争与数值优化占主导。",
+    "link": "https://www.gamer520.com/31091.html"
+  },
+  {
+    "title": "战锤 40,000 机师2 Warhammer 40,000 Mechanicus II",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家选择机械修会或太空死灵，在战役地图管理势力并进入回合战术战斗，动力来自阵营推进和部队配置。双阵营有结构差异，但传统回合战斗和科幻宏观战争不够贴合生活与叙事偏好。",
+    "link": "https://www.gamer520.com/114033.html"
+  },
+  {
+    "title": "房产达人 重制版合集 House Flipper Remastered Collection",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家接订单、清理房屋、装修并出售或布置房产，动力来自把空间从混乱变得可用。实际是装修模拟和订单循环，若只是美化空间则容易空；客户目标和翻新过程提供有限经营结构。",
+    "link": "https://www.gamer520.com/114830.html"
+  },
+  {
+    "title": "折言 And Roger",
+    "old_score": "3",
+    "new_score": "3",
+    "judgment": "玩家从不同角色视点经历少女、父亲与陌生男子之间的认知错位，动力来自判断谁可靠以及拼出失踪真相。实际是短篇互动叙事，视点切换是有效形式差异，但药物与畸变仍主要靠阅读和选择推进。",
+    "link": "https://www.gamer520.com/96731.html"
+  },
+  {
+    "title": "星砂岛",
+    "old_score": "3",
+    "new_score": "4",
+    "judgment": "玩家回到岛屿经营一段新的田园生活，通过种植、养殖、建造、结识岛民和探索秘密恢复地方日常。实际是生活模拟与岛屿探索，关系和地点变化能让劳动服务于叙事；制作与收集重复是主要限制。",
+    "link": "https://www.gamer520.com/108595.html"
+  },
+  {
+    "title": "消失的列车 The Vanishing Train",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家以售票员身份在日本地方线路上处理列车与异常事件，动力来自发现恐怖真相。实际是第一人称心理恐怖步行/调查，售票职业只是叙事入口，仍命中恐怖视角雷区。",
+    "link": "https://www.gamer520.com/114879.html"
+  },
+  {
+    "title": "深空七号 Deep Space 7",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在太空站搜集补给、解谜并躲避怪物，动力是资源压力下的逃生。实际是第一人称恐怖探索，补给与谜题只是生存恐怖的外围结构。",
+    "link": "https://www.gamer520.com/92047.html"
+  },
+  {
+    "title": "王国历史 三国志",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家割据一方、经营城池并用半即时战争扩张领土，动力是统一地图和效率优化。实际是宏观战略与军事征服，没有足够人物、关系或涌现叙事来抵消传统战争循环。",
+    "link": "https://www.gamer520.com/113500.html"
+  },
+  {
+    "title": "电竞教父",
+    "old_score": "2",
+    "new_score": "3",
+    "judgment": "玩家作为教练组建战队，在选手培养、BP、卡牌指令和赛季资源间做决定，动力是看一支队伍形成自己的风格并争夺冠军。实际是电竞经营与卡牌战术，数据和对局占比高，但队伍成长与长期管理提供明确经营结构。",
+    "link": "https://www.gamer520.com/77165.html"
+  },
+  {
+    "title": "终末机兵 NITRO GEN OMEGA",
+    "old_score": "2",
+    "new_score": "3",
+    "judgment": "玩家带领机甲佣兵穿越废土，在时序回合战斗中安排队员、机体和协同动作，动力来自队伍成长与成员关系。实际是战棋战斗加队伍管理，时序编排有结构差异；科幻题材、传统战斗和高系统负担仍是限制。",
+    "link": "https://www.gamer520.com/113434.html"
+  },
+  {
+    "title": "迪士尼梦幻星谷 Disney Dreamlight Valley",
+    "old_score": "2",
+    "new_score": "4",
+    "judgment": "玩家在被遗忘的迪士尼山谷中恢复社区、完成居民任务、收集资源、种植和装饰，并逐步解锁角色故事。实际是生活模拟与任务驱动探索，居民关系和地方恢复让劳动有方向；日课、装饰和资源收集会带来重复。",
+    "link": "https://www.gamer520.com/41011.html"
+  },
+  {
+    "title": "魔女 终末旅途",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家组建魔女小队进入一局局卡牌构筑战斗，靠随机强化和技能搭配把队伍推向终局，动力是构筑效率。实际是Roguelite卡牌战斗，终焉叙事只是包装，命中传统战斗与重复刷局。",
+    "link": "https://www.gamer520.com/114890.html"
+  },
+  {
+    "title": "龙胤立志传",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家在神州世界探索、修炼、经营门派并争夺地盘，动力来自建立自己的武林势力。实际是武侠开放世界加战斗与资源成长，门派经营有潜力，但修炼、攻城和数值推进仍占主要时间。",
+    "link": "https://www.gamer520.com/104670.html"
+  },
+  {
+    "title": "Remorses",
+    "old_score": "3",
+    "new_score": "1",
+    "judgment": "玩家在宅邸中调查巫术传闻、寻找线索并面对恐怖异常，动力来自揭开房屋过去。实际是慢节奏恐怖解谜，调查媒介不足以改变恐怖题材和心理压迫的核心，不符合明确偏好。",
+    "link": "https://www.gamer520.com/114820.html"
+  },
+  {
+    "title": "哈迪斯2 Hades II",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家反复进入冥界区域，靠即时战斗、随机祝福和永久成长推进剧情，动力是掌握战斗和刷出更强构筑。实际是高完成度动作肉鸽，叙事和美术优秀但无法抵消纯战斗与重复挑战雷区。",
+    "link": "https://www.gamer520.com/75506.html"
+  },
+  {
+    "title": "地心护核者 Core Keeper",
+    "old_score": "2",
+    "new_score": "2",
+    "judgment": "玩家在地下采矿、建造基地、种植、制作并击败Boss探索核心秘密，动力是新区域和生产能力逐步打开。实际是生存多人沙盒，基地与探索有价值，但资源劳动、战斗和重复挖掘是主轴。",
+    "link": "https://www.gamer520.com/83617.html"
+  },
+  {
+    "title": "天朝上国",
+    "old_score": "2",
+    "new_score": "3",
+    "judgment": "玩家作为古代统治者在内政、军事、外交和文化之间安排国家方向，动力来自制度选择如何改变国家局势。实际是宏观国家经营，资源压力和历史路线有研究价值，但人物与具体生活层较弱，复杂度也可能压过体验。",
+    "link": "https://www.gamer520.com/99874.html"
+  },
+  {
+    "title": "妖谈2 九尾异闻",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家在六边格地图上部署单位、守护领地并探索中日神话混合的事件，动力来自阵容安排和收集神明赐福。实际是战术防守与回合/策略地图，神话氛围有形式价值，但战斗和收集成长仍占主体。",
+    "link": "https://www.gamer520.com/112455.html"
+  },
+  {
+    "title": "孤胆少女",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在军事基地中拿枪清理蜂拥而来的异形和畸变怪物，动力来自火力与生存。实际是纯动作射击清怪，末世少女设定没有形成关系或探索结构。",
+    "link": "https://www.gamer520.com/114784.html"
+  },
+  {
+    "title": "帝国时代2 决定版 Age of Empires II Definitive Edition",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家采集资源、建造基地、发展文明并指挥军队击败对手，动力是即时资源竞速与军事效率。实际是传统RTS，历史战役也主要服务于战斗，不符合明确偏好。",
+    "link": "https://www.gamer520.com/40759.html"
+  },
+  {
+    "title": "最终幻想7 重生 FINAL FANTASY VII REBIRTH",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家跟随克劳德一行穿越广阔区域，在伙伴关系、支线地点和主线追猎中推进一段强叙事旅程。实际是开放世界动作JRPG，探索和人物演出有价值，但实时战斗、支线清单和素材收集占比很高。",
+    "link": "https://www.gamer520.com/89212.html"
+  },
+  {
+    "title": "欧皇VS非酋",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在抽卡概率与策略选择间博弈，靠运气和资源管理赢过对手，动力是随机结果和概率逆转。实际是抽卡博弈，纯数值与运气代替了叙事、探索和经营体验。",
+    "link": "https://www.gamer520.com/114782.html"
+  },
+  {
+    "title": "流放者柯南 Conan Exiles",
+    "old_score": "2",
+    "new_score": "1",
+    "judgment": "玩家在荒野中采集、制作、建造基地并对抗环境和其他玩家，动力是把生存据点扩张成势力。实际是生存多人沙盒，资源劳动、建造和战斗占据主体，明显命中不喜欢模式。",
+    "link": "https://www.gamer520.com/69881.html"
+  },
+  {
+    "title": "热血西游记 天竺奇谭",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家操控西游角色在Roguelite关卡中清怪、拾取强化并一路打到天竺，动力是随机技能和战斗熟练。实际是热血动作肉鸽，喜剧和西游改编不改变纯战斗结构。",
+    "link": "https://www.gamer520.com/114748.html"
+  },
+  {
+    "title": "疯狂前哨",
+    "old_score": "1",
+    "new_score": "2",
+    "judgment": "玩家搭建前哨、安排防御工事和资源，在一波波敌袭中决定守哪里、升级什么，动力来自据点能否撑住。实际是波次防守与轻基地管理，布局有一点工程取舍，但重复防守和数值优化仍是主体。",
+    "link": "https://www.gamer520.com/114779.html"
+  },
+  {
+    "title": "自动梭哈 Slots & Diapers",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家让老虎机自动运转，通过概率收益和升级扩大数字，动力是等待与优化自动产出。实际是放置博彩/增量循环，没有主动选择或叙事内容。",
+    "link": "https://www.gamer520.com/114786.html"
+  },
+  {
+    "title": "血色西部",
+    "old_score": "1",
+    "new_score": "1",
+    "judgment": "玩家在西部荒野中潜行、瞄准并调查克苏鲁式威胁，动力来自战斗和生存压力。实际是第一人称潜行射击，恐怖与枪战同时占据核心，不符合偏好。",
+    "link": "https://www.gamer520.com/114825.html"
+  }
+]
+

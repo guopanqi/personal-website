@@ -21,5 +21,10 @@ __pycache__/
 .venv/
 .pytest_cache/
 
+# Local agent state
+.claude/
+.codex/
+*.lock
+
 # CSV backups
 游戏收集agent/gamer520-games.csv.bak-*

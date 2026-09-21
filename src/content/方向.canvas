@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"9ec001d5e67c99e2","type":"text","text":"阅读新的东西\n小说，Paul，CS，我觉得我从中学到了很多东西，很多新的想法","x":-200,"y":-314,"width":566,"height":554},
+		{"id":"24294236182c51f3","type":"text","text":"能够专注，一开始就停不下来的：\n我觉得特别有用的，经常在生活中回想起来的：","x":-188,"y":-594,"width":388,"height":220,"color":"#ffffff"},
+		{"id":"c69adfcae3f00e67","type":"text","text":"SWIM","x":-200,"y":520,"width":400,"height":160},
+		{"id":"c3c67c269b5e5d15","type":"text","text":"CS， program\n挤痘痘","x":-200,"y":280,"width":446,"height":189},
+		{"id":"dec854bc3c47132d","type":"text","text":"也许能够，写一些新的东西？","x":560,"y":-314,"width":388,"height":312},
+		{"id":"e66dd3183bc4609c","type":"text","text":"build 游戏 ?\nbuild 人们需要的东西","x":560,"y":250,"width":250,"height":250},
+		{"id":"e675356fffa871ab","type":"text","text":"创造？新的想法？\n美的？感动的？","x":560,"y":-594,"width":388,"height":220,"color":"#ffffff"},
+		{"id":"0618f7219dc19986","type":"text","text":"build a little LLM from scratch to learn how wheels are made.\n\nI'd probably try to make an LLM that I could use on some specific problem.","x":-760,"y":27,"width":423,"height":342},
+		{"id":"84430ea95e375c4d","type":"text","text":"自由泳\n","x":-760,"y":500,"width":250,"height":246},
+		{"id":"e4dce3520eeba950","type":"text","text":"Benefit：\n睡眠\n外表","x":-760,"y":840,"width":250,"height":220},
+		{"id":"505ace1a51621753","type":"file","file":"对于经典游戏的学习.md","x":1080,"y":722,"width":400,"height":400},
+		{"id":"46683cf8ded92ca0","type":"file","file":"关于游戏的一些闲谈/宫本茂 - fami通.md","x":1080,"y":269,"width":400,"height":400},
+		{"id":"5953e512593d6834","type":"text","text":"PRODUCT and BUSINESS\n\n为了一些愿意为之付费的玩家，做出一些他们想要的东西","x":1520,"y":722,"width":405,"height":338},
+		{"id":"b44836c1d1006a7c","type":"text","text":"了解，思考\n\n最终能够建造一个游戏，它的玩法和乐趣是新的","x":1520,"y":269,"width":405,"height":338}
+	],
+	"edges":[
+		{"id":"43fae641a14d3b3b","fromNode":"0618f7219dc19986","fromSide":"right","toNode":"c3c67c269b5e5d15","toSide":"left"},
+		{"id":"1f509de02e6f0010","fromNode":"c69adfcae3f00e67","fromSide":"left","toNode":"e4dce3520eeba950","toSide":"right"},
+		{"id":"03f0fa7b20ddca5f","fromNode":"84430ea95e375c4d","fromSide":"right","toNode":"c69adfcae3f00e67","toSide":"left"}
+	]
+}

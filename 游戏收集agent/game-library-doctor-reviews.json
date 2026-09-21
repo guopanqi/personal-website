@@ -1,0 +1,1776 @@
+{
+  "version": 1,
+  "reviews": [
+    {
+      "normalized_titles": [
+        "cataloop",
+        "lootloop"
+      ],
+      "decision": "distinct",
+      "reason": "英文名与详情玩法不同：前者是猫咪战术自动战斗肉鸽，后者是另一款作品。",
+      "reviewed_at": "2026-09-21T07:58:53.773618+00:00",
+      "title_a": "Cat a Loop",
+      "title_b": "Loot Loop"
+    },
+    {
+      "normalized_titles": [
+        "crawltactics",
+        "梦境战术dreamtactics"
+      ],
+      "decision": "distinct",
+      "reason": "英文名与完整标题不同，是不同游戏",
+      "reviewed_at": "2026-07-18T11:15:06.989275+00:00",
+      "title_a": "梦境战术 Dream Tactics",
+      "title_b": "Crawl Tactics"
+    },
+    {
+      "normalized_titles": [
+        "deified",
+        "登神之路deified"
+      ],
+      "decision": "same",
+      "reason": "来源详情与手工条目的英文名 Deified、玩法描述均一致，是同一游戏。",
+      "reviewed_at": "2026-09-21T07:58:53.344556+00:00",
+      "title_a": "登神之路 Deified",
+      "title_b": "Deified"
+    },
+    {
+      "normalized_titles": [
+        "drakkarcrew",
+        "维京海盗团drakkarcrew"
+      ],
+      "decision": "same",
+      "reason": "详情页英文名、发行日期、描述与玩法完全一致，是同一游戏",
+      "reviewed_at": "2026-08-21T11:15:50.844551+00:00",
+      "title_a": "维京海盗团 Drakkar Crew",
+      "title_b": "Drakkar Crew"
+    },
+    {
+      "normalized_titles": [
+        "esportsmanager2026",
+        "城市巴士模拟器2026"
+      ],
+      "decision": "distinct",
+      "reason": "题材与主循环不同，分别是公交驾驶模拟和电竞经营",
+      "reviewed_at": "2026-07-16T11:05:40.467764+00:00",
+      "title_a": "城市巴士模拟器 2026",
+      "title_b": "Esports Manager 2026"
+    },
+    {
+      "normalized_titles": [
+        "go-gotown",
+        "gogotown"
+      ],
+      "decision": "same",
+      "reason": "同一 Go-Go Town 作品，连字符与感叹号差异。",
+      "reviewed_at": "2026-08-15T10:00:26.270399+00:00",
+      "title_a": "GoGoTown",
+      "title_b": "Go-Go Town!"
+    },
+    {
+      "normalized_titles": [
+        "gta5switch移植版",
+        "switch轩辕剑天之痕移植版"
+      ],
+      "decision": "distinct",
+      "reason": "两者游戏IP与内容完全不同：候选是 Grand Theft Auto V，库内记录是《轩辕剑参外传：天之痕》；仅因都带有移植版措辞而触发标题相似度。",
+      "reviewed_at": "2026-08-30T11:04:03.689695+00:00",
+      "title_a": "GTA5 Switch移植版",
+      "title_b": "Switch 轩辕剑天之痕 移植版"
+    },
+    {
+      "normalized_titles": [
+        "nba2k26",
+        "nba2k27巅峰版"
+      ],
+      "decision": "distinct",
+      "reason": "NBA 2K27 与 NBA 2K26 是不同年度作品，编号和内容代际不同。",
+      "reviewed_at": "2026-08-28T13:15:31.610550+00:00",
+      "title_a": "NBA 2K27 巅峰版",
+      "title_b": "NBA 2K26"
+    },
+    {
+      "normalized_titles": [
+        "remorses",
+        "thereismore"
+      ],
+      "decision": "distinct",
+      "reason": "详情分别为挖矿+夜间塔防肉鸽与另一款作品，标题和主循环均不同。",
+      "reviewed_at": "2026-09-21T07:58:54.581839+00:00",
+      "title_a": "There Is mORE",
+      "title_b": "Remorses"
+    },
+    {
+      "normalized_titles": [
+        "stafferretro异能追忆",
+        "异能追忆stafferretro"
+      ],
+      "decision": "same",
+      "reason": "详情页英文名、剧情、文档推理系统与主角完全一致，是同一游戏",
+      "reviewed_at": "2026-08-21T11:15:51.971333+00:00",
+      "title_a": "Staffer Retro 异能追忆",
+      "title_b": "异能追忆 Staffer Retro"
+    },
+    {
+      "normalized_titles": [
+        "tcg卡牌店模拟器tcgcardshopsimulator",
+        "卡牌店模拟器多人联机版"
+      ],
+      "decision": "same",
+      "reason": "详情均为 TCG Card Shop Simulator，属于同一款卡牌店经营游戏的版本/资源命名差异。",
+      "reviewed_at": "2026-09-21T07:58:55.233689+00:00",
+      "title_a": "TCG卡牌店模拟器 TCG Card Shop Simulator",
+      "title_b": "卡牌店模拟器 多人联机版"
+    },
+    {
+      "normalized_titles": [
+        "tcg卡牌店模拟器tcgcardshopsimulator",
+        "手办店模拟器"
+      ],
+      "decision": "distinct",
+      "reason": "详情分别为 TCG Card Shop Simulator 与手办店经营模拟器，经营对象、核心循环和作品身份不同。",
+      "reviewed_at": "2026-09-21T07:59:59.654278+00:00",
+      "title_a": "TCG卡牌店模拟器 TCG Card Shop Simulator",
+      "title_b": "手办店模拟器"
+    },
+    {
+      "normalized_titles": [
+        "tcg卡牌店模拟器正式版",
+        "卡牌店模拟器多人联机版"
+      ],
+      "decision": "same",
+      "reason": "详情均为TCG Card Shop Simulator，正式版与多人联机版是同一款卡牌店经营游戏的版本/资源命名差异，不新建条目。",
+      "reviewed_at": "2026-09-16T11:15:09.201910+00:00",
+      "title_a": "TCG 卡牌店模拟器 正式版",
+      "title_b": "卡牌店模拟器 多人联机版"
+    },
+    {
+      "normalized_titles": [
+        "一统江湖",
+        "下一站江湖ⅱthenextjianghuii"
+      ],
+      "decision": "distinct",
+      "reason": "标题与详情均为不同作品；前者是开放世界古风经营养成，后者是系列续作。",
+      "reviewed_at": "2026-09-14T15:12:00.462560+00:00",
+      "title_a": "一统江湖",
+      "title_b": "下一站江湖Ⅱ（The Next Jianghu II）"
+    },
+    {
+      "normalized_titles": [
+        "三国志13威力加强版",
+        "三国志14with威力加强传承版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与13，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:12:06.733314+00:00",
+      "title_a": "三国志14 with威力加强传承版",
+      "title_b": "三国志13 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志13威力加强版",
+        "三国志14威力加强传承版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与13，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:12:03.924094+00:00",
+      "title_a": "三国志14威力加强传承版",
+      "title_b": "三国志13 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志13威力加强版",
+        "三国志14威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号13与14，均为独立正传作品。",
+      "reviewed_at": "2026-08-26T01:06:45.806508+00:00",
+      "title_a": "三国志13 威力加强版",
+      "title_b": "三国志14 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志13威力加强版",
+        "三国志7威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号13与7，均为独立正传作品。",
+      "reviewed_at": "2026-08-26T01:06:45.942774+00:00",
+      "title_a": "三国志13 威力加强版",
+      "title_b": "三国志7 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志13威力加强版",
+        "三国志9威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号13与9，均为独立正传作品。",
+      "reviewed_at": "2026-08-26T01:06:46.077694+00:00",
+      "title_a": "三国志13 威力加强版",
+      "title_b": "三国志9 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14with威力加强传承版",
+        "三国志14威力加强版"
+      ],
+      "decision": "same",
+      "reason": "详情与 PC 传承版相同，均为《三国志14 威力加强传承版》并包含威力加强版内容。",
+      "reviewed_at": "2026-09-14T15:12:06.192982+00:00",
+      "title_a": "三国志14 with威力加强传承版",
+      "title_b": "三国志14 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14with威力加强传承版",
+        "三国志7威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与7，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:12:07.141159+00:00",
+      "title_a": "三国志14 with威力加强传承版",
+      "title_b": "三国志7 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14with威力加强传承版",
+        "三国志8威力加强重制版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与8，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:15:04.352110+00:00",
+      "title_a": "三国志14 with威力加强传承版",
+      "title_b": "三国志8 威力加强重制版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14with威力加强传承版",
+        "三国志9威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与9，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:15:04.056143+00:00",
+      "title_a": "三国志14 with威力加强传承版",
+      "title_b": "三国志9 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14威力加强传承版",
+        "三国志14威力加强版"
+      ],
+      "decision": "same",
+      "reason": "详情明确传承版包含《三国志14 威力加强版》内容并以其为前置，按同一游戏版本体系处理。",
+      "reviewed_at": "2026-09-14T15:12:03.277588+00:00",
+      "title_a": "三国志14威力加强传承版",
+      "title_b": "三国志14 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14威力加强传承版",
+        "三国志7威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与7，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:12:04.622159+00:00",
+      "title_a": "三国志14威力加强传承版",
+      "title_b": "三国志7 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14威力加强传承版",
+        "三国志8威力加强重制版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与8，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:15:03.626258+00:00",
+      "title_a": "三国志14威力加强传承版",
+      "title_b": "三国志8 威力加强重制版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14威力加强传承版",
+        "三国志9威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与9，不同正传作品。",
+      "reviewed_at": "2026-09-14T15:15:03.185935+00:00",
+      "title_a": "三国志14威力加强传承版",
+      "title_b": "三国志9 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14威力加强版",
+        "三国志7威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与7，是不同作品",
+      "reviewed_at": "2026-07-14T22:09:42.855596+00:00",
+      "title_a": "三国志14 威力加强版",
+      "title_b": "三国志7 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14威力加强版",
+        "三国志8威力加强重制版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与8，是不同作品",
+      "reviewed_at": "2026-07-14T22:09:42.875172+00:00",
+      "title_a": "三国志14 威力加强版",
+      "title_b": "三国志8 威力加强重制版"
+    },
+    {
+      "normalized_titles": [
+        "三国志14威力加强版",
+        "三国志9威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号14与9，是不同作品",
+      "reviewed_at": "2026-07-14T22:09:42.848503+00:00",
+      "title_a": "三国志14 威力加强版",
+      "title_b": "三国志9 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "三国志7威力加强版",
+        "三国志9威力加强版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号 7 与 9，是不同作品",
+      "reviewed_at": "2026-07-10T04:35:07.392208+00:00",
+      "title_a": "三国志7 威力加强版",
+      "title_b": "三国志9 威力加强版"
+    },
+    {
+      "normalized_titles": [
+        "东方红魔乡新典",
+        "东方红魔乡新典+原典"
+      ],
+      "decision": "same",
+      "reason": "详情明确为同一东方红魔乡新典，并附带原典的捆绑版本，不新建独立游戏。",
+      "reviewed_at": "2026-09-21T07:58:55.449054+00:00",
+      "title_a": "东方红魔乡 新典+原典",
+      "title_b": "东方红魔乡 新典"
+    },
+    {
+      "normalized_titles": [
+        "九山狼之城",
+        "九山狼之城kusancityofwolves"
+      ],
+      "decision": "same",
+      "reason": "详情页描述完全一致,同一游戏移植Switch",
+      "reviewed_at": "2026-08-03T11:18:25.642722+00:00",
+      "title_a": "九山 狼之城 Kusan City of Wolves",
+      "title_b": "九山 狼之城"
+    },
+    {
+      "normalized_titles": [
+        "优米雅的炼金工房",
+        "优米雅的炼金工房追忆之炼金术士与幻创之地"
+      ],
+      "decision": "same",
+      "reason": "同一游戏Atelier Yumia，短标题与含副标题版本重复投稿，已有PC/Switch记录覆盖",
+      "reviewed_at": "2026-08-04T11:28:09.694984+00:00",
+      "title_a": "优米雅的炼金工房",
+      "title_b": "优米雅的炼金工房 追忆之炼金术士与幻创之地"
+    },
+    {
+      "normalized_titles": [
+        "余火守护者emberward",
+        "永恒守护者everwarde"
+      ],
+      "decision": "distinct",
+      "reason": "Everwarde 是结合时间生存与塔防的随机挑战，Emberward 是另一款独立作品；英文名、核心玩法和详情均不对应。",
+      "reviewed_at": "2026-08-28T13:17:35.987025+00:00",
+      "title_a": "永恒守护者 Everwarde",
+      "title_b": "余火守护者 Emberward"
+    },
+    {
+      "normalized_titles": [
+        "使命召唤12黑色行动3编年史版",
+        "使命召唤9黑色行动2"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号9与12明确不同作品",
+      "reviewed_at": "2026-07-12T04:03:36.023788+00:00",
+      "title_a": "使命召唤9 黑色行动2",
+      "title_b": "使命召唤12 黑色行动3 编年史版"
+    },
+    {
+      "normalized_titles": [
+        "修仙家族模拟器",
+        "修仙模拟器"
+      ],
+      "decision": "distinct",
+      "reason": "独立作品，标题不只是版本差异。",
+      "reviewed_at": "2026-08-15T10:00:25.468282+00:00",
+      "title_a": "修仙模拟器",
+      "title_b": "修仙家族模拟器"
+    },
+    {
+      "normalized_titles": [
+        "兔兔秘密花园2",
+        "兔兔秘密花园2bunnygarden2"
+      ],
+      "decision": "same",
+      "reason": "标题完全一致，同一游戏Switch版重发帖",
+      "reviewed_at": "2026-07-30T23:53:50.753304+00:00",
+      "title_a": "兔兔秘密花园2 BUNNY GARDEN 2",
+      "title_b": "兔兔秘密花园2"
+    },
+    {
+      "normalized_titles": [
+        "全面战争三国",
+        "沙盘战争三国"
+      ],
+      "decision": "distinct",
+      "reason": "详情分别对应 Total War: Three Kingdoms 与另一款沙盘战争作品，主循环和作品身份不同。",
+      "reviewed_at": "2026-09-21T07:58:53.985550+00:00",
+      "title_a": "全面战争 三国",
+      "title_b": "沙盘战争 三国"
+    },
+    {
+      "normalized_titles": [
+        "刀剑神域碎梦边境",
+        "刀剑神域碎梦边境swordartonlinefractureddaydream"
+      ],
+      "decision": "same",
+      "reason": "中文标题与英文副标题对应，是同一作品的不同平台条目",
+      "reviewed_at": "2026-07-15T09:30:41.564677+00:00",
+      "title_a": "刀剑神域 碎梦边境",
+      "title_b": "刀剑神域 碎梦边境 SWORD ART ONLINE Fractured Daydream"
+    },
+    {
+      "normalized_titles": [
+        "卢湖采风",
+        "卢湖采风lou’slagoon"
+      ],
+      "decision": "same",
+      "reason": "中文标题与英文副标题对应同一款岛屿探索经营游戏，仅平台版本标题不同。",
+      "reviewed_at": "2026-08-28T13:15:31.279830+00:00",
+      "title_a": "卢湖采风",
+      "title_b": "卢湖采风 Lou’s Lagoon"
+    },
+    {
+      "normalized_titles": [
+        "又一个僵尸塔防hd",
+        "又一个僵尸幸存者"
+      ],
+      "decision": "distinct",
+      "reason": "题名相近但主循环不同：前者是幸存者式弹幕战斗，后者是塔防作品，属于不同游戏。",
+      "reviewed_at": "2026-08-22T11:06:23.060369+00:00",
+      "title_a": "又一个僵尸幸存者",
+      "title_b": "又一个僵尸塔防HD"
+    },
+    {
+      "normalized_titles": [
+        "又一个僵尸幸存者",
+        "终点站僵尸幸存者"
+      ],
+      "decision": "distinct",
+      "reason": "前者与后者是不同作品，完整标题和来源链接均不同，不能仅因共享僵尸幸存者字样合并。",
+      "reviewed_at": "2026-08-22T11:06:23.483949+00:00",
+      "title_a": "又一个僵尸幸存者",
+      "title_b": "终点站 僵尸幸存者"
+    },
+    {
+      "normalized_titles": [
+        "双子星传奇重制版",
+        "绯夜传奇重制版talesofberseriaremastered"
+      ],
+      "decision": "distinct",
+      "reason": "完整标题与作品名称不同，是不同游戏",
+      "reviewed_at": "2026-07-18T11:15:06.888161+00:00",
+      "title_a": "双子星传奇 重制版",
+      "title_b": "绯夜传奇 重制版 Tales of Berseria Remastered"
+    },
+    {
+      "normalized_titles": [
+        "古墓丽影1-3复刻版",
+        "古墓丽影1-3重制版"
+      ],
+      "decision": "same",
+      "reason": "两者均对应 Tomb Raider I-III Remastered，包含同一组三部曲与扩展关卡；复刻版与重制版只是中文译名差异。",
+      "reviewed_at": "2026-08-22T11:06:23.831433+00:00",
+      "title_a": "古墓丽影1-3 复刻版",
+      "title_b": "古墓丽影1-3 重制版"
+    },
+    {
+      "normalized_titles": [
+        "合金装备3重制版",
+        "合金装备3食蛇者"
+      ],
+      "decision": "distinct",
+      "reason": "前者是 Switch 上的原版《Snake Eater》，后者是 PC 上的重制版《Delta》，属于不同发行版本与独立库条目。",
+      "reviewed_at": "2026-09-10T14:57:30.016980+00:00",
+      "title_a": "合金装备3 食蛇者",
+      "title_b": "合金装备3 重制版"
+    },
+    {
+      "normalized_titles": [
+        "吸血鬼幸存者",
+        "吸血鬼爬行者"
+      ],
+      "decision": "distinct",
+      "reason": "不同游戏，仅标题相似",
+      "reviewed_at": "2026-07-24T13:13:29.144285+00:00",
+      "title_a": "吸血鬼幸存者",
+      "title_b": "吸血鬼爬行者"
+    },
+    {
+      "normalized_titles": [
+        "吸血鬼幸存者",
+        "吸血鬼爬行者屠戮地牢的吸血鬼幸存者"
+      ],
+      "decision": "distinct",
+      "reason": "前者是另一款以吸血鬼幸存者为副标题的独立作品，并非 Vampire Survivors 本体",
+      "reviewed_at": "2026-07-29T11:05:32.619397+00:00",
+      "title_a": "吸血鬼爬行者 屠戮地牢的吸血鬼幸存者",
+      "title_b": "吸血鬼幸存者"
+    },
+    {
+      "normalized_titles": [
+        "吸血鬼幸存者",
+        "血月幸存者bloodmoonsurvivors"
+      ],
+      "decision": "distinct",
+      "reason": "英文名、开发作品均不同，仅共享幸存者类型词。",
+      "reviewed_at": "2026-08-15T10:00:25.659614+00:00",
+      "title_a": "血月幸存者 Bloodmoon Survivors",
+      "title_b": "吸血鬼幸存者"
+    },
+    {
+      "normalized_titles": [
+        "吸血鬼爬行者",
+        "吸血鬼爬行者屠戮地牢的吸血鬼幸存者"
+      ],
+      "decision": "same",
+      "reason": "回合制卡牌构筑地牢探索描述一致，同一游戏Switch版重发帖",
+      "reviewed_at": "2026-07-30T23:53:50.923714+00:00",
+      "title_a": "吸血鬼爬行者 屠戮地牢的吸血鬼幸存者",
+      "title_b": "吸血鬼爬行者"
+    },
+    {
+      "normalized_titles": [
+        "呓语小镇",
+        "呓语小镇whisperofthehouse"
+      ],
+      "decision": "same",
+      "reason": "英文副标题版本与库内中文标题的委托、收纳、小镇秘密描述完全对应，是同一款游戏。",
+      "reviewed_at": "2026-08-28T13:15:33.516351+00:00",
+      "title_a": "呓语小镇 Whisper of the House",
+      "title_b": "呓语小镇"
+    },
+    {
+      "normalized_titles": [
+        "命运石之门重启steinsgatereboot",
+        "命运石之门重启版"
+      ],
+      "decision": "same",
+      "reason": "英文名、重启版剧情、秋叶原场景、手机选择系统与新增剧情一致，是同一游戏",
+      "reviewed_at": "2026-08-21T11:15:52.521505+00:00",
+      "title_a": "命运石之门 重启版",
+      "title_b": "命运石之门 重启 STEINS;GATE REBOOT"
+    },
+    {
+      "normalized_titles": [
+        "咖啡心语3东京",
+        "咖啡心语东京coffeetalktokyo"
+      ],
+      "decision": "same",
+      "reason": "同一 Coffee Talk Tokyo，数字为站点命名差异。",
+      "reviewed_at": "2026-08-15T10:00:26.474397+00:00",
+      "title_a": "咖啡心语3 东京",
+      "title_b": "咖啡心语 东京 Coffee Talk Tokyo"
+    },
+    {
+      "normalized_titles": [
+        "喵斯快跑",
+        "喵斯快跑musedash"
+      ],
+      "decision": "same",
+      "reason": "Switch 来源是同一款 Muse Dash 的原版/更新资源，现有 PC/Switch 记录已覆盖该平台。",
+      "reviewed_at": "2026-08-29T11:06:17.087504+00:00",
+      "title_a": "喵斯快跑",
+      "title_b": "喵斯快跑 MUSE DASH"
+    },
+    {
+      "normalized_titles": [
+        "四海兄弟2最终版",
+        "四海兄弟最终版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号1与2，详情分别对应Mafia与Mafia II，是两款独立作品。",
+      "reviewed_at": "2026-08-26T01:07:12.973300+00:00",
+      "title_a": "四海兄弟 最终版",
+      "title_b": "四海兄弟2 最终版"
+    },
+    {
+      "normalized_titles": [
+        "回弹深渊ricochetabyss",
+        "遗物深渊relicabyss"
+      ],
+      "decision": "distinct",
+      "reason": "英文名与作品设定均不同，仅共享“深渊”词。",
+      "reviewed_at": "2026-08-15T10:00:24.892284+00:00",
+      "title_a": "回弹深渊 Ricochet Abyss",
+      "title_b": "遗物深渊 Relic Abyss"
+    },
+    {
+      "normalized_titles": [
+        "团本自走棋",
+        "矮人军团自走棋"
+      ],
+      "decision": "distinct",
+      "reason": "不同作品，仅共享自走棋类型词。",
+      "reviewed_at": "2026-08-15T10:00:25.093414+00:00",
+      "title_a": "矮人军团自走棋",
+      "title_b": "团本自走棋"
+    },
+    {
+      "normalized_titles": [
+        "圣剑传说3重制版",
+        "薄暮传说重制版"
+      ],
+      "decision": "distinct",
+      "reason": "《薄暮传说 重制版》是 Tales of Vesperia；《圣剑传说3 重制版》是 Trials of Mana，系列、英文名与作品编号均不同。",
+      "reviewed_at": "2026-08-23T11:07:28.663069+00:00",
+      "title_a": "薄暮传说 重制版",
+      "title_b": "圣剑传说3 重制版"
+    },
+    {
+      "normalized_titles": [
+        "在虚妄之中infalsus",
+        "虚妄之盒"
+      ],
+      "decision": "distinct",
+      "reason": "前者是近未来高中生活与节奏游戏结合的多视角作品，后者是下落式肉鸽卡牌战斗，主循环与作品身份均不同。",
+      "reviewed_at": "2026-09-10T14:57:29.881992+00:00",
+      "title_a": "在虚妄之中 In Falsus",
+      "title_b": "虚妄之盒"
+    },
+    {
+      "normalized_titles": [
+        "地下古域2",
+        "地下古域dungeonantiqua"
+      ],
+      "decision": "distinct",
+      "reason": "候选标题为Dungeon Antiqua，既有条目明确为地下古域2，系列编号不同，属于两款独立作品。",
+      "reviewed_at": "2026-09-01T11:32:21.566970+00:00",
+      "title_a": "地下古域 Dungeon Antiqua",
+      "title_b": "地下古域2"
+    },
+    {
+      "normalized_titles": [
+        "地下城4dungeons4",
+        "地下城竞技场dungeonbrawls"
+      ],
+      "decision": "distinct",
+      "reason": "前者是4人联机动作肉鸽，后者是地下城经营策略游戏，不同作品。",
+      "reviewed_at": "2026-09-14T15:12:05.440585+00:00",
+      "title_a": "地下城竞技场 Dungeon Brawls",
+      "title_b": "地下城4 Dungeons4"
+    },
+    {
+      "normalized_titles": [
+        "地下城4dungeons4",
+        "地城拓荒dungeonsettlers"
+      ],
+      "decision": "distinct",
+      "reason": "地城拓荒是殖民地建设加地牢探险、实时暂停小队战斗的独立作品；地下城4是另一款地下城建造 RTS，标题与玩法均非版本差异。",
+      "reviewed_at": "2026-09-07T07:52:46.781939+00:00",
+      "title_a": "地城拓荒 Dungeon Settlers",
+      "title_b": "地下城4 Dungeons4"
+    },
+    {
+      "normalized_titles": [
+        "地心护核者",
+        "地心护核者corekeeper"
+      ],
+      "decision": "same",
+      "reason": "中英文标题与挖矿建造玩法描述一致",
+      "reviewed_at": "2026-07-10T04:35:07.014731+00:00",
+      "title_a": "地心护核者 Core Keeper",
+      "title_b": "地心护核者"
+    },
+    {
+      "normalized_titles": [
+        "地牢破坏者dungeonraze",
+        "抓抓地牢dungeonclawler"
+      ],
+      "decision": "distinct",
+      "reason": "Dungeon Clawler 以抓娃娃机驱动卡组构筑与肉鸽地牢为核心，Dungeon Raze 是不同作品；标题、英文名和玩法均不对应。",
+      "reviewed_at": "2026-08-28T13:17:36.395172+00:00",
+      "title_a": "抓抓地牢 Dungeon Clawler",
+      "title_b": "地牢破坏者 DUNGEON RAZE"
+    },
+    {
+      "normalized_titles": [
+        "天命奇御",
+        "天命奇御归途"
+      ],
+      "decision": "distinct",
+      "reason": "归途为独立Roguelite外传，非本篇",
+      "reviewed_at": "2026-08-15T11:22:23.637922+00:00",
+      "title_a": "天命奇御 归途",
+      "title_b": "天命奇御"
+    },
+    {
+      "normalized_titles": [
+        "天外世界2theouterworlds2",
+        "天外世界太空人之选theouterworlds"
+      ],
+      "decision": "distinct",
+      "reason": "系列二代与一代特别版，是不同作品",
+      "reviewed_at": "2026-07-10T04:35:07.583885+00:00",
+      "title_a": "天外世界2（The Outer Worlds 2）",
+      "title_b": "天外世界：太空人之选（The Outer Worlds）"
+    },
+    {
+      "normalized_titles": [
+        "奇迹之星wanderstars",
+        "节奏天国奇迹之星"
+      ],
+      "decision": "distinct",
+      "reason": "完整标题与英文名不同，只共享奇迹之星字样",
+      "reviewed_at": "2026-07-10T04:35:07.680229+00:00",
+      "title_a": "节奏天国 奇迹之星",
+      "title_b": "奇迹之星 Wander Stars"
+    },
+    {
+      "normalized_titles": [
+        "女巫之火witchfire",
+        "女巫之血witchblood"
+      ],
+      "decision": "distinct",
+      "reason": "不同游戏，Witchblood(密特罗德风格动作)与Witchfire(FPS)标题仅一字相似",
+      "reviewed_at": "2026-08-17T11:12:23.079183+00:00",
+      "title_a": "女巫之血 Witchblood",
+      "title_b": "女巫之火 Witchfire"
+    },
+    {
+      "normalized_titles": [
+        "宠物幸存者petssurvivors",
+        "审判幸存者trialssurvivors"
+      ],
+      "decision": "distinct",
+      "reason": "英文名与作品不同，仅共享幸存者类型词。",
+      "reviewed_at": "2026-08-15T10:00:25.757849+00:00",
+      "title_a": "宠物幸存者 Pets Survivors",
+      "title_b": "审判幸存者 Trials Survivors"
+    },
+    {
+      "normalized_titles": [
+        "宠物幸存者petssurvivors",
+        "幸存者笔记survivor’snotes"
+      ],
+      "decision": "distinct",
+      "reason": "前者是全动态影像末日丧尸剧情游戏，后者是另一款幸存者类型游戏。",
+      "reviewed_at": "2026-09-14T15:12:01.508038+00:00",
+      "title_a": "幸存者笔记 Survivor’s Notes",
+      "title_b": "宠物幸存者 Pets Survivors"
+    },
+    {
+      "normalized_titles": [
+        "宠物幸存者petssurvivors",
+        "炼狱幸存者purgatorysurvivors"
+      ],
+      "decision": "distinct",
+      "reason": "英文名与作品不同，仅共享幸存者类型词。",
+      "reviewed_at": "2026-08-15T10:00:25.856485+00:00",
+      "title_a": "宠物幸存者 Pets Survivors",
+      "title_b": "炼狱幸存者 Purgatory Survivors"
+    },
+    {
+      "normalized_titles": [
+        "寂静之冠",
+        "寂静之歌songsofsilence"
+      ],
+      "decision": "distinct",
+      "reason": "英文名、类型与玩法不同：前者是2D银河恶魔城，后者是4X王国策略",
+      "reviewed_at": "2026-08-21T11:15:50.141616+00:00",
+      "title_a": "寂静之冠",
+      "title_b": "寂静之歌（Songs of Silence）"
+    },
+    {
+      "normalized_titles": [
+        "展翅翱翔",
+        "展翅翱翔wingspan"
+      ],
+      "decision": "same",
+      "reason": "标题与描述完全一致，同一游戏Switch版重发帖",
+      "reviewed_at": "2026-07-30T23:53:51.083521+00:00",
+      "title_a": "展翅翱翔 Wingspan",
+      "title_b": "展翅翱翔"
+    },
+    {
+      "normalized_titles": [
+        "币圈模拟器",
+        "浣币模拟器"
+      ],
+      "decision": "distinct",
+      "reason": "前者模拟加密货币交易与盘口杠杆，后者是清洗、分拣钞票的休闲模拟器，核心玩法不同。",
+      "reviewed_at": "2026-08-28T13:15:33.209208+00:00",
+      "title_a": "币圈模拟器",
+      "title_b": "浣币模拟器"
+    },
+    {
+      "normalized_titles": [
+        "帝国时代2决定版ageofempiresiidefinitiveedition",
+        "帝国时代3决定版"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号3与2，不同作品",
+      "reviewed_at": "2026-07-30T01:37:24.056137+00:00",
+      "title_a": "帝国时代3 决定版",
+      "title_b": "帝国时代2 决定版 Age of Empires II Definitive Edition"
+    },
+    {
+      "normalized_titles": [
+        "帝国时代2决定版ageofempiresiidefinitiveedition",
+        "帝国时代ivageofempiresiv"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号 2 与 4，是不同作品",
+      "reviewed_at": "2026-07-10T04:35:07.778130+00:00",
+      "title_a": "帝国时代2 决定版 Age of Empires II Definitive Edition",
+      "title_b": "帝国时代 IV Age of Empires IV"
+    },
+    {
+      "normalized_titles": [
+        "帝国时代3决定版",
+        "帝国时代ivageofempiresiv"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号3与4，不同作品",
+      "reviewed_at": "2026-07-30T01:37:24.208688+00:00",
+      "title_a": "帝国时代3 决定版",
+      "title_b": "帝国时代 IV Age of Empires IV"
+    },
+    {
+      "normalized_titles": [
+        "席德·梅尔的文明vii奠基者版",
+        "文明7sidmeier'scivilizationvii"
+      ],
+      "decision": "same",
+      "reason": "同一游戏，文明7的奠基者版发行帖子",
+      "reviewed_at": "2026-08-20T06:38:08.327064+00:00",
+      "title_a": "席德·梅尔的文明 VII 奠基者版",
+      "title_b": "文明7 Sid Meier's Civilization VII"
+    },
+    {
+      "normalized_titles": [
+        "幻世录重制版",
+        "幻世录重制版抢先试玩"
+      ],
+      "decision": "same",
+      "reason": "详情均为同一款《幻世录 重制版》，后者是抢先试玩版本，不另建游戏条目。",
+      "reviewed_at": "2026-09-10T14:57:29.743862+00:00",
+      "title_a": "幻世录 重制版",
+      "title_b": "幻世录 重制版 抢先试玩"
+    },
+    {
+      "normalized_titles": [
+        "幻想生活i转圈圈的龙和偷取时间的少女",
+        "幻想生活幻想生活i转圈圈的龙和偷取时间的少女"
+      ],
+      "decision": "same",
+      "reason": "详情页剧情、14种职业、岛屿建设与时间穿梭内容一致，是同一游戏",
+      "reviewed_at": "2026-08-21T11:15:53.767178+00:00",
+      "title_a": "幻想生活i 转圈圈的龙和偷取时间的少女",
+      "title_b": "幻想生活幻想生活i 转圈圈的龙和偷取时间的少女"
+    },
+    {
+      "normalized_titles": [
+        "废品机械师scrapmechanic",
+        "废柴机械师"
+      ],
+      "decision": "same",
+      "reason": "详情描述、建造系统、Farmbots 生存剧情与 Scrap Mechanic 完全一致，是同一游戏的中文标题差异。",
+      "reviewed_at": "2026-09-21T07:58:54.173537+00:00",
+      "title_a": "废柴机械师",
+      "title_b": "废品机械师 Scrap Mechanic"
+    },
+    {
+      "normalized_titles": [
+        "康斯坦丝",
+        "康斯坦丝constance"
+      ],
+      "decision": "same",
+      "reason": "详情页描述完全一致,数据库已是PC/Switch,本次为重复发帖",
+      "reviewed_at": "2026-08-03T11:18:25.772539+00:00",
+      "title_a": "康斯坦丝 Constance",
+      "title_b": "康斯坦丝"
+    },
+    {
+      "normalized_titles": [
+        "异度之刃2",
+        "异度之刃决定版xenobladechroniclesde"
+      ],
+      "decision": "distinct",
+      "reason": "二代与一代决定版，不同作品",
+      "reviewed_at": "2026-07-30T01:37:25.104797+00:00",
+      "title_a": "异度之刃2",
+      "title_b": "异度之刃 决定版 Xenoblade Chronicles DE"
+    },
+    {
+      "normalized_titles": [
+        "异能缉凶staffercase",
+        "异能追忆stafferretro"
+      ],
+      "decision": "distinct",
+      "reason": "追忆与缉凶剧情、英文名(Retro vs Case)均不同，为同系列不同独立作品",
+      "reviewed_at": "2026-07-25T11:37:38.259459+00:00",
+      "title_a": "异能追忆 Staffer Retro",
+      "title_b": "异能缉凶 Staffer Case"
+    },
+    {
+      "normalized_titles": [
+        "忍者神龟斯普林特的命运",
+        "忍者神龟斯普特林的命运"
+      ],
+      "decision": "same",
+      "reason": "英文名、斯普林特营救剧情、四只乌龟与Roguelike合作玩法一致，是同一游戏",
+      "reviewed_at": "2026-08-21T11:15:54.426035+00:00",
+      "title_a": "忍者神龟 斯普林特的命运",
+      "title_b": "忍者神龟 斯普特林的命运"
+    },
+    {
+      "normalized_titles": [
+        "忍者神龟斯普林特的命运",
+        "忍者神龟破碎命运"
+      ],
+      "decision": "same",
+      "reason": "详情正文明确将本候选称为《斯普林特的命运》，是现有条目的另一中文标题；同一款Roguelike动作合作游戏。",
+      "reviewed_at": "2026-09-01T11:38:17.780402+00:00",
+      "title_a": "忍者神龟 破碎命运",
+      "title_b": "忍者神龟 斯普林特的命运"
+    },
+    {
+      "normalized_titles": [
+        "忍者龙剑传3",
+        "忍者龙剑传西格玛1"
+      ],
+      "decision": "distinct",
+      "reason": "《忍者龙剑传3》与《忍者龙剑传：西格玛1》作品编号和版本副标题不同，属于不同游戏。",
+      "reviewed_at": "2026-08-23T11:07:29.652853+00:00",
+      "title_a": "忍者龙剑传3",
+      "title_b": "忍者龙剑传：西格玛1"
+    },
+    {
+      "normalized_titles": [
+        "忍者龙剑传3",
+        "忍者龙剑坛2"
+      ],
+      "decision": "distinct",
+      "reason": "标题中的作品编号不同：《忍者龙剑传3》不是库内的《忍者龙剑坛2》；两者只是系列标题相似。",
+      "reviewed_at": "2026-08-23T11:07:29.181643+00:00",
+      "title_a": "忍者龙剑传3",
+      "title_b": "忍者龙剑坛2"
+    },
+    {
+      "normalized_titles": [
+        "恶魔学家",
+        "恶魔学校demonschool"
+      ],
+      "decision": "distinct",
+      "reason": "恶魔学家是合作识别并驱除恶灵的恐怖游戏，Demonschool 是不同的战术 RPG。",
+      "reviewed_at": "2026-09-21T07:58:54.799704+00:00",
+      "title_a": "恶魔学家",
+      "title_b": "恶魔学校 Demonschool"
+    },
+    {
+      "normalized_titles": [
+        "恶魔幸存者",
+        "魔堡幸存者"
+      ],
+      "decision": "distinct",
+      "reason": "规范标题与英文/详情对应不同：恶魔幸存者为 Malignant Survivors 2 的3D群怪割草肉鸽，魔堡幸存者为另一款哥特风横版类幸存者；名称相似但不是同一游戏。",
+      "reviewed_at": "2026-08-31T14:29:31.355656+00:00",
+      "title_a": "恶魔幸存者",
+      "title_b": "魔堡幸存者"
+    },
+    {
+      "normalized_titles": [
+        "战锤40000战区",
+        "战锤40000星际战士2"
+      ],
+      "decision": "distinct",
+      "reason": "详情确认：星际战士2是Space Marine 2第三人称动作游戏，战区是Battlesector回合制策略游戏，不同作品",
+      "reviewed_at": "2026-07-30T01:37:24.403081+00:00",
+      "title_a": "战锤40,000 星际战士2",
+      "title_b": "战锤40000 战区"
+    },
+    {
+      "normalized_titles": [
+        "战锤40000战区",
+        "战锤40k行商浪人warhammer40000roguetrader"
+      ],
+      "decision": "distinct",
+      "reason": "不同战锤衍生作品，玩法不同",
+      "reviewed_at": "2026-07-24T13:13:29.270115+00:00",
+      "title_a": "战锤40000 战区",
+      "title_b": "战锤40K：行商浪人 (Warhammer 40,000: Rogue Trader)"
+    },
+    {
+      "normalized_titles": [
+        "房产达人",
+        "房产达人2"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号不同，分别为初代与续作。",
+      "reviewed_at": "2026-09-14T15:12:02.066114+00:00",
+      "title_a": "房产达人",
+      "title_b": "房产达人2"
+    },
+    {
+      "normalized_titles": [
+        "房产达人",
+        "房产达人重制版合集houseflipperremasteredcollection"
+      ],
+      "decision": "distinct",
+      "reason": "前者是原版《房产达人》，后者是重制版合集，属于不同发行条目。",
+      "reviewed_at": "2026-09-14T15:12:02.768559+00:00",
+      "title_a": "房产达人",
+      "title_b": "房产达人 重制版合集 House Flipper Remastered Collection"
+    },
+    {
+      "normalized_titles": [
+        "打骨折超市日记discounty",
+        "打骨折超市日记支持者版discounty"
+      ],
+      "decision": "same",
+      "reason": "原版与支持者版是同一款 Discounty，支持者版仅包含额外支持者内容。",
+      "reviewed_at": "2026-08-28T13:15:33.835972+00:00",
+      "title_a": "打骨折超市日记 Discounty",
+      "title_b": "打骨折超市日记 支持者版 Discounty"
+    },
+    {
+      "normalized_titles": [
+        "拾光旅人outbound",
+        "拾光旅人卡带版outbound"
+      ],
+      "decision": "same",
+      "reason": "同一 Outbound 作品，卡带版为版本/媒介描述。",
+      "reviewed_at": "2026-08-15T10:00:25.186299+00:00",
+      "title_a": "拾光旅人 Outbound",
+      "title_b": "拾光旅人卡带版 Outbound"
+    },
+    {
+      "normalized_titles": [
+        "指环王北境之战thelordoftherings",
+        "指环王北境之战传世版"
+      ],
+      "decision": "same",
+      "reason": "详情均为The Lord of the Rings: War in the North，同一款动作RPG；传世版是PC版本/版本名差异，不新建条目。",
+      "reviewed_at": "2026-09-16T11:14:15.223916+00:00",
+      "title_a": "指环王 北境之战 传世版",
+      "title_b": "指环王 北境之战 The Lord of the Rings"
+    },
+    {
+      "normalized_titles": [
+        "挖掘者米娜",
+        "挖掘者米娜minathehollower"
+      ],
+      "decision": "same",
+      "reason": "详情页描述完全一致,数据库已是PC/Switch,本次为重复发帖",
+      "reviewed_at": "2026-08-03T11:18:25.899661+00:00",
+      "title_a": "挖掘者米娜 Mina the Hollower",
+      "title_b": "挖掘者米娜"
+    },
+    {
+      "normalized_titles": [
+        "放置帝国incrempire",
+        "放置模拟国"
+      ],
+      "decision": "distinct",
+      "reason": "不同游戏，标题和玩法均不同",
+      "reviewed_at": "2026-07-24T13:13:29.015809+00:00",
+      "title_a": "放置帝国 Incrempire",
+      "title_b": "放置模拟国"
+    },
+    {
+      "normalized_titles": [
+        "数码宝贝物语时空异客",
+        "数码宝贝物语时空异客digimonstorytimestranger"
+      ],
+      "decision": "same",
+      "reason": "PC 与 Switch 详情页内容一致，均为同一款《数码宝贝物语 时空异客》；合并为一条 PC/Switch 记录。",
+      "reviewed_at": "2026-07-16T12:09:04.544028+00:00",
+      "title_a": "数码宝贝物语 时空异客",
+      "title_b": "数码宝贝物语 时空异客 Digimon Story Time Stranger"
+    },
+    {
+      "normalized_titles": [
+        "星界战士astralascent",
+        "星界战士豪华版"
+      ],
+      "decision": "same",
+      "reason": "详情描述完全一致，均为2D平台rogue-lite《Astral Ascent》，仅版本/平台不同",
+      "reviewed_at": "2026-08-01T06:40:18.383816+00:00",
+      "title_a": "星界战士 豪华版",
+      "title_b": "星界战士 Astral Ascent"
+    },
+    {
+      "normalized_titles": [
+        "星际深钻",
+        "星际钻探站"
+      ],
+      "decision": "distinct",
+      "reason": "详情显示前者是基地经营，后者是开放宇宙钻头探索动作冒险，不是同一游戏",
+      "reviewed_at": "2026-07-10T15:03:49.609103+00:00",
+      "title_a": "星际钻探站",
+      "title_b": "星际深钻"
+    },
+    {
+      "normalized_titles": [
+        "暗影地牢shadowdungeon",
+        "暗黑地牢"
+      ],
+      "decision": "distinct",
+      "reason": "Shadow Dungeon 是独立的黑暗奇幻动作 RPG，不是 Darkest Dungeon；玩法、标题和详情均不同。",
+      "reviewed_at": "2026-08-28T13:15:32.750318+00:00",
+      "title_a": "暗影地牢 Shadow Dungeon",
+      "title_b": "暗黑地牢"
+    },
+    {
+      "normalized_titles": [
+        "暗影地牢shadowdungeon",
+        "点击地牢tapdungeon"
+      ],
+      "decision": "distinct",
+      "reason": "标题与详情对应不同作品；仅共享地牢题材词，不是同一游戏。",
+      "reviewed_at": "2026-08-29T11:06:15.379918+00:00",
+      "title_a": "点击地牢 Tap Dungeon",
+      "title_b": "暗影地牢 Shadow Dungeon"
+    },
+    {
+      "normalized_titles": [
+        "暗黑地牢",
+        "暗黑骨牢darkboneprison"
+      ],
+      "decision": "distinct",
+      "reason": "前者是地牢割草游戏，后者是另一款地牢策略作品，标题相似但不是同一游戏。",
+      "reviewed_at": "2026-09-14T15:12:00.983562+00:00",
+      "title_a": "暗黑骨牢 Dark Bone Prison",
+      "title_b": "暗黑地牢"
+    },
+    {
+      "normalized_titles": [
+        "暗黑破坏神2",
+        "暗黑破坏神2狱火重生重制炼狱版diabloiiresurrectedinfernalforge"
+      ],
+      "decision": "same",
+      "reason": "均为 Diablo II Resurrected 的不同平台与资源版本，核心游戏相同",
+      "reviewed_at": "2026-08-21T11:15:51.432082+00:00",
+      "title_a": "暗黑破坏神2",
+      "title_b": "暗黑破坏神2 狱火重生 重制炼狱版 Diablo II Resurrected Infernal Forge"
+    },
+    {
+      "normalized_titles": [
+        "最后的星舰thelaststarship",
+        "最后的飞船lastspaceship"
+      ],
+      "decision": "distinct",
+      "reason": "冒险解谜科幻游戏 vs 太空建造模拟游戏，题材和玩法均不同",
+      "reviewed_at": "2026-07-30T23:53:50.371248+00:00",
+      "title_a": "最后的飞船 Last Spaceship",
+      "title_b": "最后的星舰 The Last Starship"
+    },
+    {
+      "normalized_titles": [
+        "最终夺回小分队",
+        "最终夺回小分队thelastsalvagesquad"
+      ],
+      "decision": "same",
+      "reason": "游戏描述均为同一款 2.5D 单人 FPS",
+      "reviewed_at": "2026-07-10T04:35:06.830399+00:00",
+      "title_a": "最终夺回小分队",
+      "title_b": "最终夺回小分队 TheLastSalvageSquad"
+    },
+    {
+      "normalized_titles": [
+        "最终幻想33d重制版",
+        "最终幻想7重生finalfantasyviirebirth"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号3与7，不同作品。",
+      "reviewed_at": "2026-08-15T10:00:25.952153+00:00",
+      "title_a": "最终幻想3 3D重制版",
+      "title_b": "最终幻想7 重生 FINAL FANTASY VII REBIRTH"
+    },
+    {
+      "normalized_titles": [
+        "最终幻想维度1",
+        "最终幻想维度2"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号不同，为两部独立作品",
+      "reviewed_at": "2026-08-15T11:22:23.732490+00:00",
+      "title_a": "最终幻想维度1",
+      "title_b": "最终幻想维度2"
+    },
+    {
+      "normalized_titles": [
+        "月光岭物语moonlightpeaks",
+        "阳光物语"
+      ],
+      "decision": "distinct",
+      "reason": "完整标题、英文名与作品均不同。",
+      "reviewed_at": "2026-08-15T10:00:24.997069+00:00",
+      "title_a": "阳光物语",
+      "title_b": "月光岭物语 Moonlight Peaks"
+    },
+    {
+      "normalized_titles": [
+        "未来骑士团futureknight",
+        "骑士团战knightsofbraveland"
+      ],
+      "decision": "distinct",
+      "reason": "不同游戏，Future Knight与Knights of Braveland仅标题片段相似",
+      "reviewed_at": "2026-08-17T11:12:23.204413+00:00",
+      "title_a": "未来骑士团 Future Knight",
+      "title_b": "骑士团战 Knights of Braveland"
+    },
+    {
+      "normalized_titles": [
+        "林中小女巫",
+        "林中小女巫littlewitchinthewoods"
+      ],
+      "decision": "same",
+      "reason": "详情、英文名与村庄/魔药/探索玩法一致，是同一游戏的 Switch 版本。",
+      "reviewed_at": "2026-09-21T07:58:55.019029+00:00",
+      "title_a": "林中小女巫 Little Witch in the Woods",
+      "title_b": "林中小女巫"
+    },
+    {
+      "normalized_titles": [
+        "梅莫莉治愈物语",
+        "梅莫莉治愈物语memoryofmemorie"
+      ],
+      "decision": "same",
+      "reason": "英文副标题版本与库内中文标题均为同一款工作陪伴冒险游戏。",
+      "reviewed_at": "2026-08-28T13:15:34.216650+00:00",
+      "title_a": "梅莫莉 治愈物语 Memory of Memorie",
+      "title_b": "梅莫莉 治愈物语"
+    },
+    {
+      "normalized_titles": [
+        "梦塔比montabi",
+        "梦塔比montabimb"
+      ],
+      "decision": "same",
+      "reason": "同一作品的 PC 与 Switch 条目，译名尾字拼写差异",
+      "reviewed_at": "2026-08-15T11:22:23.446028+00:00",
+      "title_a": "梦塔比 Montabi",
+      "title_b": "梦塔比 Montabimb"
+    },
+    {
+      "normalized_titles": [
+        "模拟农场25",
+        "模拟农场26farmingsimulator26"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号26与25，不同作品。",
+      "reviewed_at": "2026-09-14T15:12:07.538215+00:00",
+      "title_a": "模拟农场26 Farming Simulator 26",
+      "title_b": "模拟农场25"
+    },
+    {
+      "normalized_titles": [
+        "永恒之夜",
+        "永恒之夜终极版"
+      ],
+      "decision": "same",
+      "reason": "双方详情均明确为 Aeterna Noctis",
+      "reviewed_at": "2026-07-10T04:35:07.292586+00:00",
+      "title_a": "永恒之夜 终极版",
+      "title_b": "永恒之夜"
+    },
+    {
+      "normalized_titles": [
+        "江湖奇侠录",
+        "江湖录"
+      ],
+      "decision": "distinct",
+      "reason": "详情显示江湖录是门派经营与即时战斗作品；江湖奇侠录是另一款传统回合制武侠 RPG，核心玩法与来源链接均不同。",
+      "reviewed_at": "2026-09-07T07:52:46.662993+00:00",
+      "title_a": "江湖录",
+      "title_b": "江湖奇侠录"
+    },
+    {
+      "normalized_titles": [
+        "沉没之城2白金版",
+        "龙之信条2白金版"
+      ],
+      "decision": "distinct",
+      "reason": "两者分别对应 Dragon’s Dogma 2 与 The Sinking City 2，系列和游戏本体不同；“白金版”只是各自版本后缀。",
+      "reviewed_at": "2026-09-02T07:34:21.978462+00:00",
+      "title_a": "龙之信条2 白金版",
+      "title_b": "沉没之城2 白金版"
+    },
+    {
+      "normalized_titles": [
+        "波斯王子rogue",
+        "波斯王子失落的王冠"
+      ],
+      "decision": "distinct",
+      "reason": "Rogue 是波斯王子动作肉鸽新作，失落的王冠是另一款既有动作冒险作品。",
+      "reviewed_at": "2026-09-21T07:58:54.359126+00:00",
+      "title_a": "波斯王子 Rogue",
+      "title_b": "波斯王子 失落的王冠"
+    },
+    {
+      "normalized_titles": [
+        "流明物语特雷的回忆",
+        "流明物语特雷的回忆lumentalememories"
+      ],
+      "decision": "same",
+      "reason": "标题与详情完全对应，为同一作品的PC与Switch条目",
+      "reviewed_at": "2026-07-16T11:05:40.183500+00:00",
+      "title_a": "流明物语 特雷的回忆",
+      "title_b": "流明物语：特雷的回忆 LumenTale Memories"
+    },
+    {
+      "normalized_titles": [
+        "浅红2",
+        "简红2"
+      ],
+      "decision": "same",
+      "reason": "同一游戏Easy Red 2，浅红2为标题OCR/录入误差，详情描述完全一致",
+      "reviewed_at": "2026-08-17T11:12:23.329273+00:00",
+      "title_a": "浅红2",
+      "title_b": "简红2"
+    },
+    {
+      "normalized_titles": [
+        "深海迷航2",
+        "深海迷航subnautica"
+      ],
+      "decision": "distinct",
+      "reason": "初代与续作，不同作品",
+      "reviewed_at": "2026-07-24T13:13:29.523907+00:00",
+      "title_a": "深海迷航 Subnautica",
+      "title_b": "深海迷航2"
+    },
+    {
+      "normalized_titles": [
+        "深海迷航subnautica",
+        "深海迷航零度之下"
+      ],
+      "decision": "distinct",
+      "reason": "零度之下是独立的外传/资料片作品，与初代是不同游戏",
+      "reviewed_at": "2026-07-24T13:14:13.193080+00:00",
+      "title_a": "深海迷航 零度之下",
+      "title_b": "深海迷航 Subnautica"
+    },
+    {
+      "normalized_titles": [
+        "深渊之印markofthedeep",
+        "深渊之箱chestbuster"
+      ],
+      "decision": "distinct",
+      "reason": "不同游戏，仅标题相似",
+      "reviewed_at": "2026-07-24T13:13:29.395040+00:00",
+      "title_a": "深渊之箱 Chest Buster",
+      "title_b": "深渊之印 Mark of the Deep"
+    },
+    {
+      "normalized_titles": [
+        "深渊之印支持者版",
+        "深渊之潮abyssus"
+      ],
+      "decision": "distinct",
+      "reason": "英文名与核心玩法不同：前者是合作FPS肉鸽，后者是海盗动作冒险",
+      "reviewed_at": "2026-08-21T11:15:49.315926+00:00",
+      "title_a": "深渊之潮 Abyssus",
+      "title_b": "深渊之印 支持者版"
+    },
+    {
+      "normalized_titles": [
+        "深渊之潮abyssus",
+        "深渊之箱chestbuster"
+      ],
+      "decision": "distinct",
+      "reason": "英文名、类型与玩法完全不同：前者是合作FPS肉鸽，后者是宝箱增量战斗",
+      "reviewed_at": "2026-08-21T11:15:48.245836+00:00",
+      "title_a": "深渊之潮 Abyssus",
+      "title_b": "深渊之箱 Chest Buster"
+    },
+    {
+      "normalized_titles": [
+        "深空梦里人2逐星之旅",
+        "深空梦里人2逐星之旅citizensleeper2"
+      ],
+      "decision": "same",
+      "reason": "详情描述完全一致，同一游戏PC/Switch双平台",
+      "reviewed_at": "2026-07-24T13:13:29.658387+00:00",
+      "title_a": "深空梦里人2 逐星之旅",
+      "title_b": "深空梦里人2 逐星之旅 Citizen Sleeper 2"
+    },
+    {
+      "normalized_titles": [
+        "深空梦里人2逐星之旅citizensleeper2",
+        "深空梦里人citizensleeper"
+      ],
+      "decision": "distinct",
+      "reason": "系列续作与一代，是不同作品",
+      "reviewed_at": "2026-07-10T04:35:07.488957+00:00",
+      "title_a": "深空梦里人2 逐星之旅 Citizen Sleeper 2",
+      "title_b": "深空梦里人 Citizen Sleeper"
+    },
+    {
+      "normalized_titles": [
+        "点击地牢tapdungeon",
+        "精灵地牢spiritdungeon"
+      ],
+      "decision": "distinct",
+      "reason": "标题与详情对应不同作品；仅共享地牢题材词，不是同一游戏。",
+      "reviewed_at": "2026-08-29T11:06:16.259896+00:00",
+      "title_a": "点击地牢 Tap Dungeon",
+      "title_b": "精灵地牢（Spirit Dungeon）"
+    },
+    {
+      "normalized_titles": [
+        "点击地牢tapdungeon",
+        "背包地牢backpackdungeon"
+      ],
+      "decision": "distinct",
+      "reason": "标题与详情对应不同作品；一个是卡片迷宫职业肉鸽，另一个是背包整理地牢，非版本差异。",
+      "reviewed_at": "2026-08-29T11:06:14.628116+00:00",
+      "title_a": "点击地牢 Tap Dungeon",
+      "title_b": "背包地牢 Backpack Dungeon"
+    },
+    {
+      "normalized_titles": [
+        "爱的传递",
+        "爱的传递&爱在登入lovedeliveryandloveinlogin"
+      ],
+      "decision": "same",
+      "reason": "后者为包含《爱的传递》的合辑，当前条目是同作单独版本。",
+      "reviewed_at": "2026-08-15T10:00:25.279042+00:00",
+      "title_a": "爱的传递",
+      "title_b": "爱的传递&爱在登入 Love Delivery and Love in Login"
+    },
+    {
+      "normalized_titles": [
+        "王之凝视",
+        "王之凝视thekingiswatching"
+      ],
+      "decision": "same",
+      "reason": "详情页描述完全一致,同一游戏移植Switch",
+      "reviewed_at": "2026-08-03T11:18:25.516223+00:00",
+      "title_a": "王之凝视 The King is Watching",
+      "title_b": "王之凝视"
+    },
+    {
+      "normalized_titles": [
+        "王之凝视",
+        "蛇之凝视serpent’sgaze"
+      ],
+      "decision": "distinct",
+      "reason": "规范标题与英文名均指向不同作品，王国建造与蛇主题游戏并非同一游戏",
+      "reviewed_at": "2026-07-15T09:30:41.054438+00:00",
+      "title_a": "王之凝视",
+      "title_b": "蛇之凝视 Serpent’s Gaze"
+    },
+    {
+      "normalized_titles": [
+        "王冠守护者传奇再现",
+        "王冠守护者传奇归来defenderofthecrown"
+      ],
+      "decision": "same",
+      "reason": "英文名同为 Defender of the Crown，描述均为同一款经典策略游戏的现代重制/回归版本；中文副标题为译名差异。",
+      "reviewed_at": "2026-08-22T11:06:24.153410+00:00",
+      "title_a": "王冠守护者 传奇归来 Defender of the Crown",
+      "title_b": "王冠守护者 传奇再现"
+    },
+    {
+      "normalized_titles": [
+        "王国保卫战3起源",
+        "王国保卫战初代"
+      ],
+      "decision": "distinct",
+      "reason": "《起源》是系列第三作/前传，和初代是不同游戏。",
+      "reviewed_at": "2026-08-26T01:06:46.213124+00:00",
+      "title_a": "王国保卫战3 起源",
+      "title_b": "王国保卫战 初代"
+    },
+    {
+      "normalized_titles": [
+        "真・三国无双起源",
+        "真三国无双8帝国"
+      ],
+      "decision": "distinct",
+      "reason": "帝国系列8代与起源重启作是不同世代的不同游戏",
+      "reviewed_at": "2026-08-03T11:18:25.257790+00:00",
+      "title_a": "真三国无双8 帝国",
+      "title_b": "真・三国无双 起源"
+    },
+    {
+      "normalized_titles": [
+        "空之轨迹the1st",
+        "空之轨迹the2nd"
+      ],
+      "decision": "distinct",
+      "reason": "系列标题明确为 the 2nd 与 the 1st，详情说明为正统续作，是不同作品。",
+      "reviewed_at": "2026-09-21T07:58:53.560870+00:00",
+      "title_a": "空之轨迹 The 2nd",
+      "title_b": "空之轨迹 THE 1ST"
+    },
+    {
+      "normalized_titles": [
+        "符文之骰",
+        "符文之骰runedice"
+      ],
+      "decision": "same",
+      "reason": "中英文标题对应同一 Rune Dice 作品。",
+      "reviewed_at": "2026-08-15T10:00:26.050305+00:00",
+      "title_a": "符文之骰 Rune Dice",
+      "title_b": "符文之骰"
+    },
+    {
+      "normalized_titles": [
+        "红色沙漠",
+        "红色沙漠增强版虚拟机版"
+      ],
+      "decision": "same",
+      "reason": "详情明确说明这是同一款《红色沙漠》的增强版虚拟机运行版本，并提供原版本链接，不是独立游戏。",
+      "reviewed_at": "2026-08-29T11:06:13.760689+00:00",
+      "title_a": "红色沙漠增强版 虚拟机版",
+      "title_b": "红色沙漠"
+    },
+    {
+      "normalized_titles": [
+        "终末机兵nitrogenomega",
+        "终末机兵正式版"
+      ],
+      "decision": "distinct",
+      "reason": "详情链接对应不同作品，正式版与NITRO GEN OMEGA为不同游戏",
+      "reviewed_at": "2026-07-16T11:05:40.557554+00:00",
+      "title_a": "终末机兵 正式版",
+      "title_b": "终末机兵 NITRO GEN OMEGA"
+    },
+    {
+      "normalized_titles": [
+        "绝对魔权",
+        "绝对魔权absolum"
+      ],
+      "decision": "same",
+      "reason": "同一作品的 PC 与 Switch 条目，英文副标题差异",
+      "reviewed_at": "2026-08-15T11:22:23.348107+00:00",
+      "title_a": "绝对魔权",
+      "title_b": "绝对魔权 Absolum"
+    },
+    {
+      "normalized_titles": [
+        "苍翼混沌效应",
+        "苍翼混沌效应x"
+      ],
+      "decision": "same",
+      "reason": "同一 BlazBlue Entropy Effect，X 为版本/命名差异。",
+      "reviewed_at": "2026-08-15T10:00:26.168642+00:00",
+      "title_a": "苍翼 混沌效应X",
+      "title_b": "苍翼 混沌效应"
+    },
+    {
+      "normalized_titles": [
+        "英雄不再3",
+        "英雄连3"
+      ],
+      "decision": "distinct",
+      "reason": "不同系列，英雄不再3(No More Heroes 3)与英雄连3(Company of Heroes 3)无关",
+      "reviewed_at": "2026-08-17T11:12:22.947962+00:00",
+      "title_a": "英雄不再3",
+      "title_b": "英雄连3"
+    },
+    {
+      "normalized_titles": [
+        "英雄连3",
+        "英雄连3最终防线"
+      ],
+      "decision": "distinct",
+      "reason": "英雄连3是本篇策略游戏，最终防线是独立的Roguelite波次防御外传，无需拥有本篇",
+      "reviewed_at": "2026-08-01T06:40:18.232562+00:00",
+      "title_a": "英雄连3",
+      "title_b": "英雄连3 最终防线"
+    },
+    {
+      "normalized_titles": [
+        "蓝色反射少女们的奇迹",
+        "蔚蓝反射quartet少女们的奇迹bluereflectionquartet"
+      ],
+      "decision": "same",
+      "reason": "同一BLUE REFLECTION合集,数据库已是PC/Switch,本次为日文版重复发帖",
+      "reviewed_at": "2026-08-03T11:18:26.024134+00:00",
+      "title_a": "蔚蓝反射 Quartet 少女们的奇迹 BLUE REFLECTION Quartet",
+      "title_b": "蓝色反射 少女们的奇迹"
+    },
+    {
+      "normalized_titles": [
+        "衔尾龙之铃",
+        "衔尾龙之铃dragonloop"
+      ],
+      "decision": "same",
+      "reason": "中英文标题、五日循环和银河城描述一致",
+      "reviewed_at": "2026-07-10T04:35:06.922490+00:00",
+      "title_a": "衔尾 龙之铃",
+      "title_b": "衔尾 龙之铃 Dragon Loop"
+    },
+    {
+      "normalized_titles": [
+        "超时空方舟",
+        "超时空方舟chronoark"
+      ],
+      "decision": "same",
+      "reason": "中文标题与英文名完全对应，是同一作品的不同版本条目",
+      "reviewed_at": "2026-07-15T09:30:41.310332+00:00",
+      "title_a": "超时空方舟",
+      "title_b": "超时空方舟 Chrono Ark"
+    },
+    {
+      "normalized_titles": [
+        "超级机器人大战y",
+        "超级机器人大战y终极版"
+      ],
+      "decision": "same",
+      "reason": "同一作品的 PC 终极版与 Switch 版本",
+      "reviewed_at": "2026-08-15T11:22:23.543599+00:00",
+      "title_a": "超级机器人大战Y 终极版",
+      "title_b": "超级机器人大战Y"
+    },
+    {
+      "normalized_titles": [
+        "超英派遣中心",
+        "超英派遣中心dispatch"
+      ],
+      "decision": "same",
+      "reason": "英文名Dispatch与中文标题对应，为同一作品的PC与Switch条目",
+      "reviewed_at": "2026-07-16T11:05:40.287363+00:00",
+      "title_a": "超英派遣中心 Dispatch",
+      "title_b": "超英派遣中心"
+    },
+    {
+      "normalized_titles": [
+        "迪士尼梦幻星谷disneydreamlightvalley",
+        "迪士尼梦幻星谷奇幻版"
+      ],
+      "decision": "same",
+      "reason": "同一 Disney Dreamlight Valley，奇幻版为版本名。",
+      "reviewed_at": "2026-08-15T10:00:25.562105+00:00",
+      "title_a": "迪士尼梦幻星谷 奇幻版",
+      "title_b": "迪士尼梦幻星谷 Disney Dreamlight Valley"
+    },
+    {
+      "normalized_titles": [
+        "量子猛兽quantum",
+        "量子猛兽quantumbeast"
+      ],
+      "decision": "same",
+      "reason": "Steam 条目确认 Quantum 的规范标题为 Quantum Beast，发行商、玩法与链接对应同一款游戏；新条目只是 Gamer520 标题省略了 Beast。",
+      "reviewed_at": "2026-09-07T07:52:46.895797+00:00",
+      "title_a": "量子猛兽 Quantum",
+      "title_b": "量子猛兽 Quantum Beast"
+    },
+    {
+      "normalized_titles": [
+        "铁尾传奇2冬之须",
+        "铁尾传奇2冬之须tailsofiron2whiskers"
+      ],
+      "decision": "same",
+      "reason": "两条帖子都对应 Tails of Iron 2: Whiskers，详情剧情、玩法和英文名一致，仅平台帖子标题是否附英文名不同。",
+      "reviewed_at": "2026-08-22T11:06:24.848224+00:00",
+      "title_a": "铁尾传奇2 冬之须",
+      "title_b": "铁尾传奇2 冬之须 Tails of Iron 2 Whiskers"
+    },
+    {
+      "normalized_titles": [
+        "银白钢铁x1+2双重收藏辑",
+        "银白钢铁伊克斯1+2双重收藏辑"
+      ],
+      "decision": "same",
+      "reason": "PC 与 Switch 是同一合辑，标题译名不同",
+      "reviewed_at": "2026-07-10T15:03:49.467728+00:00",
+      "title_a": "银白钢铁伊克斯1+2双重收藏辑",
+      "title_b": "银白钢铁X 1+2 双重收藏辑"
+    },
+    {
+      "normalized_titles": [
+        "闪电十一人英雄们的胜利之路",
+        "闪电十一人英雄们的胜利之路高级版"
+      ],
+      "decision": "same",
+      "reason": "高级版是同一款《闪电十一人 英雄们的胜利之路》的本体加升级补丁与DLC版本，不是独立游戏。",
+      "reviewed_at": "2026-08-22T11:06:24.509662+00:00",
+      "title_a": "闪电十一人 英雄们的胜利之路 高级版",
+      "title_b": "闪电十一人 英雄们的胜利之路"
+    },
+    {
+      "normalized_titles": [
+        "队长小翼2世界群星白金版",
+        "队长小翼2世界群星终极版"
+      ],
+      "decision": "same",
+      "reason": "PC 白金版与 Switch 终极版是同一款游戏，仅发行版本和平台不同。",
+      "reviewed_at": "2026-08-28T13:15:30.975988+00:00",
+      "title_a": "队长小翼2 世界群星 白金版",
+      "title_b": "队长小翼2 世界群星 终极版"
+    },
+    {
+      "normalized_titles": [
+        "阿格洛斯2",
+        "阿格洛斯2aggelos2"
+      ],
+      "decision": "same",
+      "reason": "Switch 标题只是 PC 条目的中英文扩展写法，详情均为 Aggelos 2，属于同一游戏。",
+      "reviewed_at": "2026-08-31T14:29:31.472382+00:00",
+      "title_a": "阿格洛斯2 Aggelos 2",
+      "title_b": "阿格洛斯2"
+    },
+    {
+      "normalized_titles": [
+        "鬼魂大师重生",
+        "鬼魂大师重生ghostmasterresurrection"
+      ],
+      "decision": "same",
+      "reason": "中文短标题与带英文副标题的记录是同一款 Ghost Master Resurrection。",
+      "reviewed_at": "2026-08-28T13:15:31.960610+00:00",
+      "title_a": "鬼魂大师 重生",
+      "title_b": "鬼魂大师 重生 Ghost Master Resurrection"
+    },
+    {
+      "normalized_titles": [
+        "魔法门之异世界觉醒",
+        "魔法门之闇界者觉醒"
+      ],
+      "decision": "distinct",
+      "reason": "规范标题及对应作品不同。",
+      "reviewed_at": "2026-08-15T10:00:25.373722+00:00",
+      "title_a": "魔法门之闇界者觉醒",
+      "title_b": "魔法门之异世界觉醒"
+    },
+    {
+      "normalized_titles": [
+        "魔法门之英雄无敌ⅲ完整版",
+        "魔法门之英雄无敌上古纪元"
+      ],
+      "decision": "distinct",
+      "reason": "前者是 1999 年《英雄无敌III》及资料片合集，后者是系列正统前传，作品不同。",
+      "reviewed_at": "2026-08-28T13:15:32.397152+00:00",
+      "title_a": "魔法门之英雄无敌Ⅲ 完整版",
+      "title_b": "魔法门之英雄无敌 上古纪元"
+    },
+    {
+      "normalized_titles": [
+        "龙之信条2",
+        "龙之信条2白金版"
+      ],
+      "decision": "same",
+      "reason": "白金版只是《龙之信条2》的豪华/完整内容版本，详情与已有条目同属 Dragon’s Dogma 2；不是独立作品。",
+      "reviewed_at": "2026-09-02T07:31:20.890895+00:00",
+      "title_a": "龙之信条2 白金版",
+      "title_b": "龙之信条2"
+    }
+  ]
+}
