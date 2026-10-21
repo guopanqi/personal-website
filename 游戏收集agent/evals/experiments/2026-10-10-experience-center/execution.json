@@ -1,0 +1,19 @@
+{
+  "executor": "Codex collaboration.spawn_agent",
+  "model_alias": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "fork_turns": "none",
+  "python": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "client_date": "2026-10-10",
+  "client_timezone": "Asia/Singapore",
+  "baseline_agent": "/root/baseline_luna",
+  "candidate_agent": "/root/candidate_luna",
+  "baseline_reused": false,
+  "model_provider_version": null,
+  "sampling_seed": null,
+  "temperature": null,
+  "isolation": "fresh conversation plus explicit file read restrictions; not a separate filesystem sandbox",
+  "runner_envelope_note": "Baseline was run before prepare using the same fields and frozen title inputs; candidate read generated request.md. Prompt wording is substantially equivalent but not byte-identical.",
+  "tool_sha256_at_recording": "e10f8e81615a0dcd09595c62d3cee67f82c93bd11c0ec6aae135d963ac2d66a1"
+}

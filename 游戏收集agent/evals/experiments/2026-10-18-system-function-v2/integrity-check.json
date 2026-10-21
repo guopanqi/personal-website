@@ -1,0 +1,16 @@
+{
+  "游戏收集agent/taste.txt": {
+    "unchanged_since_freeze": true,
+    "sha256": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968"
+  },
+  "游戏收集agent/游戏库-Gamer520更新SKILL.md": {
+    "unchanged_since_freeze": true,
+    "sha256": "ee918703deea1ad4801d9043281f021969f80acd3d022762026dbf2c170d4dc2"
+  },
+  "游戏收集agent/game-library-test-set-draft.json": {
+    "unchanged_since_freeze": true,
+    "sha256": "0fc16a0443262fee9baad02caf831ac7540dbee491e4709d508beed71693907f"
+  },
+  "candidate_taste_identical": true,
+  "both_baselines_identical": true
+}

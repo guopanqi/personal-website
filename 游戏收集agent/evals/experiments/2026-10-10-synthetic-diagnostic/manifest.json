@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-10-10T02:57:49.270481+00:00",
+  "git_head": "54fb88eaa2dc625b4fa33b4b5f3645eb742ffe06",
+  "baseline_origin": "current_working_tree",
+  "hypothesis": "检查相同规则下题材变化、不同叙事因果和玩法探索的具体识别；只作为辅助诊断，不扩充正式金标准，也不要求推荐强度一致。",
+  "experiment_mode": "auxiliary_diagnostic",
+  "split": "diagnostic",
+  "model": "gpt-6-luna",
+  "repetition": 1,
+  "runner_environment": {
+    "python": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "tool_sha256": "3f19979f820aac4f8430fce9de8cd6cbf7cc101d6c434793268fc2862dc37ebb",
+    "reasoning_effort": "high",
+    "sampling_seed": null,
+    "temperature": null,
+    "provider_model_revision": null
+  },
+  "input_limitations": "synthetic diagnostic only; unapproved rubrics; not real-game verification or blind holdout",
+  "hashes": {
+    "inputs.json": "180655e2724d0c58276dfa15dfbc966be529ab216f2185449a37f5f05abb997b",
+    "expectations.json": "f2f5292d9cd135b5054c7e1fb42c0f6b0cac853bb1f3c6bc5e462193624f07c7",
+    "gold-source.json": "0fc16a0443262fee9baad02caf831ac7540dbee491e4709d508beed71693907f",
+    "baseline-taste.txt": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968",
+    "baseline-SKILL.md": "ab10dd108057aa17bfa8d63bab98b26641c7ba2edb17c6f2ec77bf4ebccd9ca9",
+    "candidate-taste.txt": "0463d0697c360f7c46a4dcef068b5304f9b149bb3d6aa1ed50f0160d108d3f4b",
+    "candidate-SKILL.md": "56abf603d975f5383f9b0da77c398ac22646028d87518f0afbd5dc376ec7211e",
+    "diagnostic-source.json": "340e4500945910260598dd56f7636ad7ed10bf6de54c6b5bf9342314ff8a9736"
+  }
+}

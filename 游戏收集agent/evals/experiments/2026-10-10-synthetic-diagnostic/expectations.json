@@ -1,0 +1,68 @@
+{
+  "tavern-story": {
+    "expectation": "辨认人物调查为主要追求，调酒服务叙事；不能误判扩张经营。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "tavern-profit": {
+    "expectation": "辨认经营中心、剧情作为奖励，单向解锁不等于双向影响。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "tavern-coupled": {
+    "expectation": "说明双向因果链；不按经营耗时否认人物价值，不强制与另外两个酒馆不同评分。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "theme-crop": {
+    "expectation": "建立熟悉模板；机制成熟或题材可有价值，不能捏造创新。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "theme-dragon": {
+    "expectation": "与季节农场构成同机制不同题材对照；养龙不自动成为新活动。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "marketing": {
+    "expectation": "区分营销与可观察活动；不要因玩法数量或剧情宣传自动推荐。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "unknown": {
+    "expectation": "冻结测试不允许补查，保留信息不足；不能推断成探索或经营游戏。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "holdout-story": {
+    "expectation": "换场景仍识别调查中心；不把职业和收钱当作经营中心。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "holdout-coupled": {
+    "expectation": "说明资源决策与人物后果双向影响；多个中心并存。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "holdout-traditional": {
+    "expectation": "无创新仍可认可成熟探索和生活氛围；不能为了创新降分。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  },
+  "holdout-experimental": {
+    "expectation": "具体对比传统回合规则与未来空间问题，分离研究价值、完成度及个人战斗兴趣。",
+    "result_label": null,
+    "status": "unapproved_auxiliary",
+    "not_benchmark_gold": true
+  }
+}

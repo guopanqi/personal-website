@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-18T06:41:04.927519+00:00",
+  "git_head": "54fb88eaa2dc625b4fa33b4b5f3645eb742ffe06",
+  "baseline_origin": "current_working_tree",
+  "hypothesis": "在第一版的系统作用与摩擦证据规则后增加最终理由回查：未知负担不得当作限制，表面活动不能覆盖已知价值，正向作用也不得虚构；检验是否减少类型式摩擦，同时保护原有偏好与证据边界。",
+  "experiment_mode": "approved_benchmark",
+  "split": "dev",
+  "model": "gpt-6-luna",
+  "repetition": 1,
+  "runner_environment": {
+    "python": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "tool_sha256": "e3eb6a8827459a5e76aa1149e62ff30960894df31d0da8a1a46745c34793068f",
+    "reasoning_effort": "high",
+    "sampling_seed": null,
+    "temperature": null,
+    "provider_model_revision": null
+  },
+  "input_limitations": "legacy title_only tests rely on model knowledge, not verified gameplay evidence",
+  "hashes": {
+    "inputs.json": "bc23ac0b386f029c8bfc69695db75fd38de84b4c28977f6c12d61a6fd0bb1f4a",
+    "expectations.json": "4140288dfea54c4489e0ccc6e545032a393f15e3297da5f0c7223d280b24890b",
+    "gold-source.json": "0fc16a0443262fee9baad02caf831ac7540dbee491e4709d508beed71693907f",
+    "baseline-taste.txt": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968",
+    "baseline-SKILL.md": "ee918703deea1ad4801d9043281f021969f80acd3d022762026dbf2c170d4dc2",
+    "candidate-taste.txt": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968",
+    "candidate-SKILL.md": "1c5720a02fff5945860b76ab68236ce41a8cb373fc45311480c89ba6ab9a787c"
+  }
+}

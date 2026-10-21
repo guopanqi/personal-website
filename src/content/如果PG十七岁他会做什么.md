@@ -1,3 +1,4 @@
+
 Main post: Someone asked what I'd do if I were 17. I'd learn how to build LLMs from scratch, and then train ones as powerful as I could with whatever hardware I could get access to.His follow-up reply (to his own post): Notice that what I would not do is try to start a startup. Instead I'd build the foundation of knowledge to base a startup on later. Way better startup ideas would grow out of understanding LLMs deeply than trying to start companies based on what I knew at 17.Replies to other people:
 
 - To someone asking “train it to do what is the interesting question”: If I were 17 I'd probably train it to do something frivolous like play computer games. But I'd learn a lot from it anyway.

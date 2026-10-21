@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-14T06:57:49.905416+00:00",
+  "git_head": "54fb88eaa2dc625b4fa33b4b5f3645eb742ffe06",
+  "baseline_origin": "current_working_tree",
+  "hypothesis": "把详情页评分明确标为暂定初评，并要求符合门槛的候选完成站外资料核验后重新判断最终评分，减少营销文案或单一来源造成的判断偏差；保护明确硬排除候选的低成本处理和现有推荐覆盖。",
+  "experiment_mode": "approved_benchmark",
+  "split": "dev",
+  "model": "gpt-6-luna",
+  "repetition": 1,
+  "runner_environment": {
+    "python": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "tool_sha256": "e3eb6a8827459a5e76aa1149e62ff30960894df31d0da8a1a46745c34793068f",
+    "reasoning_effort": "high",
+    "sampling_seed": null,
+    "temperature": null,
+    "provider_model_revision": null
+  },
+  "input_limitations": "legacy title_only tests rely on model knowledge, not verified gameplay evidence",
+  "hashes": {
+    "inputs.json": "bc23ac0b386f029c8bfc69695db75fd38de84b4c28977f6c12d61a6fd0bb1f4a",
+    "expectations.json": "4140288dfea54c4489e0ccc6e545032a393f15e3297da5f0c7223d280b24890b",
+    "gold-source.json": "0fc16a0443262fee9baad02caf831ac7540dbee491e4709d508beed71693907f",
+    "baseline-taste.txt": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968",
+    "baseline-SKILL.md": "ab10dd108057aa17bfa8d63bab98b26641c7ba2edb17c6f2ec77bf4ebccd9ca9",
+    "candidate-taste.txt": "0463d0697c360f7c46a4dcef068b5304f9b149bb3d6aa1ed50f0160d108d3f4b",
+    "candidate-SKILL.md": "9bbb7de2503e17ae725a17ccadf569f4065bd40255cbff1e7dee78a367375ef1"
+  }
+}

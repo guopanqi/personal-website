@@ -1,0 +1,1881 @@
+{
+  "assessment_policy": "recommendation-coverage-v2",
+  "manifest": {
+    "created_at": "2026-10-18T06:41:04.927519+00:00",
+    "git_head": "54fb88eaa2dc625b4fa33b4b5f3645eb742ffe06",
+    "baseline_origin": "current_working_tree",
+    "hypothesis": "在第一版的系统作用与摩擦证据规则后增加最终理由回查：未知负担不得当作限制，表面活动不能覆盖已知价值，正向作用也不得虚构；检验是否减少类型式摩擦，同时保护原有偏好与证据边界。",
+    "experiment_mode": "approved_benchmark",
+    "split": "dev",
+    "model": "gpt-6-luna",
+    "repetition": 1,
+    "runner_environment": {
+      "python": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+      "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+      "tool_sha256": "e3eb6a8827459a5e76aa1149e62ff30960894df31d0da8a1a46745c34793068f",
+      "reasoning_effort": "high",
+      "sampling_seed": null,
+      "temperature": null,
+      "provider_model_revision": null
+    },
+    "input_limitations": "legacy title_only tests rely on model knowledge, not verified gameplay evidence",
+    "hashes": {
+      "inputs.json": "bc23ac0b386f029c8bfc69695db75fd38de84b4c28977f6c12d61a6fd0bb1f4a",
+      "expectations.json": "4140288dfea54c4489e0ccc6e545032a393f15e3297da5f0c7223d280b24890b",
+      "gold-source.json": "0fc16a0443262fee9baad02caf831ac7540dbee491e4709d508beed71693907f",
+      "baseline-taste.txt": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968",
+      "baseline-SKILL.md": "ee918703deea1ad4801d9043281f021969f80acd3d022762026dbf2c170d4dc2",
+      "candidate-taste.txt": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968",
+      "candidate-SKILL.md": "1c5720a02fff5945860b76ab68236ce41a8cb373fc45311480c89ba6ab9a787c"
+    }
+  },
+  "metrics": {
+    "baseline": {
+      "cases": 33,
+      "gold_label_cases": 33,
+      "exact_label_matches": 23,
+      "information_insufficient": 5,
+      "recommendation_boundary_matches": 28,
+      "strength_variations": 5,
+      "unexpected_recommendations": 0,
+      "positive_unresolved": 0,
+      "negative_gold_cases": 8,
+      "negative_correctly_rejected": 3,
+      "negative_unresolved": 5,
+      "positive_gold_cases": 25,
+      "positive_retained": 25,
+      "positive_rejected": 0
+    },
+    "candidate": {
+      "cases": 33,
+      "gold_label_cases": 33,
+      "exact_label_matches": 19,
+      "information_insufficient": 9,
+      "recommendation_boundary_matches": 24,
+      "strength_variations": 5,
+      "unexpected_recommendations": 0,
+      "positive_unresolved": 1,
+      "negative_gold_cases": 8,
+      "negative_correctly_rejected": 0,
+      "negative_unresolved": 8,
+      "positive_gold_cases": 25,
+      "positive_retained": 24,
+      "positive_rejected": 0
+    }
+  },
+  "cases": [
+    {
+      "id": "legacy-01",
+      "title": "弗洛伦斯 Florence",
+      "expected": {
+        "title": "弗洛伦斯 Florence",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "必须推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究",
+          "系统策略",
+          "社交情境"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "互动谜题与日常情感高度融合，游戏形式直接参与讲故事。"
+      },
+      "baseline": {
+        "id": "legacy-01",
+        "title": "弗洛伦斯 Florence",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "以短篇互动形式体验一段恋爱关系从相遇、亲密到摩擦与变化，情绪和生活细节是继续推进的动力。",
+        "experience_center": "轻量、亲密而带些惆怅的关系叙事，适合一次短时体验。",
+        "mechanics": "通过点击、拖动、拼图式小互动表现日常交流与关系阶段；更接近互动绘本，而非传统冒险或复杂模拟。",
+        "innovation": "交互会随关系情境改变，具体把沟通、妥协等感受转为简单操作；这是表达方式上的有效设计，不是复杂玩法系统。",
+        "narrative_role": "人物关系和情绪变化是主体，日常生活片段提供具体感。",
+        "personal_interest": "题材、氛围和生活感高度贴合；篇幅短、交互浅，仍值得点开体验。",
+        "research_value": "可观察短篇互动如何用少量、情境化操作承担关系叙事。",
+        "reason": "故事驱动、情绪表达与日常细节符合口味，简短交互有形式价值；内容体量和玩法深度有限，故推荐而非必须推荐。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网或核验版本、平台与细节。",
+        "uncertainty": "总体身份和大致形式较熟悉，但本次没有独立核验具体互动内容。"
+      },
+      "candidate": {
+        "id": "legacy-01",
+        "title": "弗洛伦斯 Florence",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家跟随一段亲密关系从相遇、磨合到变化，以短章节和轻量互动体验情绪转折。其核心更接近交互式图像小说，拼图式操作承载日常沟通，并非复杂系统探索。",
+        "experience_center": "短时、单人、以人物情绪和关系共鸣为主；适合关注形式表达与亲密关系叙事。",
+        "mechanics": "按提示完成简短触控互动，如拼合、整理或节奏配合，互动随关系阶段改变，主要提供表达而非可重复策略。",
+        "innovation": "相较纯阅读的图像小说，互动动作会随关系状态变化，具体提升的是情绪节奏与参与感；不构成深层系统创新。",
+        "narrative_role": "亲密关系与生活片段是主体，互动用来表现沟通、默契及渐行渐远。",
+        "personal_interest": "人物与氛围匹配度较高；短篇、低操作压力，但若期待自由探索或复杂选择，内容较薄。",
+        "research_value": "可观察交互如何把关系变化转成玩家动作，是轻叙事形式的案例。",
+        "reason": "叙事、形式和氛围价值足以推荐；不是纯点击冒险，但可玩系统和重玩决策有限，因此不列必须推荐。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "作品身份和大体形式较明确；具体互动与叙事呈现细节未核验。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "推荐强度浮动",
+      "candidate_label_assessment": "推荐强度浮动",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-02",
+      "title": "冰汽时代 Frostpunk",
+      "expected": {
+        "title": "冰汽时代 Frostpunk",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "必须推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "严苛环境、制度选择和人性代价共同构成强烈体验。"
+      },
+      "baseline": {
+        "id": "legacy-02",
+        "title": "冰汽时代 Frostpunk",
+        "score": 5,
+        "result_label": "必须推荐",
+        "judgment": "你要在极寒末世维持一座城市，让居民活下去，同时不断面对秩序、希望和代价之间的选择；体验由资源压力和制度后果持续推进。",
+        "experience_center": "城市经营、危机应对与道德压力并行，选择会改变社会状态并带来事件后果。",
+        "mechanics": "围绕采集、供热、建造、劳动力安排和法令管理展开，资源与天气形成时间压力；属于城市生存经营与事件决策的组合。",
+        "innovation": "相较常规城市建造，严寒让供热和工作安排直接关系生存，法令与秩序选择又把效率决策推向社会代价；不是单纯扩城优化。",
+        "narrative_role": "事件、居民处境和制度选择让宏观生存管理落到人的生活与尊严上。",
+        "personal_interest": "管理计算服务于有情绪和后果的抉择，系统压力、氛围和叙事驱动都很贴合。",
+        "research_value": "值得研究其如何把城市资源链、环境威胁、法令和叙事后果结合成持续的选择压力。",
+        "reason": "核心循环同时满足经营取舍、氛围、制度压力和人文后果，作品辨识度与体验牵引突出；复杂管理是主要门槛，但符合用户对有意义计算的偏好。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验具体版本、DLC或平衡情况。",
+        "uncertainty": "熟知其基本设计方向，具体游玩感受会受难度、场景和版本影响。"
+      },
+      "candidate": {
+        "id": "legacy-02",
+        "title": "冰汽时代 Frostpunk",
+        "score": 5,
+        "result_label": "必须推荐",
+        "judgment": "玩家在极寒末日维持一座城市，持续分配煤、食物、劳动力并制定法令；保住城市运行的同时，决定社会秩序与个人尊严要付出什么代价。",
+        "experience_center": "单人城市经营与制度压力为主，短期事件和长期存续交织；适合喜欢资源压力转化成人物处境的人。",
+        "mechanics": "围绕热量、人口、工作班次、建筑和法令循环决策，天气与事件让短缺产生连锁后果。",
+        "innovation": "相对一般城市建造，极端低温使供热、劳动安排和法律选择成为同一条生存链；法令把效率选择变成持续的社会后果。",
+        "narrative_role": "事件、法令和居民处境让宏观经营不断落到具体的人性与政治代价。",
+        "personal_interest": "资源计算和严峻压力明确服务于选择与氛围，和用户的制度压力、经营取舍偏好高度契合。",
+        "research_value": "系统耦合、危机节奏和道德选择值得重点研究，且表达与核心循环结合紧密。",
+        "reason": "个人体验、系统策略、氛围与叙事选择均有强匹配，适合优先点开。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "核心类型判断较有把握，但本次没有核验具体版本、模式或实际流程细节。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-03",
+      "title": "短途旅行 A Short Hike",
+      "expected": {
+        "title": "短途旅行 A Short Hike",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "必须推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "轻松探索、简单机制和温柔氛围形成完整短旅途。"
+      },
+      "baseline": {
+        "id": "legacy-03",
+        "title": "短途旅行 A Short Hike",
+        "score": 5,
+        "result_label": "必须推荐",
+        "judgment": "你在一座小岛上散步、攀登、认识岛民并逐步接近山顶，轻松探索和与人相遇构成自然的前进动力。",
+        "experience_center": "短小、温柔、有旅途感的探索体验，目标明确但允许随兴绕路。",
+        "mechanics": "在小型开放区域步行、攀爬、滑翔、收集和完成支线；探索路线与角色闲谈是主要活动。",
+        "innovation": "相较常见开放世界，它缩小地图与目标规模，并用攀登能力和地形路线鼓励自选节奏；属于成熟探索结构的精炼执行，不夸称全新玩法。",
+        "narrative_role": "岛上居民的小事与主角的短途旅行共同提供轻微但有效的情绪牵引。",
+        "personal_interest": "氛围、地点、生活感、低压力探索和具体人物都高度匹配。",
+        "research_value": "适合观察小尺度地图、移动能力和支线人物如何在短篇幅中建立探索回报。",
+        "reason": "个人匹配度高且体验完整，探索不是为堆内容而扩张；即使玩法结构熟悉，形式和执行也足以支持优先体验。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验平台、版本或内容差异。",
+        "uncertainty": "基本循环认知较有把握，未核实当前发行版本及具体兼容性。"
+      },
+      "candidate": {
+        "id": "legacy-03",
+        "title": "短途旅行 A Short Hike",
+        "score": 5,
+        "result_label": "必须推荐",
+        "judgment": "玩家在一座小岛上悠闲徒步，边帮居民做小事、找路和收集羽毛，边逐步接近山顶；驱动力是轻松探索与途中相遇。",
+        "experience_center": "单人短时探索，适合随意偏离路线、和岛上居民交谈，而非追求高强度挑战。",
+        "mechanics": "探索地图、攀爬滑翔、完成支线并收集羽毛提升移动能力，能力成长打开更多路线。",
+        "innovation": "在轻量开放地图模板上，攀爬与滑翔直接把地形阅读变成行动选择，羽毛成长支持路线拓展；不是靠复杂任务树推进。",
+        "narrative_role": "支线对话和小委托营造社区日常，主目标提供温和牵引。",
+        "personal_interest": "氛围、探索、生活感、低操作压力和明确视觉风格都很匹配。",
+        "research_value": "值得观察短流程地图如何靠移动能力、支线和地形反馈形成探索节奏。",
+        "reason": "个人体验匹配很高，形式轻巧而完成度鲜明，推荐优先体验。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "根据知名作品的一般印象判断；具体平台版本与支线细节未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-04",
+      "title": "渔帆暗涌 DREDGE",
+      "expected": {
+        "title": "渔帆暗涌 DREDGE",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "必须推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "神秘驱动探索，船只成长和经济结构为发现新内容提供动力。"
+      },
+      "baseline": {
+        "id": "legacy-04",
+        "title": "渔帆暗涌 DREDGE",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "你驾驶渔船在群岛间接单、捕鱼和探索，日常谋生逐步被夜间危险与怪异秘密侵入；收集发现和压迫氛围推动前行。",
+        "experience_center": "航行、谋生、探索与克制的怪奇恐怖感结合，核心吸引力来自海域发现和风险管理。",
+        "mechanics": "出航规划时间和路线，捕鱼并整理有限货舱，回港出售、修船和推进任务；夜晚增加风险。近似轻经营探索冒险。",
+        "innovation": "相较普通钓鱼或采集循环，货舱空间、航行时段和夜间风险把捕捞路线变成取舍；主题氛围强化了熟悉循环，但结构新意幅度有限。",
+        "narrative_role": "支线人物、岛屿传闻和渐进揭示的异常为任务与探索赋予故事牵引。",
+        "personal_interest": "氛围、海上探索、任务和资源安排贴合；恐怖悬疑色彩是明显摩擦，但并非仅凭标题可断言为纯恐怖互动影游。",
+        "research_value": "值得看其如何把货舱整理、航行时限和风险连接成有主题感的探索循环。",
+        "reason": "经营、探索、任务与强氛围提供多项真实价值；怪奇恐怖和夜间压力可能降低个人舒适度，适合推荐但不必优先。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验主循环细节、恐怖强度或版本。",
+        "uncertainty": "身份和大致循环较明确，恐怖成分对用户的实际影响未知。"
+      },
+      "candidate": {
+        "id": "legacy-04",
+        "title": "渔帆暗涌 DREDGE",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家白天出海捕鱼、整理有限船舱并升级船只，夜间在危险海域承受风险；收集与交付驱动探索，诡异氛围逐步覆盖平静渔业日常。",
+        "experience_center": "单人短途航行与探索；适合喜欢地图推进、工作循环和怪奇氛围的人。",
+        "mechanics": "选择航线和捕鱼点、管理船舱格子、卖鱼换升级，再以新装备进入更远水域；夜间风险影响返航判断。",
+        "innovation": "相对常见钓鱼经营，船舱格子与航行风险让捕获、整理和路线规划相互制约；恐怖主要由环境与风险累积营造，细节需核验。",
+        "narrative_role": "委托、岛屿居民与海域秘密提供推进线索，渔业劳动构成叙事节奏。",
+        "personal_interest": "探索和经营有吸引力；诡异恐怖感大概率可接受，但若惊吓或压力很强需留意。",
+        "research_value": "捕鱼与空间管理、航线风险结合的体验循环具有分析价值。",
+        "reason": "有持续探索驱动及鲜明氛围，值得打开细看；未知的夜间压力暂不当成已证实的劝退项。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "大体玩法来自既有知识，恐怖强度、重复程度与剧情占比未经核验。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "推荐强度浮动",
+      "candidate_label_assessment": "推荐强度浮动",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-05",
+      "title": "深空梦里人2 Citizen Sleeper 2: Starward Vector",
+      "expected": {
+        "title": "深空梦里人2 Citizen Sleeper 2: Starward Vector",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "必须推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "以骰子、关系、任务和生活处境组织出持续展开的叙事体验。"
+      },
+      "baseline": {
+        "id": "legacy-05",
+        "title": "深空梦里人2 Citizen Sleeper 2: Starward Vector",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "你在太空边缘承担工作、管理队伍与不稳定处境，并通过合同和关系选择寻找出路；人物生存压力和章节式故事提供推进力。",
+        "experience_center": "骰子驱动的叙事角色扮演与资源管理，体验适合偏好文字、人物和选择的单人游玩。",
+        "mechanics": "每天分配骰子行动、承接任务、处理技能检定与资源状态；相较前作增加队伍和合同等管理层面，具体影响需本次实机核验。",
+        "innovation": "相较以个人日常为主的前作，续作加入队伍协作与合同结构，可能改变风险分配和行动安排；这属于系列内部的结构扩展，细节未经核验。",
+        "narrative_role": "人物关系、劳动处境与科幻世界中的生存选择是主要内容。",
+        "personal_interest": "叙事、资源压力、骰子作为体验引擎都很合口味；太空题材是明确摩擦，且续作可能要求熟悉前作。",
+        "research_value": "可关注队伍与合同系统怎样改变叙事骰子玩法的行动选择，值得进一步核验。",
+        "reason": "已知系列方向与用户偏好高度相交，续作机制也有研究线索；太空设定和未核实的续作改动限制优先级。",
+        "evidence_basis": "仅依据标题和对系列的既有知识判断；未联网核验续作实际循环、内容或与前作关系。",
+        "uncertainty": "对系列基调有基础认识，但本条续作的具体新规则未经确认。"
+      },
+      "candidate": {
+        "id": "legacy-05",
+        "title": "深空梦里人2 Citizen Sleeper 2: Starward Vector",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家作为受损的仿生人带着一群边缘人物在太空边缘接活求生；若沿用前作的叙事骰子框架，核心吸引力会是风险管理与关系故事。",
+        "experience_center": "单人章节式角色扮演与资源压力；太空题材是明显摩擦，人物关系和工作处境可能缓冲但不消除。",
+        "mechanics": "据系列印象，骰子分配到行动、处理状态与资源并推进任务；续作新规则如何改变行动选择尚不能断言。",
+        "innovation": "相对前作是否有新骰子规则、队伍协作或压力机制，需要具体玩法证据；标题及系列关系不能证明结构创新。",
+        "narrative_role": "工作、债务、生存和同伴关系预计是体验核心，具体事件需核验。",
+        "personal_interest": "系统选择与人物日常方向契合，太空题材降低直觉兴趣；在确认主循环前不把新意写成事实。",
+        "research_value": "系列以骰子驱动叙事的设计值得关注，续作变化暂待核实。",
+        "reason": "明确叙事与系统价值足以推荐，但太空题材和未核验的续作差异使其不宜给更高优先级。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "据系列标题与已知前作推断；续作实际规则、内容完成度与发行版本未核验。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "推荐强度浮动",
+      "candidate_label_assessment": "推荐强度浮动",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-06",
+      "title": "孤星寂海 In Other Waters",
+      "expected": {
+        "title": "孤星寂海 In Other Waters",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "必须推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "安静、优雅、引人深入的探索体验，故事作为引导而不是压倒一切的主轴。"
+      },
+      "baseline": {
+        "id": "legacy-06",
+        "title": "孤星寂海 In Other Waters",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "你通过一套抽象的探测界面陪伴研究员探索异星海洋，阅读环境信号、协助采样并逐步理解地点与人物；观察和发现驱动前进。",
+        "experience_center": "以界面和信息解读为核心的缓慢探索，氛围与叙事通过有限视角建立。",
+        "mechanics": "在地图式界面读取传感器信息、规划移动、扫描和记录生物；近似探索冒险，但把直接视觉探索改为仪器信息判断。",
+        "innovation": "相较常见第三人称探索，它让玩家通过工具界面间接观察海底并据此导航和采样，改变了获取环境信息的活动；节奏偏慢且操作可能重复。",
+        "narrative_role": "研究员的通讯与逐步发现让科学探索转为人物关系和世界理解。",
+        "personal_interest": "独特体验引擎、探索、氛围和人文关系非常符合偏好；抽象界面和重复扫描可能造成门槛。",
+        "research_value": "有明确形式与结构研究价值：信息呈现方式直接构成探索决策，而非单纯装饰。",
+        "reason": "具体的新观察方式及强烈氛围支持推荐；较慢节奏和重复动作使其未必适合优先长时间游玩。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验版本、实际操作细节或用户评价。",
+        "uncertainty": "对核心形式较有把握，节奏及重复程度未在本次验证。"
+      },
+      "candidate": {
+        "id": "legacy-06",
+        "title": "孤星寂海 In Other Waters",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家通过仪器界面陪同一名生物学家调查陌生海洋，以扫描、采样和导航逐步理解生态；主要牵引来自观察与发现。",
+        "experience_center": "单人安静探索，适合愿意从抽象界面读环境信息、慢慢拼出生物生态的人。",
+        "mechanics": "借助扫描与采样收集数据，在地图式界面定位并推进调查；玩家主要阅读信号、选择移动与研究对象，而非直接操控潜水员。",
+        "innovation": "相对第一人称探索游戏，仪表盘式呈现把观察与推理置于中心，弱化直接空间移动；其新鲜感在交互表达和信息组织。",
+        "narrative_role": "科学调查与潜水员的通讯关系提供叙事视角，环境资料参与形成世界理解。",
+        "personal_interest": "氛围、探索、体验引擎和非战斗玩法高度吻合；界面阅读占主导，是否过于抽象是个人风险。",
+        "research_value": "把生态探索做成仪器操作与信息判断，具备明确形式研究价值。",
+        "reason": "个人兴趣和形式创新均成立，推荐；具体节奏和文本量尚需体验确认。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "基于作品已知概念，实际操作细节、可读性及叙事占比未经核验。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "推荐强度浮动",
+      "candidate_label_assessment": "推荐强度浮动",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-07",
+      "title": "Cabernet",
+      "expected": {
+        "title": "Cabernet",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "medium",
+        "reason_detail": "吸血鬼身份、人性选择、时间分配和二维叙事形式有吸引力，但尚未完整玩完。"
+      },
+      "baseline": {
+        "id": "legacy-07",
+        "title": "Cabernet",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "标题不足以可靠确认此处具体作品及版本；若指已知的吸血鬼题材叙事角色扮演作品，可能围绕夜间社交、人物关系和选择展开，但这只是待核验的识别假设。",
+        "experience_center": "在该识别假设下，吸血鬼处境、社会关系和道德选择可能构成体验中心；个人匹配取决于实际玩法是否超出纯对话。",
+        "mechanics": "具体行动循环、探索和角色成长方式无法仅凭标题确认。",
+        "innovation": "目前无法确认有何规则改变玩家活动；题材或美术本身不能作为玩法创新证据。",
+        "narrative_role": "可能以角色叙事为主，但叙事呈现和交互占比未知。",
+        "personal_interest": "题材氛围有潜在吸引力，是否属于纯对话视觉小说或恋爱卖点主导尚不清楚。",
+        "research_value": "若其选择系统和夜间社交形成独立决策，可能值得关注；目前没有足够依据下结论。",
+        "reason": "因存在可能的作品识别线索，给保守的细看分；未确认身份与主循环，不能把推测写成事实。",
+        "evidence_basis": "仅依据标题和有限既有知识；未联网核验，具体识别属于推断。",
+        "uncertainty": "身份、版本、循环、对话比重及恋爱元素均需核实。"
+      },
+      "candidate": {
+        "id": "legacy-07",
+        "title": "Cabernet",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "标题对应的作品可能是吸血鬼题材叙事角色扮演游戏；玩家可能在夜间社交与身份选择中处理道德处境，但仅凭标题无法可靠确认循环。",
+        "experience_center": "若为已知同名叙事 RPG，价值可能在人物、选择和怪奇氛围；实际游玩时长与操作结构待核实。",
+        "mechanics": "无法仅凭标题确认行动循环、资源系统、战斗比重或选择后果。",
+        "innovation": "玩法是否超出常规叙事角色扮演、是否有特殊资源或昼夜规则均待核验，不能把吸血鬼题材算成创新。",
+        "narrative_role": "标题和既有知识提示可能涉及身份、道德和社会关系，具体叙事内容未知。",
+        "personal_interest": "怪奇人物叙事可能符合兴趣，但证据不足以确认玩法与过度恋爱卖点等风险。",
+        "research_value": "若通过资源或昼夜选择改变社交活动，可能有研究价值，目前不成立为事实。",
+        "reason": "暂给保守推荐分，表示值得点开确认同一游戏和玩法，不代表已确认匹配。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "同名作品与当前条目对应关系、发行版本、核心循环均未核验；低置信度。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-08",
+      "title": "活侠传 Legend of Mortal",
+      "expected": {
+        "title": "活侠传 Legend of Mortal",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "人物、路线和时间管理很有趣，但后期重复和数值化会削弱体验。"
+      },
+      "baseline": {
+        "id": "legacy-08",
+        "title": "活侠传 Legend of Mortal",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你以门派弟子身份经历人际冲突、选择和江湖事件，可能获得有戏剧性的角色故事；但传统回合战斗与养成部分可能占据相当比重。",
+        "experience_center": "角色叙事、关系和多路线选择有吸引力，具体体验受战斗与数值养成比重影响。",
+        "mechanics": "根据既有认知，包含剧情选择、角色状态管理和回合制战斗；路线与属性可能影响事件结果。",
+        "innovation": "与传统回合制RPG相比，若关系和状态会持续改变事件路线，则选择后果有一定结构价值；单靠题材或大量结局不构成创新。",
+        "narrative_role": "人物处境、门派生活和关系变化可能是主要牵引力。",
+        "personal_interest": "人物和生活压力可能贴合，泛武侠题材及传统回合战斗是风险；不应只因武侠标签判退。",
+        "research_value": "多路线叙事与角色状态联动值得观察，但具体持续影响程度未核验。",
+        "reason": "可能的关系叙事和选择有明确潜在价值，传统战斗、养成和题材偏好形成限制；保守推荐并优先核实主循环。",
+        "evidence_basis": "仅依据标题和有限既有知识判断；未联网核验玩法版本、战斗占比或路线结构。",
+        "uncertainty": "对剧情结构的概括置信度有限，实际游玩时间分配未知。"
+      },
+      "candidate": {
+        "id": "legacy-08",
+        "title": "活侠传 Legend of Mortal",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家以资质平平的唐门弟子身份在武侠世界求生，需在日常、关系和事件选择中面对自我评价与命运落差；其人物处境有明确叙事吸引力。",
+        "experience_center": "单人文字角色扮演与多周目选择；武侠题材本身不是否决项，传统战斗与养成负担需要核验。",
+        "mechanics": "根据既有印象，时间/行动安排、属性成长、关系和分支事件共同推动旅程，可能夹有回合战斗；具体比例未经核实。",
+        "innovation": "相较线性武侠故事，成长与选择塑造不同人生路径的部分值得关注；不能仅据多结局声称玩法结构创新。",
+        "narrative_role": "人物关系、失败、尊严和命运感是主要情绪动力。",
+        "personal_interest": "生活处境和人物关系可能很合口味；若推进依赖重复养成或传统战斗则会降低兴趣。",
+        "research_value": "可研究文字冒险如何把成长路线和人物命运结合，具体差异需试玩或核验。",
+        "reason": "人物与叙事价值明确，存在条件性玩法吸引力，因此推荐；未知战斗负担不预设为事实。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "依作品既有概况推断，行动规划、战斗占比、更新状态与文本质量未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-09",
+      "title": "越过阿尔卑斯山 Over the Alps",
+      "expected": {
+        "title": "越过阿尔卑斯山 Over the Alps",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "互动绘本形式与文本选择结合得精致，具有强烈代入感。"
+      },
+      "baseline": {
+        "id": "legacy-09",
+        "title": "越过阿尔卑斯山 Over the Alps",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你在二战时期的欧洲旅途中通过地图、人物交谈和抉择塑造逃亡故事；路线和情节分支是主要驱动力。",
+        "experience_center": "短篇叙事旅程与选择体验，适合偏好历史氛围和路线叙事的短时游玩。",
+        "mechanics": "在地图上选择目的地、与人物互动并做叙事选择；结构接近分支互动小说，操作和系统管理较轻。",
+        "innovation": "地图路线为传统分支叙事提供空间化呈现，但是否实质改变资源或决策结构难以从标题确认；不把地图形式直接等同玩法创新。",
+        "narrative_role": "旅途、人物遭遇和历史环境承担主要内容。",
+        "personal_interest": "旅途感、地图和历史氛围有吸引力；若实际主要是纯对话点击，个人兴趣可能有限。",
+        "research_value": "可关注地图如何组织分支故事和路线选择，研究价值中等。",
+        "reason": "叙事与旅途形式有一定匹配和研究价值，但玩法可能接近纯互动小说，缺少已核验的系统深度。",
+        "evidence_basis": "仅依据标题和对作品的大致既有知识判断；未联网核验剧情、结构或版本。",
+        "uncertainty": "具体分支、地图影响和交互活动未经核实。"
+      },
+      "candidate": {
+        "id": "legacy-09",
+        "title": "越过阿尔卑斯山 Over the Alps",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家在二战时期的欧洲旅行逃亡，通过地图路线、信件和对话选择决定下一站及遭遇；牵引力来自旅途、悬疑和选择后果。",
+        "experience_center": "单人短篇叙事体验，地图路线与信件形式构成主要表达。",
+        "mechanics": "在路线节点间移动、读叙事片段并作选择，选择影响后续人物遭遇与旅途状态；探索更多是路线决策而非自由地图。",
+        "innovation": "相较传统分支视觉小说，地图旅行把地点顺序与路线选择融入章节推进；创新主要在形式组织和情境，不是复杂系统。",
+        "narrative_role": "历史背景服务于逃亡、身份与人际信任，具体史实呈现需核验。",
+        "personal_interest": "旅途感、地图、信件和有后果的对话高度贴合偏好；选择深度和重玩价值可能有限。",
+        "research_value": "是地图与叙事交互组织方式的清晰形式案例。",
+        "reason": "短篇叙事和形式价值足以推荐，且未确认有触及排斥类型的负担。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "依据作品已知简介式印象，具体分支幅度、历史准确性和操作细节未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-10",
+      "title": "奥森弗里2：信号丢失 OXENFREE II",
+      "expected": {
+        "title": "奥森弗里2：信号丢失 OXENFREE II",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "闲谈、环境和对话共同构筑世界，留下了持续回想的体验。"
+      },
+      "baseline": {
+        "id": "legacy-10",
+        "title": "奥森弗里2：信号丢失 OXENFREE II",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你在海岸小镇调查异常无线电信号，与同行者交谈并探索地点；神秘氛围和人物关系推动故事，但悬疑恐怖感可能成为摩擦。",
+        "experience_center": "对话驱动的探索叙事，依赖氛围、声音和逐渐揭示的异常。",
+        "mechanics": "在场景中移动、交谈并使用无线电调谐等交互，选择影响对话走向；接近叙事冒险模板。",
+        "innovation": "无线电调谐把声音与异常调查连接到探索流程，较前作具体扩展仍未经核验；不将续作或题材变化直接称为玩法创新。",
+        "narrative_role": "对话、人物关系和神秘事件是主体。",
+        "personal_interest": "小镇氛围和人物交流可能符合偏好；若悬疑恐怖压过生活感，或玩法主要是对话点击，兴趣会下降。",
+        "research_value": "形式层面的声音交互和对话节奏有观察价值，结构创新证据有限。",
+        "reason": "氛围与关系叙事提供独立价值，但恐怖悬疑及轻玩法都贴近用户谨慎区；推荐用于细看，不建议优先。",
+        "evidence_basis": "仅依据标题和对该系列的既有知识判断；未联网核验具体玩法和恐怖强度。",
+        "uncertainty": "熟知系列大致形式，未确认本作新增规则及内容侧重。"
+      },
+      "candidate": {
+        "id": "legacy-10",
+        "title": "奥森弗里2：信号丢失 OXENFREE II",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "玩家在海岸小镇调查异常无线电信号并与同伴交谈；若延续系列形式，情绪来自对话关系、环境线索与超自然悬念。",
+        "experience_center": "单人叙事探索，适合关注对话节奏和地点氛围；悬疑题材需区分是否为纯恐怖，标题本身不能确认强度。",
+        "mechanics": "可能通过行走探索、对话选择、无线电调频和地点推进展开；这些机制与前作相似性及续作变化待核验。",
+        "innovation": "相对普通对话冒险，无线电调频可能让声音线索成为玩家操作；续作是否实质改变选择或信息判断尚不确定。",
+        "narrative_role": "同伴关系与超自然事件可能相互牵引，具体人物弧线未知。",
+        "personal_interest": "氛围、关系和探索有吸引力；若整体变成纯恐怖悬疑或纯点击阅读则需谨慎。",
+        "research_value": "无线电交互与对话叙事连接值得研究，但续作是否新增结构差异不确定。",
+        "reason": "暂列中等推荐，主要因形式和氛围价值；恐怖强度与玩法占比待确认。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "标题可指向系列续作，但具体核心活动、恐怖程度和完成度本次未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-11",
+      "title": "孤山速降 Lonely Mountains: Downhill",
+      "expected": {
+        "title": "孤山速降 Lonely Mountains: Downhill",
+        "source": [
+          "好玩",
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "路线发现、环境穿行和轻技巧本身有吸引力，但高挑战限制个人游玩优先级。"
+      },
+      "baseline": {
+        "id": "legacy-11",
+        "title": "孤山速降 Lonely Mountains: Downhill",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你沿山地路线骑行、寻找捷径并控制下坡节奏，路线发现和环境穿行是主要乐趣；失误与计时挑战也可能带来反复练习压力。",
+        "experience_center": "技巧动作、路线阅读和自然环境探索并存，适合短局挑战或研究路线。",
+        "mechanics": "控制自行车在分岔山路上转向、刹车和选择路线，以到达终点、挑战时间或完成目标；接近技巧运动游戏。",
+        "innovation": "相较单纯计时竞速，分岔路径与可探索捷径使玩家需要观察地形和规划线路；具体路线探索对用户是否足够突出，标题无法确认。",
+        "narrative_role": "叙事和人物驱动较弱，环境氛围与路线本身承担体验。",
+        "personal_interest": "环境穿行和空间阅读有独立吸引力，但纯操作挑战、反复练习和排名取向可能不合口味。",
+        "research_value": "适合观察技巧游戏怎样把路线发现与动作掌握结合；这是类型执行价值，不断言其有新类型创新。",
+        "reason": "路线探索和空间阅读构成雷区之外的价值，但操作挑战占比与重复压力尚未核验，因此中等推荐。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验模式、关卡和挑战要求。",
+        "uncertainty": "探索与计时挑战的权重需看实机流程确认。"
+      },
+      "candidate": {
+        "id": "legacy-11",
+        "title": "孤山速降 Lonely Mountains: Downhill",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "玩家独自骑行下山，在速度、路线和摔车风险之间选择，沿途寻找捷径和检查点；体验更多由身体操作和路线掌握驱动。",
+        "experience_center": "短局技巧挑战，路线发现和环境穿行可能带来探索乐趣；若主要反复计时重试，和偏好存在摩擦。",
+        "mechanics": "控制自行车穿越地形、选择线路、控制速度并在失误后重来；挑战模式可能强调时间与操作成绩。",
+        "innovation": "相较线性竞速，分岔路线与自由穿行把观察地形和风险取舍带入下坡；结构差异是否足以脱离技巧挑战需核验。",
+        "narrative_role": "叙事角色和关系较弱，主要是运动、地点氛围与路线掌握。",
+        "personal_interest": "清晰美术和路线探索可能吸引；纯操作挑战与重复重试可能降低长期兴趣。",
+        "research_value": "可研究路线知识如何支持玩家自设节奏和风险，不属于叙事驱动作品。",
+        "reason": "有特定的技巧与探索价值，按3分推荐；操作强度不凭标题判成已发生的负担。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "大体玩法来自既有知识，模式中计时、失败惩罚和重复程度未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-12",
+      "title": "舒林 Cozy Grove",
+      "expected": {
+        "title": "舒林 Cozy Grove",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "生活模拟和探索发现的前期体验很好，但重复日课和建设目标会消耗兴趣。"
+      },
+      "baseline": {
+        "id": "legacy-12",
+        "title": "舒林 Cozy Grove",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你在幽灵岛上每日帮助岛民、收集材料并逐步恢复地点，温柔的人物故事提供日常回访动力；日历式节奏和重复采集可能限制连续游玩。",
+        "experience_center": "轻松的日常任务、角色关系与岛屿探索，适合低压力、分次游玩。",
+        "mechanics": "每日收集资源、制作物品、完成岛民请求和开放区域；接近任务驱动的生活模拟与轻经营。",
+        "innovation": "相较常见采集任务循环，岛屿随故事推进恢复色彩，日常节奏与人物篇章相连；未见足够依据认定核心结构有明显突破。",
+        "narrative_role": "每位岛民的回忆和情绪是任务的主要意义来源。",
+        "personal_interest": "人物日常和温和氛围贴合，但重复收集、限时日常以及若装修占比大都可能削弱兴趣。",
+        "research_value": "可以观察日常任务如何承载角色故事，整体设计探索强度有限。",
+        "reason": "生活气息、人物和氛围有明确价值；循环可能落入重复日课和收集，故只推荐尝试而非长期投入。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验当前版本、日课节奏或装修比重。",
+        "uncertainty": "核心形式大致可识别，具体重复度及更新内容未确认。"
+      },
+      "candidate": {
+        "id": "legacy-12",
+        "title": "舒林 Cozy Grove",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家每天来到一座闹鬼岛屿，通过帮灵魂居民完成小委托、搜集物品和装饰环境，逐渐了解他们的故事；驱动力在日常陪伴。",
+        "experience_center": "每日短时游玩、轻经营与角色支线；若时间门槛要求真实日历推进，适合接受慢节奏的人。",
+        "mechanics": "探索岛屿并收集材料、完成委托、制作和装饰，任务推动居民故事与环境变化。",
+        "innovation": "相较一般装饰游戏，灵魂委托与地点逐步恢复让布置嵌入人物故事；装饰本身不是唯一价值。",
+        "narrative_role": "居民的遗憾与回忆是日常任务的叙事回报，社区感持续累积。",
+        "personal_interest": "生活气息、人物、低压力探索和氛围较匹配；重复收集和现实时间门槛是待核查的限制。",
+        "research_value": "可观察日常任务、收藏循环和角色故事怎样形成轻量长期陪伴。",
+        "reason": "故事与日常的结合有明确价值，推荐；不把可能存在的重复感当成确定事实。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "大体循环较明确，但真实时间限制、后期重复度和装饰占比未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-13",
+      "title": "深空梦里人 Citizen Sleeper",
+      "expected": {
+        "title": "深空梦里人 Citizen Sleeper",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "medium",
+        "reason_detail": "叙事、骰子和生活处境的融合值得研究，个人游玩优先级待确认。"
+      },
+      "baseline": {
+        "id": "legacy-13",
+        "title": "深空梦里人 Citizen Sleeper",
+        "score": 5,
+        "result_label": "必须推荐",
+        "judgment": "你作为逃离公司控制的人工身体，在空间站里寻找工作、照顾自身状态并与居民建立关系；骰子行动和资源压力把生存日常变成章节故事。",
+        "experience_center": "人物关系、劳动处境、选择后果与科幻氛围共同推动探索，适合喜爱文字和系统叙事的单人体验。",
+        "mechanics": "每天获得骰子并分配到工作、关系、探索和维护行动；状态衰退与技能检定约束选择，任务逐步开启新地点和人物线。",
+        "innovation": "相较传统对话RPG，它把骰子质量、每日行动和身体状态直接连到可执行活动与生存压力，改变了玩家安排时间和承担风险的方式；机制服务人物叙事。",
+        "narrative_role": "空间站居民、工作和关系构成核心，世界设定通过具体生活处境呈现。",
+        "personal_interest": "氛围、人物、任务、资源取舍和体验引擎高度符合口味；太空题材可能降低直觉亲近感，但系统与人的日常紧密相连。",
+        "research_value": "骰子、时间和生存状态与叙事选择的组合值得重点研究。",
+        "reason": "个人匹配和机制叙事结合都突出，持续选择有资源后果且非纯对话点击；文字阅读量和太空背景是主要门槛。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验版本、后续更新或具体路线。",
+        "uncertainty": "对基本循环有较高把握，未核验当前可用版本与兼容性。"
+      },
+      "candidate": {
+        "id": "legacy-13",
+        "title": "深空梦里人 Citizen Sleeper",
+        "score": 5,
+        "result_label": "必须推荐",
+        "judgment": "玩家作为逐渐衰败的仿生人，在空间站靠工作、结盟与有限资源争取生存和自主；每天的行动骰子让时间与机会都带风险。",
+        "experience_center": "单人章节式叙事 RPG，太空题材存在摩擦，但紧凑的人物生活、工作和社区关系可能构成主吸引。",
+        "mechanics": "每个周期掷出有好坏差异的骰子并分配到工作、探索和关系行动；消耗状态与时限塑造优先级，任务结果改变可走路径。",
+        "innovation": "相对常规技能检定，骰子代表有限且波动的当日能力，迫使玩家在收入、维护身体和关系之间安排行动；把资源管理融入章节叙事。",
+        "narrative_role": "劳动、债务、身体脆弱与互助关系是系统压力和人物故事的共同来源。",
+        "personal_interest": "体验引擎、人物生活、选择后果与策略资源高度契合；空间站设定是明确但可辨的题材摩擦。",
+        "research_value": "骰子行动分配与叙事后果结合紧密，值得重点研究和体验。",
+        "reason": "有强烈个人匹配与鲜明系统表达，可优先打开；不是仅凭太空设定推荐。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "依据已知作品循环判断；具体路径、文本内容和版本差异未核验。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "推荐强度浮动",
+      "candidate_label_assessment": "推荐强度浮动",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-14",
+      "title": "文明6 Sid Meier's Civilization VI",
+      "expected": {
+        "title": "文明6 Sid Meier's Civilization VI",
+        "source": [
+          "好玩",
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "多种胜利方式、长程决策和复利系统会生成具体故事；多人情境进一步增强体验，但单人优先级较低。"
+      },
+      "baseline": {
+        "id": "legacy-14",
+        "title": "文明6 Sid Meier's Civilization VI",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你从早期聚落经营文明数百年，在城市发展、科技文化、外交和战争之间规划长期路线；适合愿意投入长局策略的人。",
+        "experience_center": "宏观历史发展和长期决策，可能产生显著的路线差异与局势故事。",
+        "mechanics": "回合制扩张城市、分配人口和生产、研究科技文化、处理外交并竞争胜利条件；属于复杂历史4X策略。",
+        "innovation": "相较早期系列作品，区域规划使城市布局与地形产生持续的产出权衡；具体推进是成熟类型内的系统变化，不代表消除宏观优化负担。",
+        "narrative_role": "文明发展会形成局势故事，但人物生活和关系不是叙事中心。",
+        "personal_interest": "长期路线和系统后果有吸引力，复杂历史策略的宏观优化及操作负担则是明显风险。",
+        "research_value": "区域、城市专业化和胜利路径之间的联动值得研究，尤其适合观察长期策略如何形成涌现局势。",
+        "reason": "虽不符合用户最常见的叙事生活偏好，系统路线与涌现故事仍有独立研究价值；宏观复杂度限制实际游玩意愿。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验版本、资料片或具体平衡。",
+        "uncertainty": "基础玩法熟悉，版本差异与用户对长局耐受度未知。"
+      },
+      "candidate": {
+        "id": "legacy-14",
+        "title": "文明6 Sid Meier's Civilization VI",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "玩家从早期聚落发展文明，在地图上探索、扩张、研究、外交或战争，形成跨时代的国家故事；主要驱动力是长期规划和局势演化。",
+        "experience_center": "单人长局或多人策略；用户对复杂历史策略有所保留，但涌现故事与发展路线提供独立价值。",
+        "mechanics": "按回合分配城市生产、科技文化研究、单位行动和外交资源，争夺地图空间并走向胜利条件。",
+        "innovation": "相较传统宏观策略，其城市区块布局和地形相邻加成使城市规划直接形成空间取舍；仍保留传统历史大战略的宏观优化负担。",
+        "narrative_role": "文明发展和对手互动常生成非预写故事，但叙事主要涌现于系统。",
+        "personal_interest": "长期策略和地缘选择可能有吸引力；操作与数值层级、历史战争可能造成明显摩擦。",
+        "research_value": "城市规划与科技/文化胜利路线值得分析，不过作品并非突破传统大战略范式。",
+        "reason": "体系和涌现叙事让研究价值成立，个人长期游玩意愿不确定，因此仅推荐。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "大体系统判断较有把握；具体扩展包、对局长度和用户实际耐受度未知。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-15",
+      "title": "节奏光剑 Beat Saber",
+      "expected": {
+        "title": "节奏光剑 Beat Saber",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "身体性体验"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "节奏操作服务于音乐、身体参与和即时沉浸，不应只按独自攻关型的纯反应挑战判断。"
+      },
+      "baseline": {
+        "id": "legacy-15",
+        "title": "节奏光剑 Beat Saber",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你随着音乐挥动双臂击中方块、躲避障碍，身体节奏和音乐反馈带来即时参与感；也可在朋友间形成共同表演和比较。",
+        "experience_center": "音乐、身体动作和节奏反馈是主体，适合VR设备和愿意活动的情境。",
+        "mechanics": "按方向切块并避开障碍，逐拍匹配音乐节奏；成绩挑战和歌曲重复练习是可选但常见的投入方式。",
+        "innovation": "相较传统节奏按键，VR空间和双手挥砍把节拍判断转为全身空间动作，改变了身体参与方式；持续体验依赖曲库和重复练习。",
+        "narrative_role": "叙事和人物较弱，音乐与身体表达承担体验。",
+        "personal_interest": "身体性和音乐构成taste明确认可的独立情境价值；若脱离VR体验或变成刷分练操作，吸引力较低。",
+        "research_value": "适合研究VR空间动作如何映射节奏与身体反馈。",
+        "reason": "即使个人长期游玩意愿不确定，形式和身体体验价值明确；曲库、设备和重复练习是限制。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验曲库、平台或多人功能。",
+        "uncertainty": "设备条件、可用歌曲及社交情境影响实际推荐强度。"
+      },
+      "candidate": {
+        "id": "legacy-15",
+        "title": "节奏光剑 Beat Saber",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "玩家用双手挥动光剑切击迎面而来的节奏方块，音乐和身体动作构成即时反馈；多人或现场参与时，表演与共同气氛可能是关键价值。",
+        "experience_center": "VR身体参与、短曲目练习或聚会演示；个人若只追求高分则会落入偏低兴趣的反应挑战。",
+        "mechanics": "按节拍挥剑、躲避障碍并维持连击，难度提升主要考验反应、节奏与动作准确度。",
+        "innovation": "相对传统节奏游戏，VR双手空间动作把节奏判断扩展为身体路线与姿态；属于身体表达的形式变奏，不是复杂叙事系统。",
+        "narrative_role": "叙事作用很弱，音乐与身体表现本身是体验中心。",
+        "personal_interest": "社交、共同表演和身体参与可成立，但设备条件和独自刷分模式会限制适配。",
+        "research_value": "可研究VR空间动作如何让节拍成为身体路径与观演体验。",
+        "reason": "根据口味规则，身体性和社交情境有独立价值；情境成立时推荐，不代表优先单人游玩。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "VR设备要求、曲库、多人场景与模式细节未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-16",
+      "title": "Just Dance",
+      "expected": {
+        "title": "Just Dance",
+        "source": [
+          "好玩"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "个人喜欢",
+          "社交情境",
+          "身体性体验"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "音乐、身体表达、共同表演和聚会参与构成主要价值；动作是社交体验的媒介。"
+      },
+      "baseline": {
+        "id": "legacy-16",
+        "title": "Just Dance",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你跟随流行歌曲做舞蹈动作，体验依赖身体参与、音乐和身边人的共同气氛；聚会时价值通常高于独自追求成绩。",
+        "experience_center": "舞蹈模仿、音乐和社交参与，适合聚会或共同活动。",
+        "mechanics": "跟随屏幕编舞并由设备评估动作；挑战精度和重复刷分属于次级或可选目标。",
+        "innovation": "相较独自节奏点击，舞蹈编排要求身体模仿和空间动作，使玩法成为共同表演；系列变化更多取决于曲目与平台功能，不能仅凭标题断言。",
+        "narrative_role": "没有显著叙事驱动，歌曲和表演承担内容。",
+        "personal_interest": "符合用户对音乐、身体表达和聚会情境的独立认可；独自刷成绩时兴趣较低。",
+        "research_value": "可观察舞蹈模仿和身体追踪如何降低多人共同参与门槛。",
+        "reason": "在真实聚会或共同表演情境下明确推荐，价值不依赖叙事；单人反复刷成绩和平台/曲库限制较明显。",
+        "evidence_basis": "仅依据标题和对系列的既有知识判断；未联网核验具体年份、平台和曲目。",
+        "uncertainty": "不同版本的设备支持、曲库和订阅条件差异较大。"
+      },
+      "candidate": {
+        "id": "legacy-16",
+        "title": "Just Dance",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "玩家跟随屏幕舞者模仿歌曲动作，在客厅里跳舞、轮流表演或和朋友比拼；主要乐趣常来自音乐与共同参与。",
+        "experience_center": "聚会、家庭或身体活动场景；个人单独追求分数时价值较弱。",
+        "mechanics": "跟随编舞动作并按节奏完成评分，核心反馈是音乐、动作模仿与现场参与。",
+        "innovation": "相较坐姿节奏游戏，动作模仿和多人轮流把身体表演置于中心；玩法类型熟悉，创新更多在曲目与参与情境。",
+        "narrative_role": "人物叙事不是主要价值，音乐和共同表演提供情绪。",
+        "personal_interest": "社交与身体性符合用户明确认可的价值；曲库、设备和版本服务条件影响实际可用性。",
+        "research_value": "聚会设计与动作参与值得从情境体验角度研究。",
+        "reason": "依情境成立且价值明确，按3分推荐；单人长期游玩未必有吸引力。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "标题涵盖多个版本，具体版本曲目、设备需求与在线服务未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-17",
+      "title": "边缘世界 RimWorld",
+      "expected": {
+        "title": "边缘世界 RimWorld",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "故事模拟器和系统涌现具有重要研究价值，但复杂经营未必是个人游玩偏好。"
+      },
+      "baseline": {
+        "id": "legacy-17",
+        "title": "边缘世界 RimWorld",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "你照料一群性格各异的殖民者，在食物、住房、伤病、关系与突发事件之间取舍；系统失控和人物反应会生成自己的生存故事。",
+        "experience_center": "殖民地经营、人物日常和涌现叙事结合，玩家可通过长期规划和危机应对推动局势。",
+        "mechanics": "安排建造、种植、工作优先级、库存、治疗和防御；殖民者特质与随机事件影响计划，失败也会生成故事。",
+        "innovation": "相较传统基地建造，殖民者个体需求、关系和事件系统持续改变可行安排，使管理结果生成具体人物故事；系统联动是核心价值。",
+        "narrative_role": "没有固定主线，叙事由人物特质、关系、事件和玩家取舍涌现。",
+        "personal_interest": "生活痕迹、系统经营、资源压力和涌现故事高度合适；防御战斗和复杂管理可能占用不少注意力。",
+        "research_value": "值得研究人物模拟、故事生成器与基地经营如何相互驱动，而非只做效率优化。",
+        "reason": "有鲜明系统故事价值和长期决策，符合taste明确支持的涌现故事偏好；缺少固定叙事牵引且管理复杂，故推荐。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验版本、扩展或模组。",
+        "uncertainty": "基础循环判断较有把握，实际难度和内容广度随版本、DLC及设置变化。"
+      },
+      "candidate": {
+        "id": "legacy-17",
+        "title": "边缘世界 RimWorld",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家照料一群坠落异星的殖民者，从食物、住所和医疗开始，逐渐应对天气、疾病、袭击与人物关系，系统意外常生成个人故事。",
+        "experience_center": "单人长期殖民经营；用户的太空策略雷区需要考虑，但角色日常和涌现故事提供不同驱动力。",
+        "mechanics": "分配工作、建设设施、管理库存与健康，并应对事件和角色特质产生的连锁后果。",
+        "innovation": "相对普通基地经营，叙事生成器以不同派系与事件制造不稳定处境，殖民者特质会让劳动、关系和危机彼此影响；不是单纯太空战争策略。",
+        "narrative_role": "故事由具体殖民者的需要、关系和灾难涌现，玩家会记住个体经历。",
+        "personal_interest": "经营计算、人物日常和系统后果高度匹配；太空题材与可能出现的重复管理是摩擦。",
+        "research_value": "涌现叙事和殖民管理的机制组合很鲜明，研究价值高。",
+        "reason": "虽有太空设定，但其主要价值可落在人物、生活和系统故事，推荐；未知负担暂列待确认。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "根据经典玩法印象判断；实际事件、模组依赖、管理负担及战斗比重未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-18",
+      "title": "超越光速 FTL: Faster Than Light",
+      "expected": {
+        "title": "超越光速 FTL: Faster Than Light",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "资源压力、路线选择和危机决策是策略设计的重要参考。"
+      },
+      "baseline": {
+        "id": "legacy-18",
+        "title": "超越光速 FTL: Faster Than Light",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你指挥一艘飞船穿越危险星区，在燃料、船员和系统损伤之间作紧急取舍；一次航程里的偶发事件会形成生存故事。",
+        "experience_center": "高压资源管理与随机遭遇，主要适合短局策略和观察系统后果。",
+        "mechanics": "在星区地图选择路线和事件，分配能源、管理船员、处理舱室故障并进行实时暂停战斗；失败后重新开局。",
+        "innovation": "相较传统太空战斗策略，实时暂停下的舱室供能与船员调度使战斗成为多系统故障处理；路线和事件也影响风险。但太空题材及战斗循环均是用户的摩擦。",
+        "narrative_role": "故事主要由事件、船员和随机危机涌现，而非固定人物长篇叙事。",
+        "personal_interest": "系统选择和涌现叙事贴合，太空策略这一明确低兴趣题材可能使实际游玩意愿偏低。",
+        "research_value": "机制组合紧凑，适合研究路线风险、即时战斗和船员资源如何共同制造危机故事。",
+        "reason": "研究与系统故事价值鲜明，尽管题材命中不喜欢项；按研究价值给推荐而不假设用户会长期单人游玩。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验版本或实际平衡。",
+        "uncertainty": "基础结构熟悉，太空题材摩擦是否压过研究兴趣因人而异。"
+      },
+      "candidate": {
+        "id": "legacy-18",
+        "title": "超越光速 FTL: Faster Than Light",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家带着脆弱飞船穿越敌对星区，分配船员、能源和武器并决定何时战斗或逃离；单次旅程中的风险与临机调整是主要驱动力。",
+        "experience_center": "单人短局高风险策略；太空题材触及用户明确摩擦，但系统紧凑且船员处境易懂。",
+        "mechanics": "暂停即时战斗、分配能源、控制船员和处理舰船舱室故障，在地图节点间选择路线并管理燃料、船体和补给。",
+        "innovation": "相较传统实时太空射击，暂停机制允许玩家在压力中下达精细命令；舱室损坏和船员位置让战斗成为空间与系统故障管理。",
+        "narrative_role": "船员伤亡、事件选择和飞船损坏会形成短小的临场故事，叙事主要涌现。",
+        "personal_interest": "资源压力和明确取舍合适；重开循环及太空题材可能降低长期兴趣。",
+        "research_value": "暂停实时决策与局内资源、事件路线结合，是值得分析的成熟类型执行。",
+        "reason": "策略结构和涌现体验提供实质价值，推荐；不把太空题材直接当作否决。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "依据已知作品理解；不同版本平衡、失败频率和重复感未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-19",
+      "title": "勇者斗恶龙：创世小玩家2",
+      "expected": {
+        "title": "勇者斗恶龙：创世小玩家2",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "medium",
+        "reason_detail": "生活模拟、建造和多人体验有研究价值，但个人对长期建设的兴趣有限。"
+      },
+      "baseline": {
+        "id": "legacy-19",
+        "title": "勇者斗恶龙：创世小玩家2",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "你在岛屿间冒险、帮助居民解决问题并逐步建设聚落，人物任务把建造与探索连成旅程；更像有剧情牵引的生活建造冒险。",
+        "experience_center": "探索、任务、伙伴和建造协作，体验由地点解锁与居民需求推进。",
+        "mechanics": "采集材料、制作工具和设施、完成任务、探索区域并进行动作战斗；居民需求会引导聚落建设。",
+        "innovation": "相较纯沙盒建造，剧情章节和居民委托将建造目标嵌入探索与人物需求；核心仍是成熟的方块建造和收集，不应把题材包装称为新玩法。",
+        "narrative_role": "有章节故事和伙伴互动，居民生活让建造成果具备用途。",
+        "personal_interest": "任务、探索、人物与建设相结合，明显优于单纯装修；重复收集和战斗是限制。",
+        "research_value": "可研究任务需求怎样把沙盒建造转为有方向的共同建设体验。",
+        "reason": "人物任务、探索和可见的聚落变化都贴合口味，主循环也不只是空间装修；材料收集与战斗仍可能带来重复。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验平台版本、内容或战斗节奏。",
+        "uncertainty": "对系列基本设计有把握，具体版本差异和后期重复度未确认。"
+      },
+      "candidate": {
+        "id": "legacy-19",
+        "title": "勇者斗恶龙：创世小玩家2",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家与同伴在岛屿间收集材料、建造村落并帮助居民解决问题，建造劳动有明确的故事目标与社区回应。",
+        "experience_center": "单人故事建造，也支持合作；适合把制作、探索和角色日常结合起来的游玩。",
+        "mechanics": "探索地点、采集与制作方块/设施，按居民需求建设房间和村镇，再解锁新区域与剧情。",
+        "innovation": "相较自由沙盒，故事章节和居民需求把建造目标结构化，建成环境会回应社区生活；核心建造语法仍熟悉。",
+        "narrative_role": "同伴与居民的请求、共同生活和章节冒险支撑温暖的旅途感。",
+        "personal_interest": "探索、任务、生活气息和建造服务故事，较适配；材料采集的重复量值得核验。",
+        "research_value": "结构化建造任务如何把沙盒创造与人物目标连接，具有设计参考价值。",
+        "reason": "建造不是唯一卖点，叙事与居民需求让体验更有方向，推荐。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "依作品已知结构判断；具体采集重复、战斗要求与合作体验未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-20",
+      "title": "司辰之书 BOOK OF HOURS",
+      "expected": {
+        "title": "司辰之书 BOOK OF HOURS",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "机制、叙事和图书馆概念融合得有趣，但交互可理解性和试错成本明显。"
+      },
+      "baseline": {
+        "id": "legacy-20",
+        "title": "司辰之书 BOOK OF HOURS",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "你接管一座神秘图书馆，阅读书籍、整理知识、修复空间并探索隐秘学问；安静的研究和逐步解锁构成推进力。",
+        "experience_center": "无战斗或低压力的知识管理、探索与氛围体验，适合喜欢档案、书籍和系统整理的人。",
+        "mechanics": "辨读书籍与物品属性，组合知识、技能和工具来修缮房间、处理任务并开放新内容；近似知识门槛驱动的管理冒险。",
+        "innovation": "相较传统解谜探索，它把知识分类、技能和物品关系作为开启内容的主要手段，玩家通过建立理解而非战斗推进；学习曲线和信息组织负担较高。",
+        "narrative_role": "地点历史、书籍文本和逐渐揭示的神秘背景构成氛围叙事，人物互动相对有限。",
+        "personal_interest": "档案、氛围、非战斗系统和发现感高度合适；系统晦涩、整理负担可能接近纯数值优化的边缘。",
+        "research_value": "体验引擎鲜明，值得研究知识作为资源和探索钥匙的设计。",
+        "reason": "独特的知识管理循环和强氛围支持重点细看；人物生活感较弱且复杂信息整理可能造成阻力。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验当前版本、教程或系统细节。",
+        "uncertainty": "对主设计方向较熟悉，实际可读性和后期管理负担未核实。"
+      },
+      "candidate": {
+        "id": "legacy-20",
+        "title": "司辰之书 BOOK OF HOURS",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家接手一座神秘图书馆，整理书籍、物品和访客线索，逐步理解知识与场所之间的联系；体验偏安静、缓慢、抽象。",
+        "experience_center": "单人长时知识探索与整理；对推理、档案和神秘氛围有兴趣时成立，界面复杂度可能是门槛。",
+        "mechanics": "据已知概况，玩家阅读书籍、组合物品与知识、安排访客和修复空间，通过发现规则推进。",
+        "innovation": "相对一般经营或卡牌构筑，知识分类和物品用途探索可能让信息本身成为资源；具体规则是否形成实质新活动需核验。",
+        "narrative_role": "书籍、场所和访客的碎片叙事支撑神秘感，理解世界是主要进展。",
+        "personal_interest": "档案、氛围和慢速发现匹配；如果主要循环成为抽象组合与清单管理会降低兴趣。",
+        "research_value": "将阅读、分类和物品知识作为探索机制，有明确形式与系统研究潜力。",
+        "reason": "体验引擎和氛围足以推荐，评分保守，因为具体决策及重复程度未确认。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "玩法信息基于既有印象；实际循环、提示清晰度和知识组合深度未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-21",
+      "title": "密教模拟器 Cultist Simulator",
+      "expected": {
+        "title": "密教模拟器 Cultist Simulator",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "把卡牌外形转化为独特对象和组合关系，是体验引擎设计的研究案例。"
+      },
+      "baseline": {
+        "id": "legacy-21",
+        "title": "密教模拟器 Cultist Simulator",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你在神秘城市里安排工作、研究、关系和仪式，尝试理解隐藏规则并避免失控；信息拼接与逐步揭谜驱动体验。",
+        "experience_center": "牌桌式时间与资源管理、隐晦叙事和发现感，适合愿意承受试错与不透明规则的玩家。",
+        "mechanics": "将卡牌放入不同行动槽，等待计时并处理资源、事件和后果；通过组合卡牌发现规则和路线。",
+        "innovation": "相较常规卡牌战斗，它把卡牌用于行动编排、时间分配和知识组合，而非构筑战斗牌组；信息不透明构成真实设计特征，也可能让人受挫。",
+        "narrative_role": "文本碎片和玩家推理组成叙事，人物关系与具体生活感较弱。",
+        "personal_interest": "卡牌作为管理和探索工具、神秘氛围有吸引力；晦涩试错和重复操作可能不合口味。",
+        "research_value": "其非战斗卡牌系统和信息揭示方式有明确研究价值。",
+        "reason": "它不是传统卡牌战斗，体验结构有可指认的差异；但阅读片段、试错和操作重复限制个人舒适度。",
+        "evidence_basis": "仅依据标题和对该作品的既有知识判断；未联网核验版本及后续更新。",
+        "uncertainty": "基础循环印象明确，用户对不透明规则的耐受程度未知。"
+      },
+      "candidate": {
+        "id": "legacy-21",
+        "title": "密教模拟器 Cultist Simulator",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家在神秘学世界经营一名求知者的生活，将时间、健康、资金与秘密知识投入工作、研究和仪式；驱动力是自行拼出规则和隐秘故事。",
+        "experience_center": "单人卡牌式资源管理，重视试验、失败与文本发现；可能对偏纯计算或不透明规则感到疲劳。",
+        "mechanics": "在时间轨道上安排行动，把卡牌和资源组合起来触发工作、学习、探索与仪式，处理饥饿、疾病、怀疑等压力。",
+        "innovation": "相较传统回合卡牌战斗，卡牌是可组合的生活行动与知识，不以战斗为中心；玩家要从反馈中推断系统规则。",
+        "narrative_role": "碎片文本和仪式结果构成神秘叙事，叙事与资源循环直接交织。",
+        "personal_interest": "氛围、体验引擎、秘密探索和选择压力很匹配；规则不透明及失败重来是风险。",
+        "research_value": "将卡牌从战斗牌组转成时间、知识和行动的组合系统，构成显著类型变奏。",
+        "reason": "个人和研究价值都明确，推荐；尚不足以判断是否应优先于更具人物日常感的作品。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "基于作品大体玩法，具体失败惩罚、节奏和学习成本未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-22",
+      "title": "肖普叔叔的火箭商店 Uncle Chop's Rocket Shop",
+      "expected": {
+        "title": "肖普叔叔的火箭商店 Uncle Chop's Rocket Shop",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "小店交互、工具质感、声音和经济结构的累积具有直接设计参考价值。"
+      },
+      "baseline": {
+        "id": "legacy-22",
+        "title": "肖普叔叔的火箭商店 Uncle Chop's Rocket Shop",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "标题暗示你在一家火箭维修店处理顾客设备和工作压力，但仅凭名称不能确认它具体要求玩家做什么；需先核实维修操作与管理循环。",
+        "experience_center": "若核心是限时诊断和实际维修操作，可能带来职业模拟与工作压力；若只是常规点击任务，吸引力会较弱。",
+        "mechanics": "具体工具操作、故障判断、时间限制和经济管理均未经确认。",
+        "innovation": "可能以维修工作为新活动，但目前无法说清相较常见模拟游戏改变了何种判断或操作。",
+        "narrative_role": "标题带有角色和工作场所线索，故事分量未知。",
+        "personal_interest": "工作、工具和具体问题解决可能符合体验引擎偏好；是否存在重复计时压力尚不清楚。",
+        "research_value": "若故障诊断需要观察、推理和工具操作，具有潜在新活动价值，需看实际流程。",
+        "reason": "有值得核验的玩法线索但缺少可依赖的标题外信息，因此低置信度给细看分，不把猜测当结论。",
+        "evidence_basis": "仅依据标题推断可能的题材；未联网核验身份或实际玩法。",
+        "uncertainty": "作品身份、操作循环、叙事占比和完成度均未确认。"
+      },
+      "candidate": {
+        "id": "legacy-22",
+        "title": "肖普叔叔的火箭商店 Uncle Chop's Rocket Shop",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "玩家在外星火箭维修店接单，阅读故障线索并用工具拆修部件，靠工作收入维持经营；吸引力可能在手工诊断与荒诞服务日常。",
+        "experience_center": "单人短班次模拟，任务可能受计时和重复工作压力驱动；适配程度取决于维修操作是否有变化。",
+        "mechanics": "根据已知作品概念，检查故障、查阅手册并在飞船部件上执行拆装修理，再结算工作和经营成本。",
+        "innovation": "相较菜单式维修模拟，若需要依据手册和故障表现执行具体操作，玩家活动会转为诊断与程序操作；任务变化和失败后果需核验。",
+        "narrative_role": "客户和店铺情境有潜在生活喜剧感，具体角色叙事份量未知。",
+        "personal_interest": "体验引擎和工作场景有趣；重复维修、计时压力若占主导会降低兴趣。",
+        "research_value": "可研究维修操作如何把说明书阅读、故障诊断与工作压力连接。",
+        "reason": "有特定模拟设计价值，先以3分推荐；循环变化及重复负担仍待验证。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "依标题与既有作品印象，真实操作深度、程序变化和故事占比未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-23",
+      "title": "俄勒冈之旅 The Oregon Trail",
+      "expected": {
+        "title": "俄勒冈之旅 The Oregon Trail",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "机制清晰地把旅途、资源、事件和人物故事组织在一起。"
+      },
+      "baseline": {
+        "id": "legacy-23",
+        "title": "俄勒冈之旅 The Oregon Trail",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你带领一队移民穿越漫长路线，在食物、健康、物资和旅程风险间做取舍；历史情境和意外事件构成主要故事。",
+        "experience_center": "旅行路线、资源压力和事件决策，适合短局管理与观察团队处境变化。",
+        "mechanics": "规划行程和补给、选择路线或行动、处理疾病和事故；不同版本细节差异较大，整体接近历史生存管理。",
+        "innovation": "相较单纯资源优化，旅途事件和队伍状态把管理选择放入具体迁徙处境；该系列有重要历史意义，但不据此断言当前版本结构新颖。",
+        "narrative_role": "旅途遭遇和队伍命运提供情境叙事，人物关系深度依版本而定。",
+        "personal_interest": "路线、资源和生活压力契合，若变成反复算数值与随机损失则兴趣有限。",
+        "research_value": "适合研究旅行管理与事件叙事的经典结合，但需明确具体版本再评估。",
+        "reason": "体验引擎和历史旅途有中等独立价值；系列版本跨度大，未确认此处版本的主循环细节。",
+        "evidence_basis": "仅依据标题及系列的一般既有知识判断；未联网核验版本、平台或具体系统。",
+        "uncertainty": "同名作品可能指不同代际或重制版本，需确认具体对象。"
+      },
+      "candidate": {
+        "id": "legacy-23",
+        "title": "俄勒冈之旅 The Oregon Trail",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家带领一支移民队伍穿越长途路线，在有限物资、天气、疾病和突发事件间取舍；每次抵达或损失都形成旅途故事。",
+        "experience_center": "单人情境生存与资源规划；具体版本差异很大，传统版本偏系统模拟，新版可能增加人物叙事。",
+        "mechanics": "安排行进速度、食物与物资，决定何时休息、狩猎或涉水，并承受随机事件和队伍状态变化。",
+        "innovation": "核心并非单一新机制，而是路线、物资、健康和随机事件持续交织，让宏观计划落到队员具体风险。",
+        "narrative_role": "旅程事件会生成个体命运和损失，构成经典的系统叙事来源。",
+        "personal_interest": "旅行、资源压力和小事件有吸引力；极端惩罚与版本相关的重复度需核实。",
+        "research_value": "值得研究其如何用有限资源与随机旅途事件生成叙事感。",
+        "reason": "系统策略与旅途故事价值明确，推荐；先确认具体版本再评估细节。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "同名有多个版本和改编，当前条目对应版本、规则与表现形式未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-24",
+      "title": "苏丹的游戏 Sultan's Game",
+      "expected": {
+        "title": "苏丹的游戏 Sultan's Game",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究",
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "虽然复杂、繁琐且不一定适合个人长期游玩，但它的故事结构、卡牌对象和组合设计具有明确研究价值，因此应该被推荐并注明主要限制。"
+      },
+      "baseline": {
+        "id": "legacy-24",
+        "title": "苏丹的游戏 Sultan's Game",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "标题让人联想到围绕宫廷命令与生存做选择的叙事策略游戏，但仅凭题名无法确认其玩法；若实际以卡牌和资源决策驱动人物命运，会有口味交集。",
+        "experience_center": "可能是高压选择、人物处境和叙事后果的组合；具体题材表达与暴力程度未知。",
+        "mechanics": "行动、牌组或事件循环均需核实，不能根据名称推断为事实。",
+        "innovation": "当前证据不足以说明规则是否改变玩家活动；仅有宫廷题材线索不算玩法创新。",
+        "narrative_role": "标题暗示权力与人物处境，但叙事结构、人物关系和选择后果未知。",
+        "personal_interest": "制度压力与有意义的选择可能适合；若核心只是传统卡牌战斗或随机数值管理则不合口味。",
+        "research_value": "可能有机制叙事研究价值，需确认卡牌是否服务非战斗决策及后果。",
+        "reason": "题名提示潜在的制度选择主题，但不足以确认作品或主循环；保守标记低置信度推荐供细查。",
+        "evidence_basis": "仅依据标题及有限既有认识；未联网核验，所有玩法描述均以条件句呈现。",
+        "uncertainty": "身份、玩法结构、叙事内容与卡牌用途均待确认。"
+      },
+      "candidate": {
+        "id": "legacy-24",
+        "title": "苏丹的游戏 Sultan's Game",
+        "score": 4,
+        "result_label": "推荐",
+        "judgment": "玩家在残酷宫廷中被迫接受周期性命令，选择人物与资源去完成代价高昂的任务，在生存、权力与道德之间承受后果。",
+        "experience_center": "单人章节/回合制策略叙事；黑暗题材强，但人物处境和选择压力可能具有吸引力。",
+        "mechanics": "据作品已知概况，抽取或使用命令牌，安排角色和资源执行任务并承担失败/牺牲后果，循环推进宫廷局势。",
+        "innovation": "相较常规卡牌战斗，牌面更像制度命令和叙事挑战，玩家要把角色、资源与残酷目标匹配；具体局内规则需核验。",
+        "narrative_role": "政治权力、人物命运与道德代价预计由任务规则直接呈现。",
+        "personal_interest": "制度压力、选择后果和系统叙事匹配；传统卡牌决策形式及黑暗内容可能构成限制。",
+        "research_value": "若命令牌持续改变玩家对人物与资源的安排，具备明显的系统叙事研究价值。",
+        "reason": "价值不只在题材，现有概况提示命令与人物管理结合，推荐但等待玩法核验。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "作品与玩法依据为已有知识而非本次检索；卡牌活动、分支后果及内容强度未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "一致",
+      "candidate_label_match": true,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-25",
+      "title": "勇者斗恶龙7 重制版",
+      "expected": {
+        "title": "勇者斗恶龙7 重制版",
+        "source": [
+          "有意思"
+        ],
+        "result_label": "推荐",
+        "reason_types": [
+          "值得研究",
+          "画风启发"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "叙事节奏存在问题，但画面、UI、手感和局部故事仍具有启发性，属于应该推荐但必须说明限制的案例。"
+      },
+      "baseline": {
+        "id": "legacy-25",
+        "title": "勇者斗恶龙7 重制版",
+        "score": 3,
+        "result_label": "推荐",
+        "judgment": "你跟随一群伙伴逐步揭开岛屿与历史的秘密，长篇冒险和人物旅程提供叙事牵引；传统回合战斗与成长是重要组成。",
+        "experience_center": "章节式探索、队伍冒险和长篇JRPG叙事，适合愿意投入较长旅程的玩家。",
+        "mechanics": "探索地点、完成任务、推进故事并进行传统指令式回合战斗和角色成长；重制版具体改动尚未核验。",
+        "innovation": "重制本身不能证明玩法创新；与传统JRPG模板相比，是否调整职业、节奏或探索结构需核实具体版本。",
+        "narrative_role": "伙伴关系、分章节的岛屿故事和历史谜团是主要吸引力。",
+        "personal_interest": "探索和长篇人物故事有潜在吸引力，但传统回合战斗是taste列出的摩擦，篇幅也可能很长。",
+        "research_value": "系列叙事与章节结构或有观察价值，重制改动是否带来设计变化未知。",
+        "reason": "故事与探索可能抵消部分传统战斗摩擦，但不能以重制名义推定创新；保守推荐并建议核实改版内容。",
+        "evidence_basis": "仅依据标题及对系列原作的有限既有知识判断；未联网核验该重制版身份、发行状态或规则。",
+        "uncertainty": "标题可能指未发行、假想或不同版本对象；具体玩法改动完全未确认。"
+      },
+      "candidate": {
+        "id": "legacy-25",
+        "title": "勇者斗恶龙7 重制版",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "仅凭标题可知条目声称是《勇者斗恶龙7》的重制版本；无法确认具体版本身份、重制范围或当前版本的实际玩法表现。",
+        "experience_center": "可能是单人长篇角色扮演；传统回合制战斗是系列线索，但不能据此断定该重制版的结构及负担。",
+        "mechanics": "当前资料不足以判断探索、职业成长、战斗、章节节奏或是否新增机制。",
+        "innovation": "相较原版究竟改动了哪些规则、是否改变玩家活动和选择，标题不能提供答案。",
+        "narrative_role": "系列通常包含冒险叙事，但本条目剧情呈现与版本变化未核验。",
+        "personal_interest": "系列题材可能有探索吸引力，传统回合制风险需待具体版本确认。",
+        "research_value": "重制设计是否在保留经典结构时改变节奏或决策，值得核验但现阶段不能判定。",
+        "reason": "名称指向已知系列但版本和实际循环不明确，按规则保留信息不足，不猜测评分。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "标题信息不足且无外部核验；作品同一性、正式名称、发行状态和玩法均待确认。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-26",
+      "title": "Gathera",
+      "expected": {
+        "title": "Gathera",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "温馨主题无法改变生存、制作、建造和多人沙盒的核心。"
+      },
+      "baseline": {
+        "id": "legacy-26",
+        "title": "Gathera",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "仅凭这个名称无法可靠确认游戏身份或玩家会进入什么处境。",
+        "experience_center": "未知。",
+        "mechanics": "主循环未知，无法判断操作、决策和反馈。",
+        "innovation": "没有依据判断是否有新活动或类型变奏。",
+        "narrative_role": "故事、人物和氛围均未知。",
+        "personal_interest": "无法与用户口味做可靠匹配。",
+        "research_value": "在确认作品身份和实际玩法前，无法判断研究价值。",
+        "reason": "标题不足以区分具体作品，按输入约束保留不确定性。",
+        "evidence_basis": "仅使用给定标题；未联网或查询外部资料。",
+        "uncertainty": "游戏身份、平台、开发者和主循环全部未知。"
+      },
+      "candidate": {
+        "id": "legacy-26",
+        "title": "Gathera",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "单凭名称无法可靠识别游戏身份、类型或玩家处境。",
+        "experience_center": "无法确认单人/多人、游玩时长或核心体验情境。",
+        "mechanics": "无足够信息描述实际操作与决策循环。",
+        "innovation": "无法判断是否有新活动、类型变奏或仅为内容包装。",
+        "narrative_role": "无法判断是否存在故事、人物或关系叙事。",
+        "personal_interest": "无法与现有口味建立有依据的匹配判断。",
+        "research_value": "无从确认研究价值。",
+        "reason": "不以相似名称或臆测补足信息；需先确认具体作品及实际玩法。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "标题-only且无来源资料，身份和主循环均不确定。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "待确认",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-27",
+      "title": "Project Cobalt",
+      "expected": {
+        "title": "Project Cobalt",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "采集、制作、狩猎和基地建设构成典型生存沙盒。"
+      },
+      "baseline": {
+        "id": "legacy-27",
+        "title": "Project Cobalt",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "这是一个通用项目代号式标题，无法确认对应的具体游戏。",
+        "experience_center": "未知。",
+        "mechanics": "实际玩法未知。",
+        "innovation": "没有可判断的规则或活动信息。",
+        "narrative_role": "故事和人物信息未知。",
+        "personal_interest": "无法判断与用户偏好的关系。",
+        "research_value": "未确认作品身份前无法评价。",
+        "reason": "标题歧义过大，依据约束不猜测其题材或玩法。",
+        "evidence_basis": "仅使用给定标题；未联网或读取其他资料。",
+        "uncertainty": "可能是内部代号、多个作品之一或假想样本；身份无法确定。"
+      },
+      "candidate": {
+        "id": "legacy-27",
+        "title": "Project Cobalt",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "项目代号可能对应多个作品或尚未公开的项目，仅凭标题无法确认所指游戏。",
+        "experience_center": "游玩情境未知。",
+        "mechanics": "主循环、控制方式和目标未知。",
+        "innovation": "没有可确认的规则变化或创新。",
+        "narrative_role": "叙事题材和人物内容未知。",
+        "personal_interest": "无法评估与用户的兴趣匹配。",
+        "research_value": "没有足够证据评估研究价值。",
+        "reason": "保留信息不足，需先确定项目的正式名称或可信玩法材料。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "标题可能是代号或重名项目；未核验身份与实际主循环。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "待确认",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-28",
+      "title": "元素巫师 Elemental Witches",
+      "expected": {
+        "title": "元素巫师 Elemental Witches",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "本质是幸存者式自动攻击、敌潮和数值构筑，题材包装不改变核心。"
+      },
+      "baseline": {
+        "id": "legacy-28",
+        "title": "元素巫师 Elemental Witches",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "标题带有奇幻题材，但不足以确认具体作品及其玩法。",
+        "experience_center": "无法确认是叙事冒险、策略、战斗或其他体验。",
+        "mechanics": "主循环未知；不能因元素或巫师设定推断战斗规则。",
+        "innovation": "题材名词不构成玩法创新证据，具体规则无从判断。",
+        "narrative_role": "人物与故事比重未知。",
+        "personal_interest": "无法判断是否命中传统战斗、卡牌战斗或其他偏好限制。",
+        "research_value": "没有足够依据说明其提供何种可研究设计。",
+        "reason": "标题只提供题材线索，无法据此给可靠分数。",
+        "evidence_basis": "仅依据给定标题；未联网核验或查找同名作品。",
+        "uncertainty": "身份、循环、表现质量和发行状态均未确认。"
+      },
+      "candidate": {
+        "id": "legacy-28",
+        "title": "元素巫师 Elemental Witches",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "仅凭标题无法确定这是哪款游戏，也无法确认名称是否为规范译名。",
+        "experience_center": "可能涉及魔法题材，但题材不足以推断游戏情境。",
+        "mechanics": "战斗、策略、模拟或叙事循环均无法确认。",
+        "innovation": "不能仅凭“元素”或“巫师”字样认定玩法创新。",
+        "narrative_role": "故事、人物和关系未知。",
+        "personal_interest": "无法形成有依据的个人兴趣判断。",
+        "research_value": "没有足够玩法证据评估设计价值。",
+        "reason": "先确认同一作品和玩家实际要做的事情，再评分。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "标题和规范身份均未核验；不根据名称猜循环。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "待确认",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-29",
+      "title": "噬血代码II 终极版",
+      "expected": {
+        "title": "噬血代码II 终极版",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "类魂战斗、闪避、Boss攻坚和重复试错是不可绕开的主循环。"
+      },
+      "baseline": {
+        "id": "legacy-29",
+        "title": "噬血代码II 终极版",
+        "score": 2,
+        "result_label": "不推荐",
+        "judgment": "标题指向《噬血代码》续作或版本，但仅凭题名无法确认对象；若沿用系列的动作RPG与类魂战斗，核心会落在高强度反应战斗和Boss挑战。",
+        "experience_center": "在系列识别假设下，战斗掌握和装备成长可能是主要驱动力，正中用户明确排斥的类魂循环。",
+        "mechanics": "续作实际系统未确认；已知系列模板包含近战动作战斗、闪避时机和Boss模式应对。",
+        "innovation": "标题中的续作或终极版不能证明战斗结构发生实质改变；需新规则证据才能改判。",
+        "narrative_role": "系列通常有世界观和角色，但故事无法抵消核心战斗雷区。",
+        "personal_interest": "若确为类魂动作战斗，用户明确表示无论世界、美术或叙事多好都不会玩。",
+        "research_value": "仅凭标题没有足以抵消硬雷区的独立设计线索。",
+        "reason": "在最可能的系列身份下，核心体验命中明确类魂否决项，且没有已知结构差异支持研究推荐；身份仍需保留条件。",
+        "evidence_basis": "仅依据标题和对原系列的既有知识推断；未联网核验续作或版本是否真实及其规则。",
+        "uncertainty": "续作身份、发行状态和系统改动未知；若并非系列作品需重新判断。"
+      },
+      "candidate": {
+        "id": "legacy-29",
+        "title": "噬血代码II 终极版",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "标题看似指向《噬血代码》续作或某种终极版，但无法确认具体发行条目及版本内容。",
+        "experience_center": "若确为系列作品，动作角色扮演和魂系战斗可能是核心；这一点不能由当前标题可靠确认，也不能据类型猜测评分。",
+        "mechanics": "该版本的战斗、探索、队友与成长循环未知。",
+        "innovation": "续作或终极版是否改变战斗与资源决策，尚无证据。",
+        "narrative_role": "系列延续内容及叙事结构未确认。",
+        "personal_interest": "若确属魂系核心玩法将触及明确雷区，但当前身份和循环未经核验，暂不据此判不推荐。",
+        "research_value": "续作设计变化可能值得辨析，尚无可评价材料。",
+        "reason": "标题可能混合系列名与版本后缀；在确认真实条目和玩法前标记信息不足。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "身份、正式名称、发行情况与核心战斗循环未核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-30",
+      "title": "书店增量 Bookstore Incremental",
+      "expected": {
+        "title": "书店增量 Bookstore Incremental",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "书店只是增量放置的表现层，核心是等待收益和优化数值。"
+      },
+      "baseline": {
+        "id": "legacy-30",
+        "title": "书店增量 Bookstore Incremental",
+        "score": 2,
+        "result_label": "不推荐",
+        "judgment": "标题暗示经营书店并逐步增长数值，但无法确认是否有顾客故事、探索或经营决策；若主要是自动增长和效率升级，体验会偏向用户不喜欢的放置数值循环。",
+        "experience_center": "在标题所暗示的增量游戏假设下，数值增长和升级是动力，书店题材可能只是包装。",
+        "mechanics": "具体循环未确认；标题暗示可能涉及自动收入、升级和增长。",
+        "innovation": "没有证据表明书店主题改变了玩家实际决策或活动。",
+        "narrative_role": "顾客、社区或书籍故事均未从标题得到确认。",
+        "personal_interest": "若以放置增长和效率优化为主，会命中挂机、纯数值和缺乏叙事的低兴趣模式。",
+        "research_value": "目前没有可识别的新活动或实质结构差异。",
+        "reason": "根据明显的增量题名只能作低置信度风险判断；若它实际包含强人物和经营取舍，可能需要上调。",
+        "evidence_basis": "仅依据标题语义推断；未联网核验作品身份或循环。",
+        "uncertainty": "题名可能是描述性或假想标题，实际玩法和叙事内容未知。"
+      },
+      "candidate": {
+        "id": "legacy-30",
+        "title": "书店增量 Bookstore Incremental",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "标题提示可能是书店题材增量游戏，但无法确认具体产品或规范名称。",
+        "experience_center": "若属放置/增量玩法，可能触及用户低兴趣类型；不能以名称直接认定主循环。",
+        "mechanics": "无法确认是否以自动增长、点击升级、经营选择或叙事任务为核心。",
+        "innovation": "书店题材本身不构成玩法创新，规则变化未知。",
+        "narrative_role": "人物、社区、故事和书店日常元素未确认。",
+        "personal_interest": "潜在生活场景有吸引力，但实际内容不明，无法确定个人价值。",
+        "research_value": "是否把经营决策和人物故事嵌入增量循环，值得先核实。",
+        "reason": "在确认其是否纯放置、是否有生活叙事前，不给出方向性评分。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "只依据标题会过度推断，身份、循环和内容全部待核验。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-31",
+      "title": "破碎怪谈 切勿欺骗",
+      "expected": {
+        "title": "破碎怪谈 切勿欺骗",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "第一人称心理恐怖和求生调查直接命中明确雷区。"
+      },
+      "baseline": {
+        "id": "legacy-31",
+        "title": "破碎怪谈 切勿欺骗",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "标题提示怪谈或悬疑题材，但无法确认它是互动影游、文字冒险、恐怖游戏还是其他作品。",
+        "experience_center": "恐怖强度、第一人称视角和玩家活动都未知。",
+        "mechanics": "主循环未知。",
+        "innovation": "没有依据确认是否有实质玩法或叙事形式差异。",
+        "narrative_role": "可能偏悬疑叙事，但具体呈现无法确定。",
+        "personal_interest": "若属于纯恐怖互动影游或第一人称恐怖，会命中明确雷区；目前不能确认。",
+        "research_value": "需确认实际交互与视角后才能判断研究价值。",
+        "reason": "标题带来明确核查问题，却不足以支持评分或身份判断。",
+        "evidence_basis": "仅依据给定标题；未联网核验。",
+        "uncertainty": "作品身份、视角、恐怖类型、玩法和完成度均未知。"
+      },
+      "candidate": {
+        "id": "legacy-31",
+        "title": "破碎怪谈 切勿欺骗",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "当前中文标题不足以确认对应作品、规范原名及具体类型。",
+        "experience_center": "若为纯恐怖互动影游会明显不合偏好，但尚不能确认其呈现方式或体验场景。",
+        "mechanics": "无法确认是第一人称探索、互动影像、推理还是其他循环。",
+        "innovation": "不能判断是否存在实质玩法活动或仅靠叙事悬疑推进。",
+        "narrative_role": "“怪谈”字样不能证明恐怖强度、人物内容或叙事形式。",
+        "personal_interest": "在类型和镜头方式不明时，不把明确雷区套用到作品上。",
+        "research_value": "玩法结构和表达形式尚无证据可供分析。",
+        "reason": "身份及循环不明确，按信息不足处理，而非从标题直接判不推荐。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "未确认作品同一性、第一人称/影像形式、恐怖强度与实际玩法。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "待确认",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-32",
+      "title": "武林对决",
+      "expected": {
+        "title": "武林对决",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "武侠美术无法抵消传统回合制卡牌战斗和重复首领挑战。"
+      },
+      "baseline": {
+        "id": "legacy-32",
+        "title": "武林对决",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "名称过于宽泛，无法确认具体游戏或其所指的玩法类型。",
+        "experience_center": "未知；可能指格斗、卡牌、策略或其他作品，不能据标题断定。",
+        "mechanics": "主循环未知。",
+        "innovation": "没有规则信息可用于比较成熟类型或判断结构变化。",
+        "narrative_role": "人物、故事和生活感未知。",
+        "personal_interest": "若是纯战斗或传统卡牌可能不合口味，但身份未确认，不能套用该判断。",
+        "research_value": "无足够信息评价。",
+        "reason": "保留对作品身份与实际玩法的不确定性，避免仅凭武侠词汇做推荐判断。",
+        "evidence_basis": "仅使用给定标题；未联网或查找同名作品。",
+        "uncertainty": "存在同名歧义，平台、类型和循环均未确认。"
+      },
+      "candidate": {
+        "id": "legacy-32",
+        "title": "武林对决",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "名称较泛，可能对应多款游戏或模式，无法确认具体作品。",
+        "experience_center": "武侠题材本身并不决定兴趣；单人/多人和游玩情境未知。",
+        "mechanics": "对战、策略、动作或卡牌等可能性都无法确认。",
+        "innovation": "没有可核实的活动或规则变化。",
+        "narrative_role": "叙事与人物关系未知。",
+        "personal_interest": "无法判断其是否落入泛武侠、传统战斗或社交对战等偏好边界。",
+        "research_value": "无足够材料评估其设计探索或情境价值。",
+        "reason": "需要正式名称、平台或玩法介绍来识别对象。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "同名风险高，标题无法确认身份及循环。"
+      },
+      "baseline_label_match": false,
+      "baseline_label_assessment": "待确认",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    },
+    {
+      "id": "legacy-33",
+      "title": "无为修仙传",
+      "expected": {
+        "title": "无为修仙传",
+        "source": [
+          "taste",
+          "游戏库"
+        ],
+        "result_label": "不推荐",
+        "reason_types": [
+          "明确雷区"
+        ],
+        "draft_confidence": "high",
+        "reason_detail": "泛修仙、放置、自动战斗和境界成长构成完整的低兴趣循环。"
+      },
+      "baseline": {
+        "id": "legacy-33",
+        "title": "无为修仙传",
+        "score": 2,
+        "result_label": "不推荐",
+        "judgment": "标题指向修仙题材，‘无为’可能暗示放置或挂机成长，但无法据此确认实际系统；若主循环是自动修炼、境界升级和刷资源，会落入用户明确低兴趣类型。",
+        "experience_center": "按标题的保守推断，可能以数值增长和长线升级提供驱动力，故事与选择比重未知。",
+        "mechanics": "实际是否挂机、战斗、资源生产或主动选择均未确认。",
+        "innovation": "标题中的修仙设定或“无为”概念不证明有新活动或结构变奏。",
+        "narrative_role": "叙事和人物关系未知。",
+        "personal_interest": "泛修仙、挂机和放置是明确低兴趣组合；若实际有强叙事或独特决策则需重新评估。",
+        "research_value": "标题没有显示足够鲜明的机制研究价值。",
+        "reason": "基于题名给低置信度的不推荐判断，主要因疑似命中泛修仙放置偏好限制，结论不等于已确认玩法。",
+        "evidence_basis": "仅依据给定标题语义推断；未联网核验作品身份或循环。",
+        "uncertainty": "实际是否挂机放置、是否有故事选择及作品身份均未确认。"
+      },
+      "candidate": {
+        "id": "legacy-33",
+        "title": "无为修仙传",
+        "score": null,
+        "result_label": "信息不足",
+        "judgment": "标题可能指修仙题材游戏，但具体作品身份和玩法都无法确认。",
+        "experience_center": "若核心是挂机、境界突破和资源刷取会触及低兴趣项；目前不能据名称认定。",
+        "mechanics": "无法确认玩家是否主动经营选择、探索任务，或主要等待数值增长。",
+        "innovation": "题材和名称不能证明玩法探索。",
+        "narrative_role": "人物生活、关系、故事份量未知。",
+        "personal_interest": "只有在确认其并非纯放置且有具体人物或系统选择后，才可能判断匹配。",
+        "research_value": "规则和活动未知，无法评价研究价值。",
+        "reason": "不给标题推测虚构的正反理由，保留待核验。",
+        "evidence_basis": "仅凭标题与既有知识判断，未经外部核验；以下玩法描述和匹配判断均为暂定。",
+        "uncertainty": "作品身份和主循环均未确认；此信息不足受本次禁止联网限制。"
+      },
+      "baseline_label_match": true,
+      "baseline_label_assessment": "一致",
+      "candidate_label_assessment": "待确认",
+      "candidate_label_match": false,
+      "review": {},
+      "verdict": "不确定"
+    }
+  ],
+  "adoption": "pending_human_review"
+}

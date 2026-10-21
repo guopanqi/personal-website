@@ -1,0 +1,10 @@
+{
+  "agent_id": "/root/review_luna",
+  "model_alias": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "fork_turns": "none",
+  "role": "advisory_not_human_review",
+  "output_sha256": "7fcf7becb06d53bb84fa3d4027fea118c2525b19c6d5f8b3e0897db6bd0ebcc2",
+  "baseline_raw_sha256": "cc9a9a8d05e29b9d4d72a284e5a02be6155f552b4d1ad1bc0a772a19000d8938",
+  "candidate_raw_sha256": "bf4fd388f7dd683a62822d8cd650c6a23b0adb13403399112fabad4a65ae78a4"
+}

@@ -1,0 +1,136 @@
+{
+  "cases": {
+    "tavern-story": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "tavern-profit": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "tavern-coupled": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "theme-crop": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "theme-dragon": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "marketing": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "unknown": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "holdout-story": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "holdout-coupled": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "holdout-traditional": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    },
+    "holdout-experimental": {
+      "verdict": "不确定",
+      "reviewed_by": "",
+      "reason": "",
+      "dimensions": {
+        "实际体验": "",
+        "结构区别": "",
+        "证据边界": "",
+        "原有偏好": "",
+        "体验与研究分离": ""
+      }
+    }
+  }
+}

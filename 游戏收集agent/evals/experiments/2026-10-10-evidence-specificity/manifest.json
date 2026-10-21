@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-10-10T02:31:32.696465+00:00",
+  "git_head": "54fb88eaa2dc625b4fa33b4b5f3645eb742ffe06",
+  "baseline_origin": "current_working_tree",
+  "hypothesis": "在体验中心分析基础上要求逐款个人兴趣与研究依据，并明确标题线索不能支撑推荐，减少泛泛说明和证据不足时的误推荐；保持原有推荐门槛。",
+  "split": "dev",
+  "model": "gpt-6-luna",
+  "repetition": 1,
+  "input_limitations": "legacy title_only tests rely on model knowledge, not verified gameplay evidence",
+  "hashes": {
+    "inputs.json": "bc23ac0b386f029c8bfc69695db75fd38de84b4c28977f6c12d61a6fd0bb1f4a",
+    "expectations.json": "4140288dfea54c4489e0ccc6e545032a393f15e3297da5f0c7223d280b24890b",
+    "gold-source.json": "0fc16a0443262fee9baad02caf831ac7540dbee491e4709d508beed71693907f",
+    "extensions-source.json": "340e4500945910260598dd56f7636ad7ed10bf6de54c6b5bf9342314ff8a9736",
+    "baseline-taste.txt": "f48bd2e2339b58ad2a1be3c7616fd6d4a7a37ce7f8b5356c2a582cc4aaf5d968",
+    "baseline-SKILL.md": "ab10dd108057aa17bfa8d63bab98b26641c7ba2edb17c6f2ec77bf4ebccd9ca9",
+    "candidate-taste.txt": "0463d0697c360f7c46a4dcef068b5304f9b149bb3d6aa1ed50f0160d108d3f4b",
+    "candidate-SKILL.md": "56abf603d975f5383f9b0da77c398ac22646028d87518f0afbd5dc376ec7211e"
+  }
+}

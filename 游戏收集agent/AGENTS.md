@@ -11,20 +11,15 @@
 | 工作流 | `游戏库-Gamer520更新SKILL.md` | Gamer520 来源更新的执行流程 |
 | 临时 | `scratch/` | 个人札记、历史产物，不属于生产流程 |
 
-## 关键指引
+CLI 完整参考（命令、CSV schema、示例）见 `game_library_cli/README.md`。所有正式游戏库操作通过 `game_library_cli/game-library`，不要直接改 CSV、用户备注或来源游标。不要直接读取整份 CSV；使用 `search` 或 `export` 获取局部数据。不要创建流程中转文件；CLI 输出由 Agent 直接处理，持久化业务状态只写数据库和 Doctor 复核账本。
 
-- **CLI 完整参考**（命令、CSV schema、示例）→ `game_library_cli/README.md`
-- **Gamer520 来源更新流程** → `游戏库-Gamer520更新SKILL.md`
-- **不要直接读取整份 CSV**，用 `search` 或 `export` 获取局部数据
-- **不要创建流程中转文件**，CLI 输出由 Agent 直接处理；持久化业务状态只写数据库和 Doctor 复核账本
+## 每日 Gamer520 更新
 
-## 常用调用
+详细执行流程见 `游戏库-Gamer520更新SKILL.md`。常用命令：
 
 ```bash
 游戏收集agent/game_library_cli/game-library <command>
 ```
-
-常用起点：
 
 ```bash
 # 查看最新收录边界（PC / Switch 分别查）
@@ -51,3 +46,9 @@
 # 健康检查
 游戏收集agent/game_library_cli/game-library validate
 ```
+
+## 判断标准修订与行为评估
+
+修改 `taste.txt` 或游戏判断 Skill、复盘口味反馈时，先读取 `evals/SKILL.md`，按其中冻结基线、独立模型测试和具体判断对比的流程执行。候选标准与正式标准、现有金标准分开保存；新增测试案例先提交用户审核，不自行批准。模型审阅只是辅助意见，不能作为人工审核记录或自动采用授权。
+
+该评估工作流允许保存冻结输入和真实模型输出，独立于每日来源流程的中转文件限制。默认使用独立 GPT 6 Luna Agent 测试。确定性工程验证与游戏判断行为评估是不同检查，不要把 CLI 单元测试称作行为评估。

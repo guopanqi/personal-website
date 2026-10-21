@@ -1,0 +1,18 @@
+{
+  "executor": "Codex collaboration.spawn_agent",
+  "model_alias": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "fork_turns": "none",
+  "baseline_agent": "/root/synthetic_baseline_luna",
+  "candidate_agent": "/root/synthetic_candidate_luna",
+  "baseline_reused": false,
+  "user_scope": "user requested hypothetical test results; auxiliary run only, not test-set approval",
+  "model_provider_version": null,
+  "sampling_seed": null,
+  "temperature": null,
+  "python": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "input_mode": "synthetic_diagnostic",
+  "holdout": false,
+  "isolation": "fresh conversations plus explicit file-read constraints, not physical filesystem isolation"
+}

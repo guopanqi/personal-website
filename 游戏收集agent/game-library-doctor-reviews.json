@@ -47,6 +47,50 @@
     },
     {
       "normalized_titles": [
+        "dunecrawl",
+        "网络爬虫netcrawl"
+      ],
+      "decision": "distinct",
+      "reason": "沙漠合作冒险与网络爬虫为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:56.640258+00:00",
+      "title_a": "DuneCrawl",
+      "title_b": "网络爬虫 NET.CRAWL"
+    },
+    {
+      "normalized_titles": [
+        "easportsfc26",
+        "easportsfc27"
+      ],
+      "decision": "distinct",
+      "reason": "FC27与FC26为不同年货作品。",
+      "reviewed_at": "2026-10-07T01:13:57.256809+00:00",
+      "title_a": "EA SPORTS FC27",
+      "title_b": "EA SPORTS FC 26"
+    },
+    {
+      "normalized_titles": [
+        "easportsfc26",
+        "easportsfc27虚拟机"
+      ],
+      "decision": "distinct",
+      "reason": "FC27与FC26为不同年货作品。",
+      "reviewed_at": "2026-10-07T01:13:56.230419+00:00",
+      "title_a": "EA Sports FC 27 虚拟机",
+      "title_b": "EA SPORTS FC 26"
+    },
+    {
+      "normalized_titles": [
+        "easportsfc27",
+        "easportsfc27虚拟机"
+      ],
+      "decision": "same",
+      "reason": "同一FC27年货作品，虚拟机为版本描述，跨平台合并。",
+      "reviewed_at": "2026-10-07T01:21:30.141772+00:00",
+      "title_a": "EA Sports FC 27 虚拟机",
+      "title_b": "EA SPORTS FC27"
+    },
+    {
+      "normalized_titles": [
         "esportsmanager2026",
         "城市巴士模拟器2026"
       ],
@@ -80,6 +124,17 @@
     },
     {
       "normalized_titles": [
+        "mistaken",
+        "魔剑maken"
+      ],
+      "decision": "distinct",
+      "reason": "MAKEN 与 Mistaken 是不同作品，标题近似但英文名、玩法与来源页均不同。",
+      "reviewed_at": "2026-10-14T06:41:23.743268+00:00",
+      "title_a": "魔剑 MAKEN",
+      "title_b": "Mistaken"
+    },
+    {
+      "normalized_titles": [
         "nba2k26",
         "nba2k27巅峰版"
       ],
@@ -99,6 +154,17 @@
       "reviewed_at": "2026-09-21T07:58:54.581839+00:00",
       "title_a": "There Is mORE",
       "title_b": "Remorses"
+    },
+    {
+      "normalized_titles": [
+        "sandsofaura",
+        "奥拉之沙sandsofaura"
+      ],
+      "decision": "same",
+      "reason": "中英标题同一游戏，Switch移植。",
+      "reviewed_at": "2026-10-07T01:13:57.975549+00:00",
+      "title_a": "奥拉之沙 Sands of Aura",
+      "title_b": "Sands of Aura"
     },
     {
       "normalized_titles": [
@@ -154,6 +220,17 @@
       "reviewed_at": "2026-09-14T15:12:00.462560+00:00",
       "title_a": "一统江湖",
       "title_b": "下一站江湖Ⅱ（The Next Jianghu II）"
+    },
+    {
+      "normalized_titles": [
+        "万古仙途",
+        "万里仙途"
+      ],
+      "decision": "distinct",
+      "reason": "两者为不同游戏：万古仙途是纵向洞府经营、境界突破与轮回重修的挂机养成；万里仙途是《修仙塔》2.0版的横向自动战斗与宗门成长。名称相近但核心内容与作品身份不同。",
+      "reviewed_at": "2026-10-20T00:51:24.101171+00:00",
+      "title_a": "万古仙途",
+      "title_b": "万里仙途"
     },
     {
       "normalized_titles": [
@@ -344,6 +421,17 @@
     },
     {
       "normalized_titles": [
+        "东京女武神",
+        "东京女武神tokyovalkyries"
+      ],
+      "decision": "same",
+      "reason": "英文副标题差异，同一游戏，Switch移植。",
+      "reviewed_at": "2026-10-07T01:13:57.772112+00:00",
+      "title_a": "东京女武神 Tokyo Valkyries",
+      "title_b": "东京女武神"
+    },
+    {
+      "normalized_titles": [
         "东方红魔乡新典",
         "东方红魔乡新典+原典"
       ],
@@ -355,6 +443,39 @@
     },
     {
       "normalized_titles": [
+        "丰收之月特拉底亚回声harvestmoonechoesofteradea",
+        "丰收之月特拉迪亚回声harvestmoon"
+      ],
+      "decision": "same",
+      "reason": "同一 Harvest Moon: Echoes of Teradea，仅来源标题省略英文副标题且中文译名略异；平台已收录为 PC/Switch。",
+      "reviewed_at": "2026-10-18T06:28:47.693757+00:00",
+      "title_a": "丰收之月 特拉迪亚回声 Harvest Moon",
+      "title_b": "丰收之月 特拉底亚回声 Harvest Moon: Echoes of Teradea"
+    },
+    {
+      "normalized_titles": [
+        "丰收之月特拉底亚的回响",
+        "丰收之月特拉迪亚回声harvestmoon"
+      ],
+      "decision": "same",
+      "reason": "两条 Gamer520 链接对应 Harvest Moon: Echoes of Teradea，仅中文译名不同，PC与Switch版本。",
+      "reviewed_at": "2026-10-18T06:27:26.226379+00:00",
+      "title_a": "丰收之月 特拉底亚的回响",
+      "title_b": "丰收之月 特拉迪亚回声 Harvest Moon"
+    },
+    {
+      "normalized_titles": [
+        "乐高®派对",
+        "乐高派对legoparty"
+      ],
+      "decision": "same",
+      "reason": "仅符号差异，同一游戏，Switch移植。",
+      "reviewed_at": "2026-10-07T01:13:57.873411+00:00",
+      "title_a": "乐高派对 LEGO Party!",
+      "title_b": "乐高®派对"
+    },
+    {
+      "normalized_titles": [
         "九山狼之城",
         "九山狼之城kusancityofwolves"
       ],
@@ -363,6 +484,50 @@
       "reviewed_at": "2026-08-03T11:18:25.642722+00:00",
       "title_a": "九山 狼之城 Kusan City of Wolves",
       "title_b": "九山 狼之城"
+    },
+    {
+      "normalized_titles": [
+        "亰都幻都樱花幻舞",
+        "亰都幻都樱花幻舞国语配音版"
+      ],
+      "decision": "same",
+      "reason": "国语配音版为同一游戏版本差异。",
+      "reviewed_at": "2026-10-07T01:13:57.359593+00:00",
+      "title_a": "亰都幻都 樱花幻舞 国语配音版",
+      "title_b": "亰都幻都 樱花幻舞"
+    },
+    {
+      "normalized_titles": [
+        "仙剑奇侠传3",
+        "仙剑奇侠传二"
+      ],
+      "decision": "distinct",
+      "reason": "仙剑二代与三代为不同正传作品，剧情主角均不同。",
+      "reviewed_at": "2026-10-07T01:21:19.089382+00:00",
+      "title_a": "仙剑奇侠传3",
+      "title_b": "仙剑奇侠传二"
+    },
+    {
+      "normalized_titles": [
+        "仙剑奇侠传3",
+        "仙剑奇侠传四"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号4与3是不同正传作品。",
+      "reviewed_at": "2026-10-14T06:41:22.429110+00:00",
+      "title_a": "仙剑奇侠传四",
+      "title_b": "仙剑奇侠传3"
+    },
+    {
+      "normalized_titles": [
+        "仙剑奇侠传二",
+        "仙剑奇侠传四"
+      ],
+      "decision": "distinct",
+      "reason": "系列编号4与2是不同正传作品。",
+      "reviewed_at": "2026-10-14T06:41:22.532110+00:00",
+      "title_a": "仙剑奇侠传四",
+      "title_b": "仙剑奇侠传二"
     },
     {
       "normalized_titles": [
@@ -399,6 +564,39 @@
     },
     {
       "normalized_titles": [
+        "使命召唤13无限战争",
+        "使命召唤®现代战争®4"
+      ],
+      "decision": "distinct",
+      "reason": "Call of Duty: Infinite Warfare 与 Modern Warfare 4 是不同作品。",
+      "reviewed_at": "2026-10-18T06:27:25.252109+00:00",
+      "title_a": "使命召唤13 无限战争",
+      "title_b": "使命召唤® 现代战争®4"
+    },
+    {
+      "normalized_titles": [
+        "使命召唤14二战",
+        "使命召唤4"
+      ],
+      "decision": "distinct",
+      "reason": "Call of Duty 4: Modern Warfare 与 Call of Duty: WWII 是不同系列作品。",
+      "reviewed_at": "2026-10-14T06:41:24.055390+00:00",
+      "title_a": "使命召唤4",
+      "title_b": "使命召唤14 二战"
+    },
+    {
+      "normalized_titles": [
+        "使命召唤4",
+        "使命召唤®现代战争®4"
+      ],
+      "decision": "distinct",
+      "reason": "Call of Duty 4: Modern Warfare (2007) 与 Call of Duty: Modern Warfare 4 (2026) 为不同子系列/作品，PC候选的详情与官网宣传均指向新作。",
+      "reviewed_at": "2026-10-18T06:27:25.133504+00:00",
+      "title_a": "使命召唤4",
+      "title_b": "使命召唤® 现代战争®4"
+    },
+    {
+      "normalized_titles": [
         "修仙家族模拟器",
         "修仙模拟器"
       ],
@@ -407,6 +605,28 @@
       "reviewed_at": "2026-08-15T10:00:25.468282+00:00",
       "title_a": "修仙模拟器",
       "title_b": "修仙家族模拟器"
+    },
+    {
+      "normalized_titles": [
+        "光与影33号远征队",
+        "光与影33号远征队国语配音版"
+      ],
+      "decision": "same",
+      "reason": "同一款 Clair Obscur: Expedition 33，国语配音版是资源变体。",
+      "reviewed_at": "2026-10-14T06:41:23.265016+00:00",
+      "title_a": "光与影 33号远征队 国语配音版",
+      "title_b": "光与影 33号远征队"
+    },
+    {
+      "normalized_titles": [
+        "光陨之地",
+        "神陨之地"
+      ],
+      "decision": "distinct",
+      "reason": "光陨与神陨为不同独立作品。",
+      "reviewed_at": "2026-10-07T01:13:56.027754+00:00",
+      "title_a": "光陨之地",
+      "title_b": "神陨之地"
     },
     {
       "normalized_titles": [
@@ -432,6 +652,39 @@
     },
     {
       "normalized_titles": [
+        "八方旅人2",
+        "八方旅人2国语配音版"
+      ],
+      "decision": "same",
+      "reason": "同一八方旅人2作品，国语配音版为版本差异，跨平台合并。",
+      "reviewed_at": "2026-10-07T01:21:30.342483+00:00",
+      "title_a": "八方旅人2 国语配音版",
+      "title_b": "八方旅人2"
+    },
+    {
+      "normalized_titles": [
+        "公路旅店模拟器",
+        "铁路模拟器"
+      ],
+      "decision": "distinct",
+      "reason": "公路酒吧经营与铁路模拟为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:56.747842+00:00",
+      "title_a": "公路旅店模拟器",
+      "title_b": "铁路模拟器"
+    },
+    {
+      "normalized_titles": [
+        "冰汽时代2",
+        "冰汽时代frostpunk"
+      ],
+      "decision": "distinct",
+      "reason": "Frostpunk是原作，冰汽时代2是独立续作；系列编号及系统规模不同。",
+      "reviewed_at": "2026-10-20T00:51:25.317240+00:00",
+      "title_a": "冰汽时代 Frostpunk",
+      "title_b": "冰汽时代2"
+    },
+    {
+      "normalized_titles": [
         "刀剑神域碎梦边境",
         "刀剑神域碎梦边境swordartonlinefractureddaydream"
       ],
@@ -440,6 +693,17 @@
       "reviewed_at": "2026-07-15T09:30:41.564677+00:00",
       "title_a": "刀剑神域 碎梦边境",
       "title_b": "刀剑神域 碎梦边境 SWORD ART ONLINE Fractured Daydream"
+    },
+    {
+      "normalized_titles": [
+        "勇者斗恶龙vii重制版非虚拟机解压即撸",
+        "死亡空间重制版非虚拟机解压即撸"
+      ],
+      "decision": "distinct",
+      "reason": "Dead Space Remake 与 Dragon Quest VII Remake 是不同系列，标题后缀导致误匹配。",
+      "reviewed_at": "2026-10-14T06:41:23.158109+00:00",
+      "title_a": "死亡空间 重制版 非虚拟机 解压即撸",
+      "title_b": "勇者斗恶龙VII 重制版 非虚拟机 解压即撸"
     },
     {
       "normalized_titles": [
@@ -495,6 +759,17 @@
       "reviewed_at": "2026-08-22T11:06:23.831433+00:00",
       "title_a": "古墓丽影1-3 复刻版",
       "title_b": "古墓丽影1-3 重制版"
+    },
+    {
+      "normalized_titles": [
+        "另一个伊甸起源",
+        "另一个伊甸起源anotheredenbegins"
+      ],
+      "decision": "same",
+      "reason": "英文名 Another Eden Begins 一致；候选是同一作品的重复资源页。",
+      "reviewed_at": "2026-10-14T06:41:23.846918+00:00",
+      "title_a": "另一个伊甸 起源 Another Eden Begins",
+      "title_b": "另一个伊甸 起源"
     },
     {
       "normalized_titles": [
@@ -564,6 +839,17 @@
     },
     {
       "normalized_titles": [
+        "命令与征服红色警戒3",
+        "命令与征服红色警戒3起义"
+      ],
+      "decision": "distinct",
+      "reason": "《红色警戒3》是本体；《起义时刻》是可独立运行的资料片，含独立迷你战役与新内容，按不同作品分别收录。",
+      "reviewed_at": "2026-10-14T06:46:19.274665+00:00",
+      "title_a": "命令与征服 红色警戒 3",
+      "title_b": "命令与征服:红色警戒3 起义"
+    },
+    {
+      "normalized_titles": [
         "命运石之门重启steinsgatereboot",
         "命运石之门重启版"
       ],
@@ -598,6 +884,17 @@
     {
       "normalized_titles": [
         "四海兄弟2最终版",
+        "四海兄弟3最终版"
+      ],
+      "decision": "distinct",
+      "reason": "Mafia III 与 Mafia II: Definitive Edition 是系列不同作品。",
+      "reviewed_at": "2026-10-14T06:41:22.740557+00:00",
+      "title_a": "四海兄弟3 最终版",
+      "title_b": "四海兄弟2 最终版"
+    },
+    {
+      "normalized_titles": [
+        "四海兄弟2最终版",
         "四海兄弟最终版"
       ],
       "decision": "distinct",
@@ -605,6 +902,17 @@
       "reviewed_at": "2026-08-26T01:07:12.973300+00:00",
       "title_a": "四海兄弟 最终版",
       "title_b": "四海兄弟2 最终版"
+    },
+    {
+      "normalized_titles": [
+        "四海兄弟3最终版",
+        "四海兄弟最终版"
+      ],
+      "decision": "distinct",
+      "reason": "Mafia III 与 Mafia: Definitive Edition 是系列不同作品。",
+      "reviewed_at": "2026-10-14T06:41:22.636144+00:00",
+      "title_a": "四海兄弟3 最终版",
+      "title_b": "四海兄弟 最终版"
     },
     {
       "normalized_titles": [
@@ -631,6 +939,17 @@
     {
       "normalized_titles": [
         "圣剑传说3重制版",
+        "永恒传说重制版talesofeternia"
+      ],
+      "decision": "distinct",
+      "reason": "Tales of Eternia and Trials of Mana (Seiken Densetsu 3) belong to different series and are distinct games; the shared localized word 传说 does not indicate identity.",
+      "reviewed_at": "2026-10-15T10:57:26.254947+00:00",
+      "title_a": "永恒传说 重制版 Tales of Eternia",
+      "title_b": "圣剑传说3 重制版"
+    },
+    {
+      "normalized_titles": [
+        "圣剑传说3重制版",
         "薄暮传说重制版"
       ],
       "decision": "distinct",
@@ -638,6 +957,17 @@
       "reviewed_at": "2026-08-23T11:07:28.663069+00:00",
       "title_a": "薄暮传说 重制版",
       "title_b": "圣剑传说3 重制版"
+    },
+    {
+      "normalized_titles": [
+        "圣斗士星矢战士魂",
+        "圣斗士星矢斗士之魂"
+      ],
+      "decision": "same",
+      "reason": "Soldiers’ Soul 的中文译名差异，详情所述角色、发行商和战斗系统一致。",
+      "reviewed_at": "2026-10-18T06:27:25.804958+00:00",
+      "title_a": "圣斗士星矢 战士魂",
+      "title_b": "圣斗士星矢 斗士之魂"
     },
     {
       "normalized_titles": [
@@ -707,6 +1037,17 @@
     },
     {
       "normalized_titles": [
+        "塔防山贼模拟器",
+        "消防模拟器flashinglights"
+      ],
+      "decision": "distinct",
+      "reason": "塔防山贼模拟器是山寨经营加塔防；Flashing Lights 是警消急救模拟，名称候选为误匹配。",
+      "reviewed_at": "2026-10-14T06:41:22.123698+00:00",
+      "title_a": "塔防山贼模拟器",
+      "title_b": "消防模拟器（Flashing Lights）"
+    },
+    {
+      "normalized_titles": [
         "天命奇御",
         "天命奇御归途"
       ],
@@ -715,6 +1056,17 @@
       "reviewed_at": "2026-08-15T11:22:23.637922+00:00",
       "title_a": "天命奇御 归途",
       "title_b": "天命奇御"
+    },
+    {
+      "normalized_titles": [
+        "天国拯救2kingdomcomedeliveranceii",
+        "天国拯救2国语配音版"
+      ],
+      "decision": "same",
+      "reason": "英文名与系列编号一致，“国语配音版”只是资源版本描述。",
+      "reviewed_at": "2026-10-14T06:41:22.229087+00:00",
+      "title_a": "天国 拯救2 国语配音版",
+      "title_b": "天国拯救2（Kingdom Come: Deliverance II）"
     },
     {
       "normalized_titles": [
@@ -751,6 +1103,50 @@
     },
     {
       "normalized_titles": [
+        "女神异闻录3重制版",
+        "战神3重制版"
+      ],
+      "decision": "distinct",
+      "reason": "God of War III Remastered 与 Persona 3 Reload 仅共享数字与“重制版”字样，系列和玩法完全不同。",
+      "reviewed_at": "2026-10-14T06:41:22.019842+00:00",
+      "title_a": "战神3 重制版",
+      "title_b": "女神异闻录3 重制版"
+    },
+    {
+      "normalized_titles": [
+        "孤岛惊魂1",
+        "孤岛惊魂5"
+      ],
+      "decision": "distinct",
+      "reason": "Far Cry 1 and Far Cry 5 are distinct numbered installments with different protagonists, settings, and gameplay.",
+      "reviewed_at": "2026-10-15T10:51:26.453345+00:00",
+      "title_a": "孤岛惊魂1",
+      "title_b": "孤岛惊魂5"
+    },
+    {
+      "normalized_titles": [
+        "孤星猎人",
+        "孤星猎人lonestar"
+      ],
+      "decision": "same",
+      "reason": "Gamer520 PC与Switch来源链接均指向同一款LONESTAR（孤星猎人）；标题和玩法身份一致，应合并平台。",
+      "reviewed_at": "2026-10-20T00:51:24.795868+00:00",
+      "title_a": "孤星猎人",
+      "title_b": "孤星猎人 LONESTAR"
+    },
+    {
+      "normalized_titles": [
+        "守墓人2",
+        "守墓人2graveyardkeeper2"
+      ],
+      "decision": "same",
+      "reason": "同一Graveyard Keeper 2作品，中英标题差异，跨平台合并。",
+      "reviewed_at": "2026-10-07T01:21:30.045522+00:00",
+      "title_a": "守墓人2",
+      "title_b": "守墓人2 Graveyard Keeper 2"
+    },
+    {
+      "normalized_titles": [
         "宠物幸存者petssurvivors",
         "审判幸存者trialssurvivors"
       ],
@@ -769,6 +1165,17 @@
       "reason": "前者是全动态影像末日丧尸剧情游戏，后者是另一款幸存者类型游戏。",
       "reviewed_at": "2026-09-14T15:12:01.508038+00:00",
       "title_a": "幸存者笔记 Survivor’s Notes",
+      "title_b": "宠物幸存者 Pets Survivors"
+    },
+    {
+      "normalized_titles": [
+        "宠物幸存者petssurvivors",
+        "星域幸存者eonsurvivor"
+      ],
+      "decision": "distinct",
+      "reason": "不同幸存者like作品。",
+      "reviewed_at": "2026-10-07T01:13:56.848328+00:00",
+      "title_a": "星域幸存者 EON Survivor",
       "title_b": "宠物幸存者 Pets Survivors"
     },
     {
@@ -795,6 +1202,17 @@
     },
     {
       "normalized_titles": [
+        "寂静岭3",
+        "寂静岭f"
+      ],
+      "decision": "distinct",
+      "reason": "Silent Hill 3 与 Silent Hill f 是不同作品。",
+      "reviewed_at": "2026-10-14T06:41:24.158659+00:00",
+      "title_a": "寂静岭3",
+      "title_b": "寂静岭F"
+    },
+    {
+      "normalized_titles": [
         "展翅翱翔",
         "展翅翱翔wingspan"
       ],
@@ -803,6 +1221,17 @@
       "reviewed_at": "2026-07-30T23:53:51.083521+00:00",
       "title_a": "展翅翱翔 Wingspan",
       "title_b": "展翅翱翔"
+    },
+    {
+      "normalized_titles": [
+        "巫师3",
+        "巫师3狂猎重制版"
+      ],
+      "decision": "same",
+      "reason": "Gamer520 条目详情对应 The Witcher 3: Wild Hunt Complete Edition，是库内同一游戏的 Switch 平台资源。",
+      "reviewed_at": "2026-10-14T06:42:12.549246+00:00",
+      "title_a": "巫师3",
+      "title_b": "巫师3 狂猎 重制版"
     },
     {
       "normalized_titles": [
@@ -869,6 +1298,17 @@
       "reviewed_at": "2026-09-10T14:57:29.743862+00:00",
       "title_a": "幻世录 重制版",
       "title_b": "幻世录 重制版 抢先试玩"
+    },
+    {
+      "normalized_titles": [
+        "幻想少女大战",
+        "幻想少女大战流浪者之梦"
+      ],
+      "decision": "distinct",
+      "reason": "东方同人SRPG本体与流浪者之梦为不同条目。",
+      "reviewed_at": "2026-10-07T01:13:56.434035+00:00",
+      "title_a": "幻想少女大战",
+      "title_b": "幻想少女大战 流浪者之梦"
     },
     {
       "normalized_titles": [
@@ -971,6 +1411,17 @@
     },
     {
       "normalized_titles": [
+        "恶魔城贝尔蒙特的诅咒",
+        "恶魔城贝尔蒙特的诅咒castlevaniabelmont’scurse"
+      ],
+      "decision": "same",
+      "reason": "PC and Switch source posts refer to the same Castlevania: Belmont’s Curse game and release; keep one bilingual record with platform PC/Switch.",
+      "reviewed_at": "2026-10-15T10:57:44.097754+00:00",
+      "title_a": "恶魔城 贝尔蒙特的诅咒",
+      "title_b": "恶魔城 贝尔蒙特的诅咒 Castlevania: Belmont’s Curse"
+    },
+    {
+      "normalized_titles": [
         "恶魔学家",
         "恶魔学校demonschool"
       ],
@@ -990,6 +1441,28 @@
       "reviewed_at": "2026-08-31T14:29:31.355656+00:00",
       "title_a": "恶魔幸存者",
       "title_b": "魔堡幸存者"
+    },
+    {
+      "normalized_titles": [
+        "我的世界地下城2",
+        "我的世界地下城2完美版"
+      ],
+      "decision": "same",
+      "reason": "同一Minecraft Dungeons 2作品，完美版为版本描述，跨平台合并。",
+      "reviewed_at": "2026-10-07T01:21:30.239133+00:00",
+      "title_a": "我的世界 地下城2 完美版",
+      "title_b": "我的世界 地下城2"
+    },
+    {
+      "normalized_titles": [
+        "战神4国语配音版",
+        "战神诸神黄昏国语配音版"
+      ],
+      "decision": "distinct",
+      "reason": "God of War Ragnarök 与 God of War (2018) 是不同续作。",
+      "reviewed_at": "2026-10-14T06:41:23.047943+00:00",
+      "title_a": "战神 诸神黄昏 国语配音版",
+      "title_b": "战神4 国语配音版"
     },
     {
       "normalized_titles": [
@@ -1092,6 +1565,17 @@
     },
     {
       "normalized_titles": [
+        "放置恶魔idleinferno",
+        "放置斩魔录"
+      ],
+      "decision": "distinct",
+      "reason": "标题与内容指向不同放置游戏。",
+      "reviewed_at": "2026-10-07T01:13:55.927570+00:00",
+      "title_a": "放置斩魔录",
+      "title_b": "放置恶魔 Idle Inferno"
+    },
+    {
+      "normalized_titles": [
         "数码宝贝物语时空异客",
         "数码宝贝物语时空异客digimonstorytimestranger"
       ],
@@ -1100,6 +1584,61 @@
       "reviewed_at": "2026-07-16T12:09:04.544028+00:00",
       "title_a": "数码宝贝物语 时空异客",
       "title_b": "数码宝贝物语 时空异客 Digimon Story Time Stranger"
+    },
+    {
+      "normalized_titles": [
+        "文明7sidmeier'scivilizationvii",
+        "文明7sidmeier’scivilization®vii"
+      ],
+      "decision": "same",
+      "reason": "仅标点符号差异，同一游戏。",
+      "reviewed_at": "2026-10-07T01:13:57.562751+00:00",
+      "title_a": "文明7 Sid Meier’s Civilization® VII",
+      "title_b": "文明7 Sid Meier's Civilization VII"
+    },
+    {
+      "normalized_titles": [
+        "星之海洋2staroceanthesecondstoryr",
+        "星之海洋2第二次故事r国语配音版"
+      ],
+      "decision": "same",
+      "reason": "英文副标题 The Second Story R 一致，国语配音版是同一重制作品。",
+      "reviewed_at": "2026-10-14T06:41:23.641022+00:00",
+      "title_a": "星之海洋2 第二次故事R 国语配音版",
+      "title_b": "星之海洋2 STAR OCEAN THE SECOND STORY R"
+    },
+    {
+      "normalized_titles": [
+        "星域幸存者eonsurvivor",
+        "痛击之城幸存者beatdowncitysurvivors"
+      ],
+      "decision": "distinct",
+      "reason": "不同幸存者like作品。",
+      "reviewed_at": "2026-10-07T01:13:57.051267+00:00",
+      "title_a": "星域幸存者 EON Survivor",
+      "title_b": "痛击之城幸存者（Beatdown City Survivors）"
+    },
+    {
+      "normalized_titles": [
+        "星域幸存者eonsurvivor",
+        "血月幸存者bloodmoonsurvivors"
+      ],
+      "decision": "distinct",
+      "reason": "不同幸存者like作品。",
+      "reviewed_at": "2026-10-07T01:13:56.949186+00:00",
+      "title_a": "星域幸存者 EON Survivor",
+      "title_b": "血月幸存者 Bloodmoon Survivors"
+    },
+    {
+      "normalized_titles": [
+        "星界战士",
+        "星界战士astralascent"
+      ],
+      "decision": "same",
+      "reason": "规范英文名为 Astral Ascent，中文别名不同但对应同一款游戏。",
+      "reviewed_at": "2026-10-14T06:41:22.841304+00:00",
+      "title_a": "星界战士",
+      "title_b": "星界战士 Astral Ascent"
     },
     {
       "normalized_titles": [
@@ -1144,6 +1683,17 @@
       "reviewed_at": "2026-08-29T11:06:15.379918+00:00",
       "title_a": "点击地牢 Tap Dungeon",
       "title_b": "暗影地牢 Shadow Dungeon"
+    },
+    {
+      "normalized_titles": [
+        "暗黑地牢",
+        "暗黑地牢2王国模式"
+      ],
+      "decision": "distinct",
+      "reason": "DD2王国模式与初代为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:57.153906+00:00",
+      "title_a": "暗黑地牢2 王国模式",
+      "title_b": "暗黑地牢"
     },
     {
       "normalized_titles": [
@@ -1202,6 +1752,50 @@
     },
     {
       "normalized_titles": [
+        "最终幻想7重生finalfantasyviirebirth",
+        "最终幻想x"
+      ],
+      "decision": "distinct",
+      "reason": "FFX与FF7重生为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:55.626829+00:00",
+      "title_a": "最终幻想X",
+      "title_b": "最终幻想7 重生 FINAL FANTASY VII REBIRTH"
+    },
+    {
+      "normalized_titles": [
+        "最终幻想9高清hd国语配音版",
+        "最终幻想x"
+      ],
+      "decision": "distinct",
+      "reason": "Final Fantasy IX 与 Final Fantasy X 是不同正传作品。",
+      "reviewed_at": "2026-10-14T06:41:23.391522+00:00",
+      "title_a": "最终幻想9 高清HD 国语配音版",
+      "title_b": "最终幻想X"
+    },
+    {
+      "normalized_titles": [
+        "最终幻想x",
+        "最终幻想维度1"
+      ],
+      "decision": "distinct",
+      "reason": "FFX与维度1为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:55.425866+00:00",
+      "title_a": "最终幻想X",
+      "title_b": "最终幻想维度1"
+    },
+    {
+      "normalized_titles": [
+        "最终幻想x",
+        "最终幻想维度2"
+      ],
+      "decision": "distinct",
+      "reason": "FFX与维度2为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:55.524742+00:00",
+      "title_a": "最终幻想X",
+      "title_b": "最终幻想维度2"
+    },
+    {
+      "normalized_titles": [
         "最终幻想维度1",
         "最终幻想维度2"
       ],
@@ -1232,6 +1826,17 @@
       "reviewed_at": "2026-08-17T11:12:23.204413+00:00",
       "title_a": "未来骑士团 Future Knight",
       "title_b": "骑士团战 Knights of Braveland"
+    },
+    {
+      "normalized_titles": [
+        "机械之子machinechild",
+        "机械之犬doginthemachine"
+      ],
+      "decision": "distinct",
+      "reason": "机械之犬与机械之子为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:56.129022+00:00",
+      "title_a": "机械之犬 Dog in the Machine",
+      "title_b": "机械之子 Machine Child"
     },
     {
       "normalized_titles": [
@@ -1290,6 +1895,28 @@
     },
     {
       "normalized_titles": [
+        "永恒传说复刻版",
+        "永恒传说重制版talesofeterniaremastered"
+      ],
+      "decision": "same",
+      "reason": "英文名 Tales of Eternia Remastered 完全一致，是同一游戏的中英文标题差异。",
+      "reviewed_at": "2026-10-18T06:27:25.526796+00:00",
+      "title_a": "永恒传说 复刻版",
+      "title_b": "永恒传说 重制版 Tales of Eternia Remastered"
+    },
+    {
+      "normalized_titles": [
+        "永恒传说重制版talesofeternia",
+        "薄暮传说重制版"
+      ],
+      "decision": "distinct",
+      "reason": "Tales of Eternia and Tales of Vesperia are separate entries in different series installments; Eternia is a distinct 2D real-time battle JRPG.",
+      "reviewed_at": "2026-10-15T10:51:23.307042+00:00",
+      "title_a": "永恒传说 重制版 Tales of Eternia",
+      "title_b": "薄暮传说 重制版"
+    },
+    {
+      "normalized_titles": [
         "江湖奇侠录",
         "江湖录"
       ],
@@ -1320,6 +1947,39 @@
       "reviewed_at": "2026-09-21T07:58:54.359126+00:00",
       "title_a": "波斯王子 Rogue",
       "title_b": "波斯王子 失落的王冠"
+    },
+    {
+      "normalized_titles": [
+        "泽诺尼亚1",
+        "泽诺尼亚zenonia"
+      ],
+      "decision": "same",
+      "reason": "Official Nintendo description says ZENONIA returns in its original form; the Switch release is the original action RPG restoration already recorded as 泽诺尼亚1, so merge the platform.",
+      "reviewed_at": "2026-10-15T10:51:23.599255+00:00",
+      "title_a": "泽诺尼亚 ZENONIA",
+      "title_b": "泽诺尼亚1"
+    },
+    {
+      "normalized_titles": [
+        "泽诺尼亚zenonia",
+        "泽诺尼亚传奇2"
+      ],
+      "decision": "distinct",
+      "reason": "ZENONIA（初代）与 ZENONIA 2 为系列不同作品；新详情也明确写出四位英雄与续作背景。",
+      "reviewed_at": "2026-10-18T06:27:25.667172+00:00",
+      "title_a": "泽诺尼亚 ZENONIA",
+      "title_b": "泽诺尼亚传奇2"
+    },
+    {
+      "normalized_titles": [
+        "泽诺尼亚zenonia",
+        "泽诺尼亚传奇2zenonia2"
+      ],
+      "decision": "distinct",
+      "reason": "Zenonia 2 是初代 Zenonia 的独立续作；本次入库的双语标题与已收录初代不同。",
+      "reviewed_at": "2026-10-18T06:28:12.117751+00:00",
+      "title_a": "泽诺尼亚传奇2 Zenonia 2",
+      "title_b": "泽诺尼亚 ZENONIA"
     },
     {
       "normalized_titles": [
@@ -1455,6 +2115,17 @@
     },
     {
       "normalized_titles": [
+        "狩猎之道2",
+        "猎人之道2"
+      ],
+      "decision": "same",
+      "reason": "两种中文译名均指向 Way of the Hunter 2，详情描述、版本与开发者一致。",
+      "reviewed_at": "2026-10-18T06:27:25.387987+00:00",
+      "title_a": "猎人之道2",
+      "title_b": "狩猎之道2"
+    },
+    {
+      "normalized_titles": [
         "王之凝视",
         "王之凝视thekingiswatching"
       ],
@@ -1488,6 +2159,17 @@
     },
     {
       "normalized_titles": [
+        "王国两位君主",
+        "王国双冠"
+      ],
+      "decision": "same",
+      "reason": "详情描述一字不差，同为Kingdom Two Crowns，两位君主即双冠，跨平台合并。",
+      "reviewed_at": "2026-10-07T01:24:10.996017+00:00",
+      "title_a": "王国 两位君主",
+      "title_b": "王国:双冠"
+    },
+    {
+      "normalized_titles": [
         "王国保卫战3起源",
         "王国保卫战初代"
       ],
@@ -1496,6 +2178,39 @@
       "reviewed_at": "2026-08-26T01:06:46.213124+00:00",
       "title_a": "王国保卫战3 起源",
       "title_b": "王国保卫战 初代"
+    },
+    {
+      "normalized_titles": [
+        "王国保卫战6新启程",
+        "王国保卫战初代"
+      ],
+      "decision": "distinct",
+      "reason": "6代新作与初代为不同作品，编号不同。",
+      "reviewed_at": "2026-10-07T01:13:55.324982+00:00",
+      "title_a": "王国保卫战6 新启程",
+      "title_b": "王国保卫战 初代"
+    },
+    {
+      "normalized_titles": [
+        "生化危机1高清重制版",
+        "生化危机4重制版"
+      ],
+      "decision": "distinct",
+      "reason": "RE1与RE4重制为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:56.332913+00:00",
+      "title_a": "生化危机1 高清重制版",
+      "title_b": "生化危机4 重制版"
+    },
+    {
+      "normalized_titles": [
+        "生化危机3重制版",
+        "生化危机4重制版"
+      ],
+      "decision": "distinct",
+      "reason": "RE3与RE4重制为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:56.535973+00:00",
+      "title_a": "生化危机3 重制版",
+      "title_b": "生化危机4 重制版"
     },
     {
       "normalized_titles": [
@@ -1518,6 +2233,28 @@
       "reviewed_at": "2026-09-21T07:58:53.560870+00:00",
       "title_a": "空之轨迹 The 2nd",
       "title_b": "空之轨迹 THE 1ST"
+    },
+    {
+      "normalized_titles": [
+        "空之轨迹the2nd",
+        "空之轨迹the2nd国语配音版"
+      ],
+      "decision": "same",
+      "reason": "国语配音版为同一游戏版本差异。",
+      "reviewed_at": "2026-10-07T01:13:57.461937+00:00",
+      "title_a": "空之轨迹 The 2nd 国语配音版",
+      "title_b": "空之轨迹 The 2nd"
+    },
+    {
+      "normalized_titles": [
+        "空战奇兵8希孚之翼",
+        "空战奇兵8希孚之翼虚拟机版"
+      ],
+      "decision": "same",
+      "reason": "标题与作品相同，虚拟机版仅描述运行方式。",
+      "reviewed_at": "2026-10-14T06:41:22.943024+00:00",
+      "title_a": "空战奇兵8 希孚之翼",
+      "title_b": "空战奇兵8 希孚之翼 虚拟机版"
     },
     {
       "normalized_titles": [
@@ -1609,6 +2346,28 @@
     },
     {
       "normalized_titles": [
+        "虐杀原形1",
+        "虐杀原形2prototype2"
+      ],
+      "decision": "distinct",
+      "reason": "Prototype 与 Prototype 2 是系列初代与续作。",
+      "reviewed_at": "2026-10-18T06:27:26.088229+00:00",
+      "title_a": "虐杀原形2 Prototype 2",
+      "title_b": "虐杀原形1"
+    },
+    {
+      "normalized_titles": [
+        "虐杀原形2prototype2",
+        "虐杀原形prototype"
+      ],
+      "decision": "distinct",
+      "reason": "Prototype 与 Prototype 2 是系列初代与续作；本次入库使用的规范双语标题仍对应不同作品。",
+      "reviewed_at": "2026-10-18T06:28:11.974745+00:00",
+      "title_a": "虐杀原形 Prototype",
+      "title_b": "虐杀原形2 Prototype 2"
+    },
+    {
+      "normalized_titles": [
         "衔尾龙之铃",
         "衔尾龙之铃dragonloop"
       ],
@@ -1639,6 +2398,17 @@
       "reviewed_at": "2026-08-15T11:22:23.543599+00:00",
       "title_a": "超级机器人大战Y 终极版",
       "title_b": "超级机器人大战Y"
+    },
+    {
+      "normalized_titles": [
+        "超级马里奥赛车wii",
+        "马里奥赛车8豪华版"
+      ],
+      "decision": "distinct",
+      "reason": "Mario Kart 8 Deluxe 与 Mario Kart Wii 是不同编号作品，不因系列名相同而合并。",
+      "reviewed_at": "2026-10-18T06:27:25.943180+00:00",
+      "title_a": "马里奥赛车8 豪华版",
+      "title_b": "超级马里奥赛车Wii"
     },
     {
       "normalized_titles": [
@@ -1730,6 +2500,72 @@
     },
     {
       "normalized_titles": [
+        "韩流偶像故事出道之路",
+        "韩流偶像故事出道之路k-popidolstories"
+      ],
+      "decision": "same",
+      "reason": "英文副标题差异，同一游戏，Switch移植。",
+      "reviewed_at": "2026-10-07T01:13:57.665961+00:00",
+      "title_a": "韩流偶像故事 出道之路 K-Pop Idol Stories",
+      "title_b": "韩流偶像故事 出道之路"
+    },
+    {
+      "normalized_titles": [
+        "马里奥赛车8豪华版",
+        "马里奥赛车wiimariokartwii"
+      ],
+      "decision": "distinct",
+      "reason": "Mario Kart Wii 与 Mario Kart 8 Deluxe 是不同编号作品；本次入库的中英文标题对应Wii作品。",
+      "reviewed_at": "2026-10-18T06:28:12.447482+00:00",
+      "title_a": "马里奥赛车Wii Mario Kart Wii",
+      "title_b": "马里奥赛车8 豪华版"
+    },
+    {
+      "normalized_titles": [
+        "鬼泣4",
+        "鬼泣4特别版"
+      ],
+      "decision": "same",
+      "reason": "Gamer520 详情对应 Devil May Cry 4 Special Edition，是库内鬼泣4的增强版资源。",
+      "reviewed_at": "2026-10-14T06:41:23.952126+00:00",
+      "title_a": "鬼泣4",
+      "title_b": "鬼泣4 特别版"
+    },
+    {
+      "normalized_titles": [
+        "鬼泣4",
+        "鬼泣5"
+      ],
+      "decision": "distinct",
+      "reason": "Devil May Cry 4 与 Devil May Cry 5 是不同系列正传作品。",
+      "reviewed_at": "2026-10-14T06:42:05.548031+00:00",
+      "title_a": "鬼泣4",
+      "title_b": "鬼泣5"
+    },
+    {
+      "normalized_titles": [
+        "鬼灭之刃火之神血风谭2",
+        "鬼灭之刃火之神血风谭demonslayer-kimetsunoyaiba-thehinokamichronicles"
+      ],
+      "decision": "distinct",
+      "reason": "规范后的候选标题对应2021年首作《鬼灭之刃 火之神血风谭》，库内同系列记录是续作《火之神血风谭2》；作品身份不同。",
+      "reviewed_at": "2026-10-20T00:53:10.876550+00:00",
+      "title_a": "鬼灭之刃 火之神血风谭 Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
+      "title_b": "鬼灭之刃 火之神血风谭2"
+    },
+    {
+      "normalized_titles": [
+        "鬼灭之刃火之神血风谭2",
+        "鬼灭之刃火之神血风谭非虚拟机解压即撸"
+      ],
+      "decision": "distinct",
+      "reason": "候选对应2021年的《鬼灭之刃 火之神血风谭》，库内条目为续作《火之神血风谭2》；系列作品与发行时间均不同。",
+      "reviewed_at": "2026-10-20T00:51:24.471797+00:00",
+      "title_a": "鬼灭之刃 火之神血风谭 非虚拟机 解压即撸",
+      "title_b": "鬼灭之刃 火之神血风谭2"
+    },
+    {
+      "normalized_titles": [
         "鬼魂大师重生",
         "鬼魂大师重生ghostmasterresurrection"
       ],
@@ -1752,6 +2588,28 @@
     },
     {
       "normalized_titles": [
+        "魔法门之英雄无敌7",
+        "魔法门之英雄无敌ⅲ完整版"
+      ],
+      "decision": "distinct",
+      "reason": "7代与3代为不同正传作品。",
+      "reviewed_at": "2026-10-07T01:13:55.727583+00:00",
+      "title_a": "魔法门之英雄无敌7",
+      "title_b": "魔法门之英雄无敌Ⅲ 完整版"
+    },
+    {
+      "normalized_titles": [
+        "魔法门之英雄无敌7",
+        "魔法门之英雄无敌上古纪元"
+      ],
+      "decision": "distinct",
+      "reason": "7代与上古纪元为不同作品。",
+      "reviewed_at": "2026-10-07T01:13:55.827235+00:00",
+      "title_a": "魔法门之英雄无敌7",
+      "title_b": "魔法门之英雄无敌：上古纪元"
+    },
+    {
+      "normalized_titles": [
         "魔法门之英雄无敌ⅲ完整版",
         "魔法门之英雄无敌上古纪元"
       ],
@@ -1760,6 +2618,17 @@
       "reviewed_at": "2026-08-28T13:15:32.397152+00:00",
       "title_a": "魔法门之英雄无敌Ⅲ 完整版",
       "title_b": "魔法门之英雄无敌 上古纪元"
+    },
+    {
+      "normalized_titles": [
+        "黎明行者之血",
+        "黎明行者之血国语配音版"
+      ],
+      "decision": "same",
+      "reason": "英文名均为 The Blood of Dawnwalker，国语配音版是同一作品的资源版本。",
+      "reviewed_at": "2026-10-14T06:41:22.329168+00:00",
+      "title_a": "黎明行者之血 国语配音版",
+      "title_b": "黎明行者之血"
     },
     {
       "normalized_titles": [
