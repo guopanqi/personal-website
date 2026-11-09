@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Clean - Reading Mode
 // @namespace    https://github.com/guopanqi
-// @version      2.5.0
+// @version      2.6.0
 // @description  Following first, hide distractions, and toggle filters in a menu.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
@@ -20,14 +20,14 @@
   const defaults = {
     following: true, forYou: true, suggestions: true,
     trends: true, grok: true, premium: true,
-    explore: false, metrics: false, sports: true, paused: false
+    explore: false, metrics: false, sports: true, rightRecommendations: true, paused: false
   };
   const labels = {
     following: '优先 Following', forYou: '隐藏 For You',
     suggestions: '隐藏推荐关注', trends: '隐藏热门趋势',
     grok: '隐藏 Grok', premium: '隐藏 Premium 推广',
     explore: '隐藏 Explore', metrics: '隐藏互动按钮',
-    sports: '隐藏赛事比分卡'
+    sports: '隐藏赛事比分卡', rightRecommendations: '隐藏右侧推荐（保留搜索）'
   };
   let prefs = { ...defaults };
   try {
@@ -153,6 +153,42 @@
           toggle(box, prefs[category]);
       });
 
+    // Hide the recommendation column content, but keep the search box.
+    // The X sidebar may contain a sticky search area followed by all
+    // recommendation cards. We hide the card siblings, never the sidebar.
+    document.querySelectorAll('[data-testid="sidebarColumn"]').forEach(sidebar => {
+      const search = sidebar.querySelector(
+        '[data-testid="SearchBox_Search_Input"], form[role="search"], input[aria-label="Search query"]'
+      );
+      const searchBlock = search && search.closest('form,[role="search"]');
+      const isSearchAncestor = el => searchBlock && (el === searchBlock || el.contains(searchBlock));
+      const mainContent = sidebar.querySelector('[data-testid="sidebarColumn"] > div > div') ||
+        sidebar.firstElementChild;
+      // Prefer the nearest container with search + recommendation sections.
+      let container = searchBlock;
+      if (container) {
+        for (let i = 0; i < 7 && container.parentElement &&
+             container.parentElement !== sidebar; i++) {
+          if (container.parentElement.children.length > 1) break;
+          container = container.parentElement;
+        }
+        if (container.parentElement && container.parentElement !== sidebar) {
+          [...container.parentElement.children].forEach(child => {
+            if (child !== container && !isSearchAncestor(child)) {
+              toggle(child, prefs.rightRecommendations);
+            }
+          });
+        }
+      }
+      // Independently match known recommendation sections as a fallback.
+      sidebar.querySelectorAll('[data-testid="trend"], [data-testid="UserCell"],' +
+        ' [data-testid="newsSidebar"], [aria-label="Timeline: Trending now"]')
+        .forEach(el => {
+          const block = el.closest('section,[data-testid="cellInnerDiv"]');
+          if (block && !block.querySelector('[data-testid="tweet"]'))
+            toggle(block, prefs.rightRecommendations);
+        });
+    });
     // Sports scorecards: match a contained NFL/NBA/etc. module,
     // not the user's own posts or search results.
     document.querySelectorAll(
@@ -210,7 +246,7 @@
     <div id="backdrop"></div>
     <div id="panel" role="dialog" aria-modal="true" aria-label="X Clean 设置">
       <div class="top"><h3>X Clean · 阅读模式</h3><button id="close" aria-label="关闭设置">×</button></div>
-      <p>设置仅保存在本机 Safari · v2.5</p>
+      <p>设置仅保存在本机 Safari · v2.6</p>
       <div id="options"></div>
       <div class="actions">
         <button id="focus">专注模式</button>
