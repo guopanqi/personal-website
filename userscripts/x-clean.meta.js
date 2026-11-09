@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Clean - Reading Mode
 // @namespace    https://github.com/guopanqi
-// @version      2.3.0
+// @version      2.4.0
 // @description  Following first, hide distractions, and toggle filters in a menu.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
