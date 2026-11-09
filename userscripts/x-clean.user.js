@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         X Clean - Reading Mode
+// @name         HideForYou
 // @namespace    https://github.com/guopanqi
-// @version      2.6.0
-// @description  Following first, hide distractions, and toggle filters in a menu.
+// @version      2.7.0
+// @description  A cleaner X/Twitter experience on mobile and desktop browsers. Prioritize Following, hide For You and sidebar recommendations, and manage filters from the navigation menu.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
 // @grant        none
@@ -23,11 +23,11 @@
     explore: false, metrics: false, sports: true, rightRecommendations: true, paused: false
   };
   const labels = {
-    following: '优先 Following', forYou: '隐藏 For You',
-    suggestions: '隐藏推荐关注', trends: '隐藏热门趋势',
-    grok: '隐藏 Grok', premium: '隐藏 Premium 推广',
-    explore: '隐藏 Explore', metrics: '隐藏互动按钮',
-    sports: '隐藏赛事比分卡', rightRecommendations: '隐藏右侧推荐（保留搜索）'
+    following: 'Prefer Following', forYou: 'Hide For You',
+    suggestions: 'Hide Who to Follow', trends: 'Hide Trends',
+    grok: 'Hide Grok', premium: 'Hide Premium promos',
+    explore: 'Hide Explore', metrics: 'Hide engagement buttons',
+    sports: 'Hide sports scorecards', rightRecommendations: 'Hide sidebar recommendations (keep search)'
   };
   let prefs = { ...defaults };
   try {
@@ -244,14 +244,14 @@
       #pause{grid-column:span 2}
     </style>
     <div id="backdrop"></div>
-    <div id="panel" role="dialog" aria-modal="true" aria-label="X Clean 设置">
-      <div class="top"><h3>X Clean · 阅读模式</h3><button id="close" aria-label="关闭设置">×</button></div>
-      <p>设置仅保存在本机 Safari · v2.6</p>
+    <div id="panel" role="dialog" aria-modal="true" aria-label="HideForYou settings">
+      <div class="top"><h3>HideForYou · Settings</h3><button id="close" aria-label="Close settings">×</button></div>
+      <p>Mobile & desktop · Saved in this browser · v2.7</p>
       <div id="options"></div>
       <div class="actions">
-        <button id="focus">专注模式</button>
-        <button id="light">轻度清理</button>
-        <button id="pause">暂停清理</button>
+        <button id="focus">Focus mode</button>
+        <button id="light">Light mode</button>
+        <button id="pause">Pause filtering</button>
       </div>
     </div>`;
 
@@ -267,31 +267,62 @@
     if (event.key === 'Escape' && open) setOpen(false);
   });
 
+  // Keep the entry inside X's navigation surfaces. Mobile X opens a
+  // separate account drawer; never add a floating on-page launcher.
   function insertSettingsLink() {
-    // Desktop: the primary nav. Mobile: X account/sidebar menu when open.
-    const nav = document.querySelector('nav[aria-label="Primary"],nav[aria-label="主要"],header nav,[data-testid="AppTabBar"]');
-    if (nav && !nav.querySelector('[data-xclean-settings-link]')) {
-      const link = document.createElement('button');
-      link.setAttribute('data-xclean-settings-link', 'true');
-      link.type = 'button';
-      link.setAttribute('aria-label', 'X Clean 设置');
-      link.style.cssText = 'display:flex;align-items:center;gap:18px;min-height:46px;' +
-        'border:0;background:transparent;color:inherit;font:inherit;' +
-        'font-size:17px;font-weight:500;padding:10px 14px;cursor:pointer;text-align:left;';
-      link.innerHTML = '<span aria-hidden="true" style="font-size:23px">⚙</span><span>X Clean 设置</span>';
-      link.addEventListener('click', () => setOpen(true));
-      nav.appendChild(link);
+    const selectors = [
+      'nav[aria-label="Primary"]',
+      'nav[aria-label="Primary navigation"]',
+      'nav[aria-label="主要"]',
+      '[data-testid="SideNav"]',
+      '[data-testid="SideNav_AccountSwitcher_Button"]',
+      '[data-testid="AppTabBar"]',
+      '[role="dialog"] nav',
+      '[role="menu"]'
+    ];
+    const targets = new Set();
+    for (const selector of selectors) {
+      document.querySelectorAll(selector).forEach(el => {
+        if (el.closest('#xclean-root')) return;
+        // Avoid adding the entry to the bottom mobile tab bar.
+        if (el.matches('[data-testid="AppTabBar"]')) return;
+        if (el.matches('[data-testid="SideNav_AccountSwitcher_Button"]')) {
+          const parent = el.closest('nav,[role="menu"],[role="dialog"]');
+          if (parent) targets.add(parent);
+          return;
+        }
+        targets.add(el);
+      });
     }
-    // X mobile side drawer may be a separate mounted menu.
-    const menu = document.querySelector('[role="menu"][data-testid], [data-testid="SideNav"],[data-testid="AccountSwitcher"]');
-    if (menu && !menu.querySelector('[data-xclean-settings-link]')) {
-      const link = document.createElement('button');
-      link.setAttribute('data-xclean-settings-link', 'true');
-      link.textContent = '⚙  X Clean 设置';
-      link.style.cssText = 'display:block;width:100%;padding:14px;border:0;' +
-        'background:transparent;color:inherit;font:inherit;text-align:left';
-      link.addEventListener('click', () => setOpen(true));
-      menu.appendChild(link);
+    // The mobile account drawer often has no stable data-testid.
+    // Look for a visible panel containing account navigation items.
+    document.querySelectorAll('[role="dialog"],[data-testid="sheetDialog"],aside').forEach(panel => {
+      const links = [...panel.querySelectorAll('a[href]')];
+      const paths = links.map(a => {
+        try { return new URL(a.href).pathname; } catch (_) { return ''; }
+      });
+      if (paths.some(p => /^\/(profile|lists|bookmarks|settings)(\/|$)/.test(p))) {
+        const nav = panel.querySelector('nav') || panel;
+        targets.add(nav);
+      }
+    });
+    for (const target of targets) {
+      if (!target.isConnected || target.querySelector('[data-hideforyou-settings]')) continue;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('data-hideforyou-settings', 'true');
+      button.setAttribute('aria-label', 'HideForYou settings');
+      button.style.cssText = 'display:flex;align-items:center;gap:12px;' +
+        'width:100%;min-height:44px;padding:10px 14px;border:0;' +
+        'border-radius:8px;background:transparent;color:inherit;' +
+        'font:inherit;font-size:15px;text-align:left;cursor:pointer';
+      button.textContent = '⚙  HideForYou settings';
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        setOpen(true);
+      });
+      target.append(button);
     }
   }
   function checkHash() {
@@ -315,7 +346,7 @@
       row.append(name, checkbox);
       container.append(row);
     });
-    shadow.getElementById('pause').textContent = prefs.paused ? '恢复清理' : '暂停清理';
+    shadow.getElementById('pause').textContent = prefs.paused ? 'Resume filtering' : 'Pause filtering';
   }
   shadow.getElementById('focus').addEventListener('click', () => {
     prefs = {...defaults, explore:true, metrics:false};
