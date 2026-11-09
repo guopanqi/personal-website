@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         X Clean - Reading Mode
+// @name         HideForYou
 // @namespace    https://github.com/guopanqi
-// @version      2.6.0
-// @description  Following first, hide distractions, and toggle filters in a menu.
+// @version      2.7.0
+// @description  A cleaner X/Twitter experience on mobile and desktop browsers. Prioritize Following, hide For You and sidebar recommendations, and manage filters from the navigation menu.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
 // @grant        none
