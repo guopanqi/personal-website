@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Clean - Reading Mode
 // @namespace    https://github.com/guopanqi
-// @version      2.3.0
+// @version      2.4.0
 // @description  Following first, hide distractions, and toggle filters in a menu.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
@@ -65,44 +65,72 @@
       document.querySelectorAll('[data-xclean-hidden]').forEach(el => toggle(el, false));
       return;
     }
-    // Mobile X sometimes places the home tabs outside <main> or uses
-    // anchors without role="tab". Discover the pair from their shared bar.
+    // X uses different top-bar containers on desktop and mobile.
+    // On iOS the tabs usually sit in [data-testid="TopNavBar"].
     if (onHome()) {
-      const candidates = [...document.querySelectorAll(
-        '[role="tab"], a[role="link"], a[href="/home"], button'
-      )].filter(el => {
-        if (el.closest('#xclean-root')) return false;
-        const value = normalize(el.textContent);
-        return exact(value, words.forYou) || exact(value, words.following);
-      });
-      const findTab = (names) => candidates.find(el =>
-        exact(el.textContent, names) &&
-        (el.getAttribute('role') === 'tab' ||
-         el.closest('[role="tablist"]') ||
-         el.closest('[data-testid="ScrollSnap-List"]') ||
-         el.closest('header')));
-      const f = findTab(words.following);
-      const y = findTab(words.forYou);
-      if (f && y) {
-        const selected = y.getAttribute('aria-selected') === 'true' ||
-          y.querySelector('[aria-selected="true"]') !== null ||
-          (y.getAttribute('tabindex') === '0' &&
-           f.getAttribute('tabindex') === '-1');
-        if (prefs.following && selected && Date.now() - lastSwitch > 2000) {
+      const bars = document.querySelectorAll(
+        '[data-testid="TopNavBar"] nav [role="tablist"],' +
+        '[data-testid="primaryColumn"] nav [role="tablist"],' +
+        'main nav [role="tablist"],' +
+        'nav [role="tablist"]'
+      );
+      let matched = false;
+      for (const bar of bars) {
+        const cells = [...bar.children];
+        if (cells.length < 2) continue;
+        const forYou = cells[0].querySelector('[role="tab"]');
+        const following = cells[1].querySelector('[role="tab"]');
+        if (!forYou || !following) continue;
+        // Confirm the pair by labels if present, so other navigation tabs
+        // (e.g. notifications or profile) are never modified.
+        const first = normalize(forYou.textContent);
+        const second = normalize(following.textContent);
+        const labelsMatch = exact(first, words.forYou) &&
+          exact(second, words.following);
+        if (!labelsMatch) continue;
+        matched = true;
+        const selected = forYou.getAttribute('aria-selected') === 'true';
+        if (prefs.following && selected && Date.now() - lastSwitch > 1200) {
           lastSwitch = Date.now();
-          f.click();
+          following.click();
         }
-        toggle(y, prefs.forYou && (!selected || !prefs.following));
-      } else {
-        // Mobile fallback: the tab itself is often an inner <a> or <div>.
-        // Hide the smallest tab-sized ancestor, not the entire header.
-        document.querySelectorAll('header a, [role="tablist"] a, [role="tablist"] [role="tab"]')
-          .forEach(el => {
-            if (exact(el.textContent, words.forYou)) {
-              toggle(el, prefs.forYou);
-            }
-          });
+        // Hide the tab itself rather than the whole home navigation.
+        toggle(forYou, prefs.forYou);
+        // The outer cell may reserve 50% width even when the tab is hidden.
+        if (prefs.forYou) {
+          cells[0].style.setProperty('flex-grow', '0');
+          cells[0].style.setProperty('flex-shrink', '1');
+        } else {
+          cells[0].style.removeProperty('flex-grow');
+          cells[0].style.removeProperty('flex-shrink');
+        }
       }
+      if (!matched) {
+        // Conservative fallback for alternative mobile layouts.
+        const selectors = [
+          '[data-testid="TopNavBar"] [role="tab"]',
+          'nav [role="tablist"] [role="tab"]',
+          'main [role="tablist"] [role="tab"]'
+        ].join(',');
+        document.querySelectorAll(selectors).forEach(el => {
+          const isForYou = exact(el.textContent, words.forYou);
+          const container = el.closest('[role="tablist"]');
+          const hasFollowing = container && [...container.querySelectorAll('[role="tab"]')]
+            .some(x => exact(x.textContent, words.following));
+          if (isForYou && hasFollowing) {
+            const next = [...container.querySelectorAll('[role="tab"]')]
+              .find(x => exact(x.textContent, words.following));
+            if (prefs.following && el.getAttribute('aria-selected') === 'true' &&
+                Date.now() - lastSwitch > 1200) {
+              lastSwitch = Date.now();
+              next.click();
+            }
+            toggle(el, prefs.forYou);
+            matched = true;
+          }
+        });
+      }
+      root.dataset.homeTabs = matched ? 'found' : 'missing';
     }
     document.querySelectorAll('nav a[href],header a[href]').forEach(a => {
       let path = '';
@@ -154,7 +182,7 @@
     </style>
     <button id="bubble" aria-label="X Clean 菜单">XC</button>
     <div id="panel"><h3>X Clean · 阅读模式</h3>
-      <p>设置仅保存在本机 Safari</p>
+      <p>设置仅保存在本机 Safari · v2.4</p>
       <div id="options"></div>
       <div class="actions">
         <button id="focus">专注模式</button>
