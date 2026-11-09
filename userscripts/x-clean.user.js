@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Clean - Reading Mode
 // @namespace    https://github.com/guopanqi
-// @version      2.1.0
+// @version      2.2.0
 // @description  Following first, hide distractions, and toggle filters in a menu.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
@@ -63,19 +63,45 @@
       document.querySelectorAll('[data-xclean-hidden]').forEach(el => toggle(el, false));
       return;
     }
-    document.querySelectorAll('main [role="tablist"]').forEach(list => {
-      const tabs = [...list.querySelectorAll('[role="tab"]')];
-      const f = tabs.find(x => exact(x.textContent, words.following));
-      const y = tabs.find(x => exact(x.textContent, words.forYou));
-      if (!f || !y) return;
-      if (onHome() && prefs.following &&
-          y.getAttribute('aria-selected') === 'true' &&
-          Date.now() - lastSwitch > 2000) {
-        lastSwitch = Date.now();
-        f.click();
+    // Mobile X sometimes places the home tabs outside <main> or uses
+    // anchors without role="tab". Discover the pair from their shared bar.
+    if (onHome()) {
+      const candidates = [...document.querySelectorAll(
+        '[role="tab"], a[role="link"], a[href="/home"], button'
+      )].filter(el => {
+        if (el.closest('#xclean-root')) return false;
+        const value = normalize(el.textContent);
+        return exact(value, words.forYou) || exact(value, words.following);
+      });
+      const findTab = (names) => candidates.find(el =>
+        exact(el.textContent, names) &&
+        (el.getAttribute('role') === 'tab' ||
+         el.closest('[role="tablist"]') ||
+         el.closest('[data-testid="ScrollSnap-List"]') ||
+         el.closest('header')));
+      const f = findTab(words.following);
+      const y = findTab(words.forYou);
+      if (f && y) {
+        const selected = y.getAttribute('aria-selected') === 'true' ||
+          y.querySelector('[aria-selected="true"]') !== null ||
+          (y.getAttribute('tabindex') === '0' &&
+           f.getAttribute('tabindex') === '-1');
+        if (prefs.following && selected && Date.now() - lastSwitch > 2000) {
+          lastSwitch = Date.now();
+          f.click();
+        }
+        toggle(y, prefs.forYou && (!selected || !prefs.following));
+      } else {
+        // Mobile fallback: the tab itself is often an inner <a> or <div>.
+        // Hide the smallest tab-sized ancestor, not the entire header.
+        document.querySelectorAll('header a, [role="tablist"] a, [role="tablist"] [role="tab"]')
+          .forEach(el => {
+            if (exact(el.textContent, words.forYou)) {
+              toggle(el, prefs.forYou);
+            }
+          });
       }
-      toggle(y, onHome() && prefs.forYou);
-    });
+    }
     document.querySelectorAll('nav a[href],header a[href]').forEach(a => {
       let path = '';
       try { path = new URL(a.href).pathname; } catch (_) {}
