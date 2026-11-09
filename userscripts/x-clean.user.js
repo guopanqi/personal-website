@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Clean - Reading Mode
 // @namespace    https://github.com/guopanqi
-// @version      2.4.0
+// @version      2.5.0
 // @description  Following first, hide distractions, and toggle filters in a menu.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
@@ -20,13 +20,14 @@
   const defaults = {
     following: true, forYou: true, suggestions: true,
     trends: true, grok: true, premium: true,
-    explore: false, metrics: false, paused: false
+    explore: false, metrics: false, sports: true, paused: false
   };
   const labels = {
     following: '优先 Following', forYou: '隐藏 For You',
     suggestions: '隐藏推荐关注', trends: '隐藏热门趋势',
     grok: '隐藏 Grok', premium: '隐藏 Premium 推广',
-    explore: '隐藏 Explore', metrics: '隐藏互动按钮'
+    explore: '隐藏 Explore', metrics: '隐藏互动按钮',
+    sports: '隐藏赛事比分卡'
   };
   let prefs = { ...defaults };
   try {
@@ -151,27 +152,53 @@
         if (box && !box.querySelector('[data-testid="tweet"]'))
           toggle(box, prefs[category]);
       });
+
+    // Sports scorecards: match a contained NFL/NBA/etc. module,
+    // not the user's own posts or search results.
+    document.querySelectorAll(
+      '[data-testid="sidebarColumn"] h2,' +
+      '[data-testid="sidebarColumn"] [role="heading"],' +
+      'aside h2, aside [role="heading"]'
+    ).forEach(heading => {
+      if (!/^(NFL|NBA|MLB|NHL|NCAA|WNBA|MLS|Premier League)$/i.test(
+        heading.textContent.trim())) return;
+      let node = heading.parentElement;
+      let candidate = null;
+      for (let depth = 0; node && depth < 7; depth++, node = node.parentElement) {
+        if (node.matches('aside,[data-testid="sidebarColumn"]') ||
+            node.querySelector('[data-testid="tweet"]')) break;
+        const t = node.textContent || '';
+        // A full scorecard has some details, not just its title.
+        if (t.length >= 35 && t.length < 1800 &&
+            node.querySelector('button,[role="button"]')) candidate = node;
+        if (t.length >= 1800) break;
+      }
+      if (candidate) toggle(candidate, prefs.sports);
+    });
     document.querySelectorAll('[data-testid="like"],[data-testid="unlike"],[data-testid="retweet"],[data-testid="unretweet"]')
       .forEach(el => toggle(el, prefs.metrics));
   }
 
+  // Settings are accessible from X navigation, not from a floating button.
   const root = document.createElement('div');
   root.id = 'xclean-root';
-  root.style.cssText = 'position:fixed;right:14px;bottom:22px;z-index:2147483647';
+  root.style.cssText = 'position:fixed;inset:0;z-index:2147483647;pointer-events:none;display:none';
   const shadow = root.attachShadow({ mode:'open' });
   shadow.innerHTML = `
     <style>
       *{box-sizing:border-box}
       button{cursor:pointer;font:inherit}
-      #bubble{height:43px;width:43px;border:1px solid #567086;border-radius:50%;
-        background:#17212e;color:white;font-weight:700;box-shadow:0 3px 15px #0005}
-      #panel{display:none;position:absolute;bottom:53px;right:0;width:min(315px,calc(100vw - 28px));
-        max-height:72vh;overflow:auto;background:#17212e;color:#fff;
-        border:1px solid #485a6e;border-radius:14px;padding:16px;
-        font:14px -apple-system,BlinkMacSystemFont,sans-serif;box-shadow:0 8px 30px #0008}
-      #panel.open{display:block}
+      #backdrop{position:absolute;inset:0;background:#0008;pointer-events:auto}
+      #panel{position:absolute;right:12px;top:50%;transform:translateY(-50%);
+        width:min(350px,calc(100vw - 24px));max-height:85vh;overflow:auto;
+        background:#17212e;color:white;border:1px solid #485a6e;
+        border-radius:16px;padding:17px;pointer-events:auto;
+        font:14px -apple-system,BlinkMacSystemFont,sans-serif;
+        box-shadow:0 8px 32px #0008}
       h3{margin:0 0 4px;font-size:17px}
       p{margin:0 0 12px;color:#b3c2cd;font-size:12px}
+      .top{display:flex;justify-content:space-between;align-items:center}
+      #close{border:0;color:#fff;background:transparent;font-size:24px;padding:0 4px}
       label{display:flex;align-items:center;justify-content:space-between;
         border-bottom:1px solid #ffffff18;padding:9px 0;gap:10px}
       input{width:19px;height:19px;accent-color:#82b7e7}
@@ -180,9 +207,10 @@
         border-radius:8px;padding:10px 4px;font-size:12px}
       #pause{grid-column:span 2}
     </style>
-    <button id="bubble" aria-label="X Clean 菜单">XC</button>
-    <div id="panel"><h3>X Clean · 阅读模式</h3>
-      <p>设置仅保存在本机 Safari · v2.4</p>
+    <div id="backdrop"></div>
+    <div id="panel" role="dialog" aria-modal="true" aria-label="X Clean 设置">
+      <div class="top"><h3>X Clean · 阅读模式</h3><button id="close" aria-label="关闭设置">×</button></div>
+      <p>设置仅保存在本机 Safari · v2.5</p>
       <div id="options"></div>
       <div class="actions">
         <button id="focus">专注模式</button>
@@ -191,9 +219,48 @@
       </div>
     </div>`;
 
-  const panel = shadow.getElementById('panel');
-  shadow.getElementById('bubble').addEventListener('click', () =>
-    panel.classList.toggle('open'));
+  let open = false;
+  const setOpen = value => {
+    open = value;
+    root.style.display = open ? 'block' : 'none';
+    if (open) render();
+  };
+  shadow.getElementById('close').addEventListener('click', () => setOpen(false));
+  shadow.getElementById('backdrop').addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && open) setOpen(false);
+  });
+
+  function insertSettingsLink() {
+    // Desktop: the primary nav. Mobile: X account/sidebar menu when open.
+    const nav = document.querySelector('nav[aria-label="Primary"],nav[aria-label="主要"],header nav,[data-testid="AppTabBar"]');
+    if (nav && !nav.querySelector('[data-xclean-settings-link]')) {
+      const link = document.createElement('button');
+      link.setAttribute('data-xclean-settings-link', 'true');
+      link.type = 'button';
+      link.setAttribute('aria-label', 'X Clean 设置');
+      link.style.cssText = 'display:flex;align-items:center;gap:18px;min-height:46px;' +
+        'border:0;background:transparent;color:inherit;font:inherit;' +
+        'font-size:17px;font-weight:500;padding:10px 14px;cursor:pointer;text-align:left;';
+      link.innerHTML = '<span aria-hidden="true" style="font-size:23px">⚙</span><span>X Clean 设置</span>';
+      link.addEventListener('click', () => setOpen(true));
+      nav.appendChild(link);
+    }
+    // X mobile side drawer may be a separate mounted menu.
+    const menu = document.querySelector('[role="menu"][data-testid], [data-testid="SideNav"],[data-testid="AccountSwitcher"]');
+    if (menu && !menu.querySelector('[data-xclean-settings-link]')) {
+      const link = document.createElement('button');
+      link.setAttribute('data-xclean-settings-link', 'true');
+      link.textContent = '⚙  X Clean 设置';
+      link.style.cssText = 'display:block;width:100%;padding:14px;border:0;' +
+        'background:transparent;color:inherit;font:inherit;text-align:left';
+      link.addEventListener('click', () => setOpen(true));
+      menu.appendChild(link);
+    }
+  }
+  function checkHash() {
+    if (location.hash === '#xclean-settings') setOpen(true);
+  }
   function render() {
     const container = shadow.getElementById('options');
     container.replaceChildren();
@@ -228,6 +295,7 @@
   });
   function mount() {
     if (document.body && !root.isConnected) document.body.append(root);
+    insertSettingsLink();
   }
   render();
   mount();
@@ -241,5 +309,7 @@
   observer.observe(document.documentElement, {childList:true,subtree:true});
   window.addEventListener('popstate', apply);
   window.addEventListener('pageshow', apply);
+  window.addEventListener('hashchange', checkHash);
+  checkHash();
   apply();
 })();
