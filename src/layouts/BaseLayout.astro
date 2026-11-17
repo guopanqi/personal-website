@@ -27,18 +27,20 @@ const isActive = (match: string) =>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <script is:inline>
-      // The artwork is an entrance detail, not a page-transition animation.
-      // Record the visit per tab so normal internal links can stay native.
+    <script is:inline define:vars={{ isHome: pathname === '/' }}>
+      // Play on the first visit in this tab, and every time Home is loaded.
+      // Other internal pages keep the completed artwork after that first visit.
+      const key = 'papergrid-sketch-intro-v2';
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let firstVisit = false;
       try {
-        const key = 'papergrid-sketch-intro-v2';
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!reduceMotion && sessionStorage.getItem(key) !== 'seen') {
-          document.documentElement.classList.add('sketch-intro');
-        }
+        firstVisit = sessionStorage.getItem(key) !== 'seen';
         sessionStorage.setItem(key, 'seen');
       } catch {
-        // If storage is blocked, display the finished drawing without motion.
+        // Storage may be unavailable; Home still animates independently.
+      }
+      if (!reduceMotion && (isHome || firstVisit)) {
+        document.documentElement.classList.add('sketch-intro');
       }
     </script>
   </head>
