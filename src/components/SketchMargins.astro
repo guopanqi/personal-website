@@ -1,0 +1,159 @@
+---
+interface Props {
+  placement: 'header' | 'footer';
+}
+
+const { placement } = Astro.props;
+---
+
+<div class={`sketch-margin sketch-margin--${placement}`} data-sketch-margin aria-hidden="true">
+  {
+    placement === 'header' ? (
+      <svg viewBox="0 0 1200 152" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g class="pencil faint">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M-18 94 C49 101 74 71 128 80" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M861 73 C919 88 954 59 1012 69 S1123 85 1220 49" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M164 121 Q191 125 212 120 M250 118 L278 113" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M1067 43 l7 -4 m12 21 l9 3 m-31 21 l-5 7" />
+        </g>
+        <g class="pencil graphite">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M177 34 Q174 34 173 40 L170 102 Q170 108 177 108 L259 111 Q265 110 265 103 L265 49 L247 31 Z" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M247 32 L246 50 L264 49 M190 55 Q210 53 234 55 M190 65 Q220 63 245 67 M190 77 Q216 75 247 78 M189 89 L226 90" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M286 73 C341 56 368 96 429 77 S529 37 586 68 S676 98 728 65" />
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M727 65 C747 45 768 57 762 73 C755 92 725 92 720 76 C715 58 739 41 765 49" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M950 100 L1032 30 L1041 42 L959 111 Z M950 100 L959 111 L946 116 Z M1030 32 L1039 41 M961 99 L1035 36" />
+        </g>
+        <g class="pencil ochre">
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M844 35 Q847 51 860 54 Q846 57 843 72 Q840 57 827 54 Q840 51 844 35 Z" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M1076 96 l0 13 m-6 -7 l12 0 M128 44 l-5 -10 m13 4 l6 -9" />
+          <circle class="sketch-mark" cx="796" cy="93" r="2.1" />
+          <circle class="sketch-mark" cx="1112" cy="108" r="2.5" />
+          <circle class="sketch-mark" cx="1144" cy="91" r="1.4" />
+        </g>
+      </svg>
+    ) : (
+      <svg viewBox="0 0 1200 168" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g class="pencil faint">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M-20 83 Q57 58 127 88 T263 84" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M185 54 Q208 49 237 56 M182 66 Q208 63 243 69 M185 78 Q207 75 228 80" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M907 122 Q992 104 1065 117 T1230 91" />
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M1028 44 l12 -4 M1048 67 l8 7 M992 32 l-3 -11" />
+        </g>
+        <g class="pencil graphite">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M167 39 Q167 34 173 34 L250 37 L256 111 Q252 118 245 116 L171 112 Q167 108 167 102 Z M180 34 L181 26 L258 29 L261 100" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M292 92 C352 123 389 37 448 72 S530 137 582 91 S629 58 652 87" />
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M658 85 Q683 87 704 75" />
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M709 78 L857 25 L798 115 L767 87 L709 78 Z M767 87 L857 25 L778 94 L776 122 L798 115" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M924 46 C940 34 967 35 974 55 S958 87 940 82 S916 62 931 56" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M975 83 l16 9 m-7 -27 l17 -1" />
+        </g>
+        <g class="pencil ochre">
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M1075 38 Q1078 52 1093 56 Q1078 60 1075 74 Q1072 60 1059 56 Q1072 52 1075 38 Z" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M333 48 l-4 -7 m12 6 l5 -8" />
+          <circle class="sketch-mark" cx="661" cy="59" r="2" />
+          <circle class="sketch-mark" cx="691" cy="52" r="1.5" />
+          <circle class="sketch-mark" cx="1123" cy="98" r="2" />
+        </g>
+      </svg>
+    )
+  }
+</div>
+
+<style>
+  .sketch-margin {
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    flex-shrink: 0;
+    color: #74685b;
+  }
+
+  .sketch-margin--header {
+    height: 140px;
+  }
+
+  .sketch-margin--footer {
+    height: 150px;
+    margin-top: auto;
+  }
+
+  .sketch-margin svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pencil {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .graphite { opacity: 0.56; }
+  .faint { opacity: 0.28; }
+  .ochre { color: #ad8657; opacity: 0.72; }
+  .ochre circle { fill: currentColor; stroke: none; }
+
+  .sketch-stroke {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .sketch-margin.is-drawing .sketch-stroke {
+      animation: pencil-draw 1.25s cubic-bezier(0.25, 0.6, 0.36, 1) both;
+    }
+    .sketch-margin.is-drawing .sketch-stroke--2 { animation-delay: 0.22s; }
+    .sketch-margin.is-drawing .sketch-stroke--3 { animation-delay: 0.48s; }
+    .sketch-margin.is-drawing .sketch-stroke--4 { animation-delay: 0.68s; }
+    .sketch-margin.is-drawing .sketch-mark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pencil-pop 0.42s ease-out 1.25s both;
+    }
+  }
+
+  @keyframes pencil-draw {
+    from { stroke-dashoffset: 100; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes pencil-pop {
+    from { opacity: 0; transform: scale(0.4); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @media (max-width: 700px) {
+    .sketch-margin--header { height: 92px; }
+    .sketch-margin--footer { height: 104px; }
+    .sketch-margin svg {
+      position: relative;
+      left: 50%;
+      width: max(100%, 750px);
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<script>
+  // Keep the artwork static without JS or when reduced motion is requested.
+  // Draw each margin once, when it actually enters the viewport.
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const margins = document.querySelectorAll('[data-sketch-margin]');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add('is-drawing');
+          observer.unobserve(entry.target);
+        }
+      }, { threshold: 0.12 });
+      margins.forEach((margin) => observer.observe(margin));
+    } else {
+      margins.forEach((margin) => margin.classList.add('is-drawing'));
+    }
+  }
+</script>

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SketchMargins from '../components/SketchMargins.astro';
 import { stripBase, withBase } from '../lib/base';
 
 interface Props {
@@ -28,6 +29,7 @@ const isActive = (match: string) =>
     <title>{title}</title>
   </head>
   <body>
+    <SketchMargins placement="header" />
     <div class="page-shell">
       <header class="site-header">
         <a class="site-title" href={withBase('/')}>papergrid</a>
@@ -49,6 +51,7 @@ const isActive = (match: string) =>
         <slot />
       </main>
     </div>
+    <SketchMargins placement="footer" />
 
     <script is:inline define:vars={{ baseUrl }}>
       const normalizeBase = (base) => {

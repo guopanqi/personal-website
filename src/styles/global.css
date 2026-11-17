@@ -514,3 +514,16 @@ a.external-link::after {
     margin-left: 0;
   }
 }
+
+/* Keep the decorative footer at the bottom on short pages. This does not
+   alter the article column or the existing navigation typography. */
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-shell {
+  flex: 1 0 auto;
+}
