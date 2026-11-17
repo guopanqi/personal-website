@@ -9,7 +9,22 @@ const { placement } = Astro.props;
 <div class={`sketch-margin sketch-margin--${placement}`} data-sketch-margin aria-hidden="true">
   {
     placement === 'header' ? (
-      <svg viewBox="0 0 1000 128" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1600 128" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        {/* Small outlying thoughts keep the drawing alive across wide monitors. */}
+        <g class="pencil faint">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M-15 86 Q46 72 101 91 T250 80 M1340 94 Q1422 77 1502 88 T1615 71" />
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M90 24 l7 -4 m12 23 l8 -2 M1435 31 l5 -8 m14 25 l9 -3" />
+        </g>
+        <g class="pencil graphite">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M92 55 l34 -17 5 8 -34 17z M92 55 l5 8 -10 7z" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M190 62 q15 -17 32 0 q-17 17 -32 0z M203 62 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0" />
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M1399 64 q-5 -16 10 -17 q15 -1 14 13 q-1 7 -14 13 v7 m0 8 v2" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M1494 48 l33 7 -7 31 -34 -6z M1502 60 l17 3 m-19 9 l15 3" />
+        </g>
+        <g class="pencil ochre">
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M265 38 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z M1570 77 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" />
+        </g>
+        <g transform="translate(300 0)">
         {/* Curiosity and imagination: wandering pencil marks rather than a row of icons. */}
         <g class="pencil faint">
           <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M-10 76 Q48 69 90 83 T195 77 M214 24 Q255 35 284 22" />
@@ -38,9 +53,25 @@ const { placement } = Astro.props;
           <circle class="sketch-mark" cx="642" cy="30" r="1.6" />
           <circle class="sketch-mark" cx="584" cy="78" r="1.5" />
         </g>
+              </g>
       </svg>
     ) : (
-      <svg viewBox="0 0 1000 136" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1600 136" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        {/* Isolated computer/science/art doodles, not a repeating technical grid. */}
+        <g class="pencil faint">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M-15 91 Q52 103 112 87 M1345 113 Q1402 99 1461 109 T1615 96" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M208 33 l5 -7 m15 16 l7 -4 M1448 28 l6 -6 m14 17 l9 -2" />
+        </g>
+        <g class="pencil graphite">
+          <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M101 54 l62 2 1 44 -64 -2z M101 65 l62 2 M113 78 l8 6 -8 6 M132 89 h16" />
+          <path class="sketch-stroke sketch-stroke--2" pathLength="100" d="M221 83 H250 V61 H278 V88 H301 M250 61 V47" />
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M1373 56 l48 3 -3 40 -50 -4z M1382 72 l28 1 m-28 10 l18 2" />
+          <path class="sketch-stroke sketch-stroke--4" pathLength="100" d="M1494 70 c-11 -14 4 -29 18 -21 c13 8 3 22 -8 17 c-9 -4 -12 -22 6 -29" />
+        </g>
+        <g class="pencil ochre">
+          <path class="sketch-stroke sketch-stroke--3" pathLength="100" d="M336 38 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z M1542 90 l2 7 7 2 -7 3 -2 7 -3 -7 -7 -3 7 -2z" />
+        </g>
+        <g transform="translate(300 0)">
         {/* Computing, science and art: loosely spaced sketches, not a schematic grid. */}
         <g class="pencil faint">
           <path class="sketch-stroke sketch-stroke--1" pathLength="100" d="M-15 91 Q57 103 101 87 M170 109 Q226 99 275 109" />
@@ -76,6 +107,7 @@ const { placement } = Astro.props;
           <circle class="sketch-mark" cx="815" cy="60" r="2" />
           <circle class="sketch-mark" cx="827" cy="79" r="2" />
         </g>
+              </g>
       </svg>
     )
   }
@@ -90,10 +122,14 @@ const { placement } = Astro.props;
     color: #74685b;
   }
 
-  .sketch-margin--header { height: 110px; }
-  .sketch-margin--footer { height: 118px; margin-top: auto; }
+  .sketch-margin--header { height: clamp(86px, 6.9vw, 124px); }
+  .sketch-margin--footer { height: clamp(90px, 7.3vw, 132px); margin-top: auto; }
 
-  .sketch-margin svg { display: block; width: 100%; height: 100%; }
+  .sketch-margin svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 
   .pencil {
     fill: none;
@@ -135,13 +171,15 @@ const { placement } = Astro.props;
     to { opacity: 1; transform: scale(1); }
   }
 
-  @media (max-width: 700px) {
-    .sketch-margin--header { height: 76px; }
-    .sketch-margin--footer { height: 84px; }
+  /* One drawing at every size: shrink the entire canvas, then crop its edges.
+     At phone widths its 900px drawing occupies about 72–77px of height. */
+  @media (max-width: 900px) {
+    .sketch-margin--header { height: clamp(55px, 8vw, 72px); }
+    .sketch-margin--footer { height: clamp(58px, 8.5vw, 77px); }
     .sketch-margin svg {
       position: relative;
       left: 50%;
-      width: max(100%, 750px);
+      width: max(100%, 900px);
       transform: translateX(-50%);
     }
   }
