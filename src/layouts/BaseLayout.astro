@@ -27,6 +27,20 @@ const isActive = (match: string) =>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <script is:inline>
+      // The artwork is an entrance detail, not a page-transition animation.
+      // Record the visit per tab so normal internal links can stay native.
+      try {
+        const key = 'papergrid-sketch-intro-v2';
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduceMotion && sessionStorage.getItem(key) !== 'seen') {
+          document.documentElement.classList.add('sketch-intro');
+        }
+        sessionStorage.setItem(key, 'seen');
+      } catch {
+        // If storage is blocked, display the finished drawing without motion.
+      }
+    </script>
   </head>
   <body>
     <SketchMargins placement="header" />

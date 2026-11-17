@@ -69,11 +69,11 @@ const { placement } = Astro.props;
   }
 
   .sketch-margin--header {
-    height: 140px;
+    height: 110px;
   }
 
   .sketch-margin--footer {
-    height: 150px;
+    height: 118px;
     margin-top: auto;
   }
 
@@ -102,14 +102,24 @@ const { placement } = Astro.props;
     stroke-dashoffset: 0;
   }
 
+  /* Only the first page opened in a tab starts with invisible strokes.
+     Navigating to another section immediately shows the completed artwork. */
+  :global(html.sketch-intro) .sketch-stroke {
+    stroke-dashoffset: 100;
+  }
+
+  :global(html.sketch-intro) .sketch-mark {
+    opacity: 0;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
-    .sketch-margin.is-drawing .sketch-stroke {
+    :global(html.sketch-intro) .sketch-margin.is-drawing .sketch-stroke {
       animation: pencil-draw 1.25s cubic-bezier(0.25, 0.6, 0.36, 1) both;
     }
-    .sketch-margin.is-drawing .sketch-stroke--2 { animation-delay: 0.22s; }
-    .sketch-margin.is-drawing .sketch-stroke--3 { animation-delay: 0.48s; }
-    .sketch-margin.is-drawing .sketch-stroke--4 { animation-delay: 0.68s; }
-    .sketch-margin.is-drawing .sketch-mark {
+    :global(html.sketch-intro) .sketch-margin.is-drawing .sketch-stroke--2 { animation-delay: 0.22s; }
+    :global(html.sketch-intro) .sketch-margin.is-drawing .sketch-stroke--3 { animation-delay: 0.48s; }
+    :global(html.sketch-intro) .sketch-margin.is-drawing .sketch-stroke--4 { animation-delay: 0.68s; }
+    :global(html.sketch-intro) .sketch-margin.is-drawing .sketch-mark {
       transform-box: fill-box;
       transform-origin: center;
       animation: pencil-pop 0.42s ease-out 1.25s both;
@@ -127,8 +137,8 @@ const { placement } = Astro.props;
   }
 
   @media (max-width: 700px) {
-    .sketch-margin--header { height: 92px; }
-    .sketch-margin--footer { height: 104px; }
+    .sketch-margin--header { height: 76px; }
+    .sketch-margin--footer { height: 84px; }
     .sketch-margin svg {
       position: relative;
       left: 50%;
@@ -141,7 +151,7 @@ const { placement } = Astro.props;
 <script>
   // Keep the artwork static without JS or when reduced motion is requested.
   // Draw each margin once, when it actually enters the viewport.
-  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  if (document.documentElement.classList.contains('sketch-intro')) {
     const margins = document.querySelectorAll('[data-sketch-margin]');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
